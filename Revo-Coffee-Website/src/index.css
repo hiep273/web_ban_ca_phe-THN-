@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border font-nunito text-primary;
+  }
+
+  body {
+    @apply m-0 bg-paper;
+  }
+
+  button {
+    @apply cursor-pointer border-0 bg-transparent p-0;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply mt-1 font-montserrat text-3xl font-black uppercase text-primary md:text-4xl;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply mx-auto mt-3 block h-[3px] w-0 bg-accent opacity-0 transition-all duration-700;
+  }
+
+  .section-title:hover::after {
+    @apply w-28 opacity-100;
+  }
+
+  .btn {
+    @apply rounded-full px-5 py-2 text-sm font-bold uppercase transition hover:-translate-y-0.5 hover:shadow-soft;
+  }
+
+  .price {
+    @apply text-left text-xl font-semibold text-accent;
+  }
+
+  .product-name {
+    @apply text-left text-2xl font-bold text-ink;
+  }
+
+  .slider-stage {
+    @apply relative w-[4000px] bg-[linear-gradient(90deg,#415167_10%,#f9fbff_10%,#f9fbff_90%,#415167_90%)] py-20 pl-28;
+  }
+
+  .slider-arrow {
+    @apply absolute top-1/2 z-30 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-accent p-4 transition duration-300;
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-left {
+  animation: slideFromLeft 0.9s ease both;
+}
+
+.animate-right {
+  animation: slideFromRight 0.9s ease both;
+}
