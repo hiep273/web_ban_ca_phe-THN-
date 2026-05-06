@@ -1,0 +1,1335 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+assets/screens/cart.png
+assets/screens/flavor-quiz.png
+assets/screens/home.png
+assets/screens/product-detail.png
+index.html
+package.json
+README.md
+src/App.jsx
+src/main.jsx
+src/styles.css
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+node_modules
+dist
+.env
+.env.local
+npm-debug.log*
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Farm to Cup Coffee Platform - specialty coffee storefront, flavor quiz, product detail, and cart in one React app."
+    />
+    <title>Farm to Cup Coffee Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
+}
+</file>
+
+<file path="README.md">
+# Coffee Platform Frontend
+
+Farm to Cup is now a single Vite React application instead of four separate
+static HTML screens.
+
+## What is included
+
+- Home/shop experience with shared product data
+- Product detail view
+- Interactive flavor quiz with recommendation logic
+- Cart with quantity controls, removal, and subscription discount
+- Shared header, footer, visual system, and responsive CSS
+
+The old HTML files remain in `pages/` as legacy reference material. The running
+app starts from `index.html` and `src/main.jsx`.
+
+## Run locally
+
+On Windows PowerShell, use `npm.cmd` if script execution policy blocks `npm`.
+
+```bash
+npm.cmd install
+npm.cmd run dev
+```
+
+Build for production:
+
+```bash
+npm.cmd run build
+```
+</file>
+
+<file path="src/App.jsx">
+import {
+  ArrowLeft,
+  ArrowRight,
+  Award,
+  Coffee,
+  Heart,
+  Leaf,
+  Minus,
+  Plus,
+  ShoppingBag,
+  Sparkles,
+  Star,
+  Trash2,
+  User,
+} from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+
+const products = [
+  {
+    id: "dalat-red-bourbon",
+    name: "Dalat Red Bourbon",
+    origin: "Lam Dong, Vietnam",
+    price: 28,
+    roast: "Medium",
+    process: "Washed",
+    notes: ["Cacao", "Orange peel", "Brown sugar"],
+    brew: ["Pour over", "Phin", "French press"],
+    image:
+      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "A high-altitude lot with a clean cup, rounded sweetness, and a calm chocolate finish.",
+    badge: "Farmer direct",
+  },
+  {
+    id: "ethiopia-yirgacheffe",
+    name: "Ethiopia Yirgacheffe",
+    origin: "Gedeo, Ethiopia",
+    price: 32,
+    roast: "Light",
+    process: "Washed",
+    notes: ["Jasmine", "Lemon zest", "Honey"],
+    brew: ["Pour over", "Aeropress"],
+    image:
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "A bright single origin built for clarity, florals, and a crisp finish.",
+    badge: "Limited release",
+  },
+  {
+    id: "sumatra-mandheling",
+    name: "Sumatra Mandheling",
+    origin: "Aceh, Indonesia",
+    price: 30,
+    roast: "Dark",
+    process: "Wet hulled",
+    notes: ["Cedar", "Spice", "Molasses"],
+    brew: ["Espresso", "French press", "Moka pot"],
+    image:
+      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "Dense, low-acidity coffee for people who like body, spice, and a long finish.",
+    badge: "Roaster pick",
+  },
+];
+
+const quizQuestions = [
+  {
+    title: "How do you brew?",
+    options: ["Pour over", "Phin", "Espresso", "French press"],
+  },
+  {
+    title: "What flavor direction do you like?",
+    options: ["Bright and floral", "Chocolatey", "Bold and earthy", "Sweet and balanced"],
+  },
+  {
+    title: "How intense should the cup feel?",
+    options: ["Light", "Medium", "Strong"],
+  },
+];
+
+function money(value) {
+  return `$${value.toFixed(2)}`;
+}
+
+function useRouter() {
+  const getRoute = () => window.location.hash.replace("#", "") || "/";
+  const [route, setRoute] = useState(getRoute);
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(getRoute());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  const navigate = (nextRoute) => {
+    window.location.hash = nextRoute;
+    setRoute(nextRoute);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return { route, navigate };
+}
+
+export default function App() {
+  const { route, navigate } = useRouter();
+  const [cart, setCart] = useState([
+    { productId: "dalat-red-bourbon", qty: 1, subscription: true },
+  ]);
+
+  const activeProduct =
+    products.find((product) => route === `/product/${product.id}`) || products[0];
+
+  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  const addToCart = (productId) => {
+    setCart((items) => {
+      const existing = items.find((item) => item.productId === productId);
+      if (existing) {
+        return items.map((item) =>
+          item.productId === productId ? { ...item, qty: item.qty + 1 } : item
+        );
+      }
+      return [...items, { productId, qty: 1, subscription: false }];
+    });
+    navigate("/cart");
+  };
+
+  return (
+    <div className="app-shell">
+      <Header route={route} navigate={navigate} cartCount={cartCount} />
+      {route === "/" && <Home navigate={navigate} addToCart={addToCart} />}
+      {route.startsWith("/product/") && (
+        <ProductDetail product={activeProduct} addToCart={addToCart} navigate={navigate} />
+      )}
+      {route === "/quiz" && <FlavorQuiz navigate={navigate} addToCart={addToCart} />}
+      {route === "/cart" && <Cart cart={cart} setCart={setCart} navigate={navigate} />}
+      <Footer navigate={navigate} />
+    </div>
+  );
+}
+
+function Header({ route, navigate, cartCount }) {
+  const links = [
+    { label: "Shop", route: "/" },
+    { label: "Discovery", route: "/quiz" },
+    { label: "Roastery", route: "/product/dalat-red-bourbon" },
+    { label: "Cart", route: "/cart" },
+  ];
+
+  return (
+    <header className="site-header">
+      <button className="brand" onClick={() => navigate("/")}>
+        Farm to Cup
+      </button>
+      <nav className="nav-links" aria-label="Primary navigation">
+        {links.map((link) => (
+          <button
+            key={link.route}
+            className={route === link.route ? "active" : ""}
+            onClick={() => navigate(link.route)}
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
+      <div className="header-actions">
+        <button className="icon-button" onClick={() => navigate("/cart")} aria-label="Open cart">
+          <ShoppingBag size={20} />
+          {cartCount > 0 && <span>{cartCount}</span>}
+        </button>
+        <button className="icon-button" aria-label="Account">
+          <User size={20} />
+        </button>
+      </div>
+    </header>
+  );
+}
+
+function Home({ navigate, addToCart }) {
+  return (
+    <main>
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow">The art of the brew</p>
+          <h1>From Soil to Soul</h1>
+          <p>
+            A farmer-direct coffee platform that helps customers discover origins,
+            compare flavor profiles, and build a better morning ritual.
+          </p>
+          <div className="button-row">
+            <button className="primary-button" onClick={() => document.getElementById("shop")?.scrollIntoView()}>
+              Explore origins
+            </button>
+            <button className="secondary-button" onClick={() => navigate("/quiz")}>
+              Take flavor quiz
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="shop">
+        <div className="section-heading">
+          <p className="eyebrow">Seasonal collection</p>
+          <h2>Find Your Flavor</h2>
+          <p>Shop by origin, roast, process, and the sensory notes that matter.</p>
+        </div>
+        <div className="product-grid">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onView={() => navigate(`/product/${product.id}`)}
+              onAdd={() => addToCart(product.id)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="story-band">
+        <div>
+          <p className="eyebrow">Traceable sourcing</p>
+          <h2>Built around the journey from farm to cup.</h2>
+        </div>
+        <div className="journey-grid">
+          <Metric icon={<Leaf />} label="Origin" value="3 regions" />
+          <Metric icon={<Award />} label="Quality" value="Q-graded lots" />
+          <Metric icon={<Coffee />} label="Craft" value="Roasted weekly" />
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function ProductCard({ product, onView, onAdd }) {
+  return (
+    <article className="product-card">
+      <img src={product.image} alt={`${product.name} coffee`} />
+      <div className="product-card-body">
+        <div className="card-topline">
+          <span>{product.badge}</span>
+          <strong>{money(product.price)}</strong>
+        </div>
+        <h3>{product.name}</h3>
+        <p>{product.origin}</p>
+        <div className="chip-row">
+          {product.notes.map((note) => (
+            <span key={note}>{note}</span>
+          ))}
+        </div>
+        <div className="card-actions">
+          <button className="secondary-button compact" onClick={onView}>
+            Details
+          </button>
+          <button className="primary-button compact" onClick={onAdd}>
+            Add
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ProductDetail({ product, addToCart, navigate }) {
+  return (
+    <main className="detail-page">
+      <button className="back-button" onClick={() => navigate("/")}>
+        <ArrowLeft size={18} /> Back to shop
+      </button>
+      <section className="product-detail">
+        <div className="gallery">
+          <img src={product.image} alt={`${product.name} package`} />
+        </div>
+        <div className="detail-copy">
+          <div className="badge-line">
+            <span>{product.badge}</span>
+            <span>{product.process}</span>
+          </div>
+          <h1>{product.name}</h1>
+          <p className="origin">{product.origin}</p>
+          <p>{product.story}</p>
+          <div className="detail-stats">
+            <Metric icon={<Star />} label="Roast" value={product.roast} />
+            <Metric icon={<Sparkles />} label="Process" value={product.process} />
+            <Metric icon={<Coffee />} label="Price" value={money(product.price)} />
+          </div>
+          <div className="detail-panel">
+            <h3>Flavor profile</h3>
+            <div className="chip-row">
+              {product.notes.map((note) => (
+                <span key={note}>{note}</span>
+              ))}
+            </div>
+          </div>
+          <div className="detail-panel">
+            <h3>Best for</h3>
+            <div className="chip-row">
+              {product.brew.map((method) => (
+                <span key={method}>{method}</span>
+              ))}
+            </div>
+          </div>
+          <button className="primary-button wide" onClick={() => addToCart(product.id)}>
+            Add to cart - {money(product.price)}
+          </button>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function FlavorQuiz({ navigate, addToCart }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState([]);
+
+  const recommendation = useMemo(() => {
+    if (answers.includes("Bright and floral") || answers.includes("Light")) {
+      return products[1];
+    }
+    if (answers.includes("Bold and earthy") || answers.includes("Strong")) {
+      return products[2];
+    }
+    return products[0];
+  }, [answers]);
+
+  const choose = (answer) => {
+    const nextAnswers = [...answers.slice(0, step), answer];
+    setAnswers(nextAnswers);
+    if (step < quizQuestions.length - 1) {
+      setStep(step + 1);
+    }
+  };
+
+  const isDone = answers.length === quizQuestions.length;
+  const current = quizQuestions[step];
+
+  return (
+    <main className="quiz-page">
+      <section className="section-heading centered">
+        <p className="eyebrow">Artisan curation</p>
+        <h1>Find Your Flavor</h1>
+        <p>Answer three questions and get a practical coffee recommendation.</p>
+      </section>
+
+      {!isDone ? (
+        <section className="quiz-card">
+          <div className="progress-row">
+            <span>Step {step + 1} of {quizQuestions.length}</span>
+            <span>{Math.round(((step + 1) / quizQuestions.length) * 100)}%</span>
+          </div>
+          <div className="progress-track">
+            <div style={{ width: `${((step + 1) / quizQuestions.length) * 100}%` }} />
+          </div>
+          <h2>{current.title}</h2>
+          <div className="quiz-options">
+            {current.options.map((option) => (
+              <button key={option} onClick={() => choose(option)}>
+                <Coffee size={22} />
+                {option}
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section className="result-card">
+          <div>
+            <p className="eyebrow">Recommended match</p>
+            <h2>{recommendation.name}</h2>
+            <p>{recommendation.story}</p>
+            <div className="chip-row">
+              {recommendation.notes.map((note) => (
+                <span key={note}>{note}</span>
+              ))}
+            </div>
+            <div className="button-row">
+              <button className="primary-button" onClick={() => addToCart(recommendation.id)}>
+                Add match
+              </button>
+              <button className="secondary-button" onClick={() => navigate(`/product/${recommendation.id}`)}>
+                View details
+              </button>
+            </div>
+          </div>
+          <img src={recommendation.image} alt={recommendation.name} />
+        </section>
+      )}
+    </main>
+  );
+}
+
+function Cart({ cart, setCart, navigate }) {
+  const items = cart
+    .map((item) => ({
+      ...item,
+      product: products.find((product) => product.id === item.productId),
+    }))
+    .filter((item) => item.product);
+
+  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.qty, 0);
+  const discount = items.some((item) => item.subscription) ? subtotal * 0.15 : 0;
+  const total = subtotal - discount + (items.length ? 6 : 0);
+
+  const updateQty = (productId, delta) => {
+    setCart((current) =>
+      current
+        .map((item) =>
+          item.productId === productId ? { ...item, qty: Math.max(0, item.qty + delta) } : item
+        )
+        .filter((item) => item.qty > 0)
+    );
+  };
+
+  const remove = (productId) => {
+    setCart((current) => current.filter((item) => item.productId !== productId));
+  };
+
+  const toggleSubscription = (productId) => {
+    setCart((current) =>
+      current.map((item) =>
+        item.productId === productId ? { ...item, subscription: !item.subscription } : item
+      )
+    );
+  };
+
+  return (
+    <main className="cart-page">
+      <section className="cart-items">
+        <div className="section-heading">
+          <p className="eyebrow">Checkout</p>
+          <h1>Your Selection</h1>
+        </div>
+        {items.length === 0 ? (
+          <div className="empty-state">
+            <ShoppingBag size={42} />
+            <h2>Your cart is empty</h2>
+            <button className="primary-button" onClick={() => navigate("/")}>
+              Browse coffee
+            </button>
+          </div>
+        ) : (
+          items.map((item) => (
+            <article className="cart-item" key={item.productId}>
+              <img src={item.product.image} alt={item.product.name} />
+              <div>
+                <div className="cart-title-row">
+                  <h3>{item.product.name}</h3>
+                  <strong>{money(item.product.price * item.qty)}</strong>
+                </div>
+                <p>{item.product.notes.join(", ")}</p>
+                <label className="subscription-toggle">
+                  <input
+                    type="checkbox"
+                    checked={item.subscription}
+                    onChange={() => toggleSubscription(item.productId)}
+                  />
+                  Subscribe and save 15%
+                </label>
+                <div className="quantity-row">
+                  <button onClick={() => updateQty(item.productId, -1)} aria-label="Decrease quantity">
+                    <Minus size={16} />
+                  </button>
+                  <span>{item.qty}</span>
+                  <button onClick={() => updateQty(item.productId, 1)} aria-label="Increase quantity">
+                    <Plus size={16} />
+                  </button>
+                  <button className="remove-button" onClick={() => remove(item.productId)}>
+                    <Trash2 size={16} /> Remove
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))
+        )}
+      </section>
+
+      <aside className="summary">
+        <h2>Order Summary</h2>
+        <SummaryLine label="Subtotal" value={money(subtotal)} />
+        <SummaryLine label="Subscription savings" value={`-${money(discount)}`} />
+        <SummaryLine label="Shipping" value={items.length ? "$6.00" : "$0.00"} />
+        <div className="summary-total">
+          <span>Total</span>
+          <strong>{money(total)}</strong>
+        </div>
+        <button className="primary-button wide" disabled={items.length === 0}>
+          Continue to checkout
+        </button>
+      </aside>
+    </main>
+  );
+}
+
+function Metric({ icon, label, value }) {
+  return (
+    <div className="metric">
+      {icon}
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function SummaryLine({ label, value }) {
+  return (
+    <div className="summary-line">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function Footer({ navigate }) {
+  return (
+    <footer className="site-footer">
+      <div>
+        <strong>Farm to Cup</strong>
+        <p>Specialty coffee discovery, product storytelling, quiz, and cart in one React app.</p>
+      </div>
+      <button onClick={() => navigate("/")}>
+        Back to shop <ArrowRight size={16} />
+      </button>
+    </footer>
+  );
+}
+</file>
+
+<file path="src/main.jsx">
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./styles.css";
+
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+</file>
+
+<file path="src/styles.css">
+:root {
+  color: #1c1c18;
+  background: #fcf9f3;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #1c1c18;
+  --muted: #62564e;
+  --line: #d8cbc2;
+  --surface: #fcf9f3;
+  --surface-low: #f4efe7;
+  --surface-high: #ffffff;
+  --primary: #26170c;
+  --secondary: #496455;
+  --accent: #b5924c;
+  --danger: #a13025;
+  --radius: 8px;
+  --shadow: 0 18px 50px rgba(61, 43, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--surface);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Noto Serif", Georgia, serif;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.app-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 76px;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(216, 203, 194, 0.7);
+  background: rgba(252, 249, 243, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-links button,
+.site-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  padding: 0 14px;
+  font-weight: 700;
+}
+
+.nav-links button.active,
+.nav-links button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  color: var(--primary);
+}
+
+.icon-button span {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  min-width: 21px;
+  height: 21px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 80px 32px;
+  background:
+    linear-gradient(90deg, rgba(38, 23, 12, 0.78), rgba(38, 23, 12, 0.28)),
+    url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+}
+
+.hero-copy {
+  width: min(680px, 100%);
+  margin-left: max(0px, calc((100vw - 1180px) / 2));
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(52px, 8vw, 96px);
+}
+
+.hero p {
+  max-width: 600px;
+  color: #f5ece2;
+  font-size: 19px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button-row,
+.card-actions,
+.quantity-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.primary-button,
+.secondary-button,
+.back-button {
+  min-height: 48px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  padding: 0 20px;
+  font-weight: 800;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.secondary-button,
+.back-button {
+  background: var(--surface-high);
+  border-color: var(--line);
+  color: var(--primary);
+}
+
+.compact {
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+.wide {
+  width: 100%;
+}
+
+.section,
+.quiz-page,
+.detail-page,
+.cart-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 82px 0;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading.centered {
+  max-width: 720px;
+  text-align: center;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.section-heading p {
+  max-width: 660px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.product-card,
+.quiz-card,
+.result-card,
+.summary,
+.empty-state,
+.cart-item,
+.detail-panel {
+  border: 1px solid rgba(216, 203, 194, 0.72);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  box-shadow: var(--shadow);
+}
+
+.product-card {
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 22px;
+}
+
+.card-topline,
+.cart-title-row,
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.card-topline span,
+.badge-line span {
+  border-radius: 999px;
+  background: rgba(73, 100, 85, 0.12);
+  color: var(--secondary);
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.product-card h3 {
+  margin-top: 16px;
+  font-size: 28px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.chip-row span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-low);
+  color: var(--primary);
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.story-band {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 42px;
+  align-items: center;
+  padding: 70px max(24px, calc((100vw - 1180px) / 2));
+  background: var(--primary);
+}
+
+.story-band h2 {
+  color: #fff;
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.journey-grid,
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric {
+  min-height: 128px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 18px;
+}
+
+.detail-stats .metric {
+  background: var(--surface-low);
+  border-color: var(--line);
+  color: var(--primary);
+}
+
+.metric span,
+.metric strong {
+  display: block;
+  margin-top: 10px;
+}
+
+.metric span {
+  color: inherit;
+  opacity: 0.72;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.gallery img {
+  width: 100%;
+  min-height: 620px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.detail-copy h1 {
+  margin-top: 16px;
+  font-size: clamp(42px, 6vw, 70px);
+}
+
+.origin {
+  font-weight: 800;
+}
+
+.badge-line {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-panel {
+  margin: 18px 0;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.quiz-card,
+.result-card {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.progress-track {
+  height: 8px;
+  margin: 14px 0 28px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-low);
+}
+
+.progress-track div {
+  height: 100%;
+  background: var(--secondary);
+}
+
+.quiz-card h2 {
+  font-size: 34px;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.quiz-options button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-low);
+  color: var(--primary);
+  padding: 0 18px;
+  font-weight: 800;
+}
+
+.quiz-options button:hover {
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: center;
+}
+
+.result-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.cart-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 28px;
+  align-items: start;
+}
+
+.cart-items {
+  display: grid;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px;
+  box-shadow: none;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 170px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.subscription-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 18px;
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+.quantity-row button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  color: var(--primary);
+}
+
+.quantity-row span {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.remove-button {
+  padding: 0 12px;
+  color: var(--danger) !important;
+}
+
+.summary {
+  position: sticky;
+  top: 98px;
+  padding: 24px;
+}
+
+.summary h2 {
+  margin-bottom: 22px;
+}
+
+.summary-line {
+  padding: 11px 0;
+  color: var(--muted);
+}
+
+.summary-total {
+  margin: 14px 0 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  font-size: 22px;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  min-height: 320px;
+  padding: 28px;
+  box-shadow: none;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 36px 32px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-low);
+}
+
+.site-footer p {
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 880px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding: 64px 24px;
+  }
+
+  .product-grid,
+  .story-band,
+  .product-detail,
+  .result-card,
+  .cart-page {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-grid,
+  .detail-stats,
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    min-height: 420px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: 240px;
+  }
+
+  .summary {
+    position: static;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+</file>
+
+</files>
