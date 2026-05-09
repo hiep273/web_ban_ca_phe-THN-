@@ -2,3 +2,5 @@
 *.ldf
 obj/
 bin/
+.vs/
+*.user

@@ -1,18 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\",
+  "WorkspaceRootPath": "C:\\coffee-platform-frontend\\FarmToCup.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\users\\admin\\downloads\\coffee-platform-frontend\\farmtocup.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\users\\admin\\downloads\\coffee-platform-frontend\\farmtocup.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\users\\admin\\downloads\\coffee-platform-frontend\\farmtocup.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\dtos\\sanpham\\capnhatsanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:dtos\\sanpham\\capnhatsanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\dtos\\sanpham\\taosanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:dtos\\sanpham\\taosanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\dtos\\sanpham\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:dtos\\sanpham\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\farmtocup.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:farmtocup.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|c:\\coffee-platform-frontend\\farmtocup.api\\models\\farmtocupcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91479F1C-1698-4DE7-AF43-973297F3E666}|FarmToCup.API.csproj|solutionrelative:models\\farmtocupcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,42 +78,141 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-05T16:40:20.256Z",
+              "DocumentIndex": 2,
+              "Title": "SanPhamController.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Controllers\\SanPhamController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SanPhamController.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Controllers\\SanPhamController.cs",
+              "RelativeToolTip": "Controllers\\SanPhamController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T17:40:34.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaoSanPhamDto.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\TaoSanPhamDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\SanPham\\TaoSanPhamDto.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\TaoSanPhamDto.cs",
+              "RelativeToolTip": "DTOs\\SanPham\\TaoSanPhamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T17:35:35.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SanPhamDto.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\SanPhamDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\SanPham\\SanPhamDto.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\SanPhamDto.cs",
+              "RelativeToolTip": "DTOs\\SanPham\\SanPhamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T17:35:07.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Repository\\IRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T16:35:23.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\Program.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\Program.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-05T16:40:16.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\coffee-platform-frontend\\FarmToCup.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-05T16:38:13.042Z",
+              "WhenOpened": "2026-05-05T16:40:20.256Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CapNhatSanPhamDto.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\CapNhatSanPhamDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\SanPham\\CapNhatSanPhamDto.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\DTOs\\SanPham\\CapNhatSanPhamDto.cs",
+              "RelativeToolTip": "DTOs\\SanPham\\CapNhatSanPhamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T17:36:16.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Repository\\Repository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repository.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Repository\\Repository.cs",
+              "RelativeToolTip": "Repository\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T16:15:08.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FarmToCupContext.cs",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Models\\FarmToCupContext.cs",
+              "RelativeDocumentMoniker": "Models\\FarmToCupContext.cs",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Models\\FarmToCupContext.cs",
+              "RelativeToolTip": "Models\\FarmToCupContext.cs",
+              "ViewState": "AgIAAD8BAAAAAAAAAAAwwEQBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T15:59:59.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FarmToCup.API",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\FarmToCup.API.csproj",
+              "RelativeDocumentMoniker": "FarmToCup.API.csproj",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\FarmToCup.API.csproj",
+              "RelativeToolTip": "FarmToCup.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-06T15:43:06.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\coffee-platform-frontend\\FarmToCup.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\coffee-platform-frontend\\FarmToCup.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-05T16:38:13.042Z"
             }
           ]
         },
