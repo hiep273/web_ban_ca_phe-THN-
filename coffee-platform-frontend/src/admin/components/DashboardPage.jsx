@@ -3,6 +3,8 @@ import ShipmentFeed from "./ShipmentFeed.jsx";
 import StatsCards from "./StatsCards.jsx";
 
 export default function DashboardPage({ data, stats }) {
+  const highlightedItem = data.inventoryItems[0];
+
   return (
     <>
       <StatsCards stats={stats} />
@@ -10,14 +12,20 @@ export default function DashboardPage({ data, stats }) {
 
       <section className="admin-secondary-grid">
         <div className="roaster-note">
-          <img
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-            alt="Roasted coffee beans"
-          />
+          {highlightedItem?.image && (
+            <img
+              src={highlightedItem.image}
+              alt={highlightedItem.name}
+            />
+          )}
           <div>
-            <span className="admin-eyebrow">Roaster note</span>
-            <h2>Ethiopia Yirgacheffe has strong floral notes this season. Prioritize it for light roast subscriptions.</h2>
-            <p>Marco, Head Roaster</p>
+            <span className="admin-eyebrow">Ghi chú tồn kho</span>
+            <h2>
+              {highlightedItem
+                ? `${highlightedItem.name} còn ${highlightedItem.stockQty} ${highlightedItem.stockUnit} trong kho.`
+                : "Chưa có dữ liệu tồn kho."}
+            </h2>
+            <p>{highlightedItem?.supplierName || "Dữ liệu backend"}</p>
           </div>
         </div>
         <ShipmentFeed shipments={data.shipments} />
