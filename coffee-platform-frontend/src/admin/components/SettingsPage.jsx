@@ -3,8 +3,8 @@ export default function SettingsPage({ settings }) {
     <section className="admin-panel settings-panel">
       <div className="inventory-toolbar">
         <div>
-          <h2>Admin Settings</h2>
-          <p>Configuration values are grouped here so they can later map to real API settings.</p>
+          <h2>Cài đặt quản trị</h2>
+          <p>Các thiết lập vận hành được gom tại đây để sau này đồng bộ với API cấu hình.</p>
         </div>
       </div>
       <div className="settings-list">

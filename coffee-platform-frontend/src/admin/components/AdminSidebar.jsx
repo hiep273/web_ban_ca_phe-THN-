@@ -26,12 +26,12 @@ export default function AdminSidebar({ activePage, items, onChangePage }) {
           <Coffee size={22} />
         </span>
         <div>
-          <strong>Artisan Roast</strong>
-          <small>Farm to Cup</small>
+          <strong>Từ Vườn Đến Ly</strong>
+          <small>Quản trị cà phê</small>
         </div>
       </div>
 
-      <nav className="admin-nav" aria-label="Admin navigation">
+      <nav className="admin-nav" aria-label="Điều hướng quản trị">
         {items.map((item) => {
           const Icon = icons[item.id] || LayoutDashboard;
           return (
@@ -50,7 +50,7 @@ export default function AdminSidebar({ activePage, items, onChangePage }) {
 
       <button className="admin-logout" type="button">
         <LogOut size={19} />
-        Logout
+        Đăng xuất
       </button>
     </aside>
   );

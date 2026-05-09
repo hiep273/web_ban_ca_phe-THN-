@@ -10,76 +10,117 @@ namespace FarmToCup.API.Controllers
     [ApiController]
     public class SanPhamController : ControllerBase
     {
-        private readonly IRepository<SanPham> _sanPhamRepo;
-        public SanPhamController(IRepository<SanPham> sanPhamRepo)
+        private readonly ISanPhamRepository _sanPhamRepo;
+
+        public SanPhamController(ISanPhamRepository sanPhamRepo)
         {
             _sanPhamRepo = sanPhamRepo;
         }
+
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(
+            string? keyword,
+            string? xuatXu,
+            string? mucRang,
+            string? quyTrinhCheBien,
+            string? huongVi,
+            string? phuongPhapPha,
+            decimal? minPrice,
+            decimal? maxPrice,
+            string? sortBy = "newest",
+            bool desc = true,
+            int page = 1,
+            int pageSize = 12)
         {
-            var sanPhams = await _sanPhamRepo.GetAllAsync();
-            return Ok(sanPhams);
+            var result = await _sanPhamRepo.GetAllAsync(
+                keyword,
+                xuatXu,
+                mucRang,
+                quyTrinhCheBien,
+                huongVi,
+                phuongPhapPha,
+                minPrice,
+                maxPrice,
+                sortBy,
+                desc,
+                page,
+                pageSize);
+
+            return Ok(result);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
+
+            if (sanPham == null)
+                return NotFound("Không tìm thấy sản phẩm");
+
             return Ok(sanPham);
         }
+
         [HttpPost]
-        public async Task<IActionResult> Create(TaoSanPhamDto taoSanPhamDto)
+        public async Task<IActionResult> Create(TaoSanPhamDto dto)
         {
             var sanPham = new SanPham
             {
-                TenSanPham = taoSanPhamDto.TenSanPham,
-                XuatXu = taoSanPhamDto.XuatXu,
-                Gia = taoSanPhamDto.Gia,
-                MucRang = taoSanPhamDto.MucRang,
-                QuyTrinhCheBien = taoSanPhamDto.QuyTrinhCheBien,
-                MoTa = taoSanPhamDto.MoTa,
-                HinhAnh = taoSanPhamDto.HinhAnh,
-                NhanHieuPhu = taoSanPhamDto.NhanHieuPhu,
-                SoLuongTon = taoSanPhamDto.SoLuongTon,
+                TenSanPham = dto.TenSanPham,
+                XuatXu = dto.XuatXu,
+                Gia = dto.Gia,
+                MucRang = dto.MucRang,
+                QuyTrinhCheBien = dto.QuyTrinhCheBien,
+                MoTa = dto.MoTa,
+                HinhAnh = dto.HinhAnh,
+                NhanHieuPhu = dto.NhanHieuPhu,
+                SoLuongTon = dto.SoLuongTon ?? 0,
                 TrangThai = true,
                 NgayTao = DateTime.UtcNow
-
             };
 
+            var result = await _sanPhamRepo.AddAsync(sanPham);
 
-
-            var createdSanPham = await _sanPhamRepo.AddAsync(sanPham);
-            return Ok(sanPham);
+            return Ok(result);
         }
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, TaoSanPhamDto taoSanPhamDto)
+        public async Task<IActionResult> Update(int id, CapNhatSanPhamDto dto)
         {
             var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
-            sanPham.TenSanPham = taoSanPhamDto.TenSanPham;
-            sanPham.XuatXu = taoSanPhamDto.XuatXu;
-            sanPham.Gia = taoSanPhamDto.Gia;
-            sanPham.MucRang = taoSanPhamDto.MucRang;
-            sanPham.QuyTrinhCheBien = taoSanPhamDto.QuyTrinhCheBien;
-            sanPham.MoTa = taoSanPhamDto.MoTa;
-            sanPham.HinhAnh = taoSanPhamDto.HinhAnh;
-            sanPham.NhanHieuPhu = taoSanPhamDto.NhanHieuPhu;
-            sanPham.SoLuongTon = taoSanPhamDto.SoLuongTon;
+
+            if (sanPham == null)
+                return NotFound("Không tìm thấy sản phẩm");
+
+            sanPham.TenSanPham = dto.TenSanPham;
+            sanPham.XuatXu = dto.XuatXu;
+            sanPham.Gia = (decimal)dto.Gia;
+            sanPham.MucRang = dto.MucRang;
+            sanPham.QuyTrinhCheBien = dto.QuyTrinhCheBien;
+            sanPham.MoTa = dto.MoTa;
+            sanPham.HinhAnh = dto.HinhAnh;
+            sanPham.NhanHieuPhu = dto.NhanHieuPhu;
+
+            if (dto.SoLuongTon.HasValue)
+                sanPham.SoLuongTon = dto.SoLuongTon.Value;
+
+            sanPham.TrangThai = dto.TrangThai ?? sanPham.TrangThai;
+
             await _sanPhamRepo.UpdateAsync(sanPham);
+
             return Ok(sanPham);
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
-            sanPham.TrangThai = false;
-            await _sanPhamRepo.UpdateAsync(sanPham);
-            return Ok("da an san pham");
-       
+            var result = await _sanPhamRepo.SoftDeleteAsync(id);
 
+            if (!result)
+                return NotFound("Không tìm thấy sản phẩm");
+
+            return Ok("Đã ẩn sản phẩm");
         }
+
     }
             
 }
