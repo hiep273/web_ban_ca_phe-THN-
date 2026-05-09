@@ -14,8 +14,9 @@ import {
   User,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { getProducts } from "../api/products";
 
-const products = [
+const fallbackProducts = [
   {
     id: "dalat-red-bourbon",
     name: "Dalat Red Bourbon",
@@ -107,9 +108,41 @@ function useRouter() {
 
 export default function App() {
   const { route, navigate } = useRouter();
-  const [cart, setCart] = useState([
-    { productId: "dalat-red-bourbon", qty: 1, subscription: true },
-  ]);
+  const [products, setProducts] = useState(fallbackProducts);
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  const [productsError, setProductsError] = useState("");
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadProducts() {
+      try {
+        setIsLoadingProducts(true);
+        const data = await getProducts();
+
+        if (isMounted && data.length > 0) {
+          setProducts(data);
+          setProductsError("");
+        }
+      } catch (error) {
+        if (isMounted) {
+          setProducts(fallbackProducts);
+          setProductsError("Chua ket noi duoc API san pham, dang hien du lieu mau.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoadingProducts(false);
+        }
+      }
+    }
+
+    loadProducts();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const activeProduct =
     products.find((product) => route === `/product/${product.id}`) || products[0];
@@ -131,23 +164,31 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Header route={route} navigate={navigate} cartCount={cartCount} />
-      {route === "/" && <Home navigate={navigate} addToCart={addToCart} />}
+      <Header route={route} navigate={navigate} cartCount={cartCount} featuredProductId={products[0]?.id} />
+      {route === "/" && (
+        <Home
+          navigate={navigate}
+          addToCart={addToCart}
+          products={products}
+          isLoadingProducts={isLoadingProducts}
+          productsError={productsError}
+        />
+      )}
       {route.startsWith("/product/") && (
         <ProductDetail product={activeProduct} addToCart={addToCart} navigate={navigate} />
       )}
-      {route === "/quiz" && <FlavorQuiz navigate={navigate} addToCart={addToCart} />}
-      {route === "/cart" && <Cart cart={cart} setCart={setCart} navigate={navigate} />}
+      {route === "/quiz" && <FlavorQuiz navigate={navigate} addToCart={addToCart} products={products} />}
+      {route === "/cart" && <Cart cart={cart} setCart={setCart} navigate={navigate} products={products} />}
       <Footer navigate={navigate} />
     </div>
   );
 }
 
-function Header({ route, navigate, cartCount }) {
+function Header({ route, navigate, cartCount, featuredProductId }) {
   const links = [
     { label: "Cửa hàng", route: "/" },
     { label: "Tìm gu", route: "/quiz" },
-    { label: "Cà phê nổi bật", route: "/product/dalat-red-bourbon" },
+    { label: "Cà phê nổi bật", route: `/product/${featuredProductId || fallbackProducts[0].id}` },
     { label: "Giỏ hàng", route: "/cart" },
   ];
 
@@ -180,7 +221,7 @@ function Header({ route, navigate, cartCount }) {
   );
 }
 
-function Home({ navigate, addToCart }) {
+function Home({ navigate, addToCart, products, isLoadingProducts, productsError }) {
   return (
     <main>
       <section className="hero">
@@ -208,6 +249,8 @@ function Home({ navigate, addToCart }) {
           <h2>Chọn Gu Cà Phê Của Bạn</h2>
           <p>Mua theo vùng trồng, mức rang, phương pháp sơ chế và những nốt hương bạn yêu thích.</p>
         </div>
+        {productsError && <p className="inline-notice">{productsError}</p>}
+        {isLoadingProducts && <p className="inline-notice">Dang tai san pham tu backend...</p>}
         <div className="product-grid">
           {products.map((product) => (
             <ProductCard
@@ -236,6 +279,8 @@ function Home({ navigate, addToCart }) {
 }
 
 function ProductCard({ product, onView, onAdd }) {
+  const notes = product.notes?.length ? product.notes : ["Ca phe dac san"];
+
   return (
     <article className="product-card">
       <img src={product.image} alt={`Cà phê ${product.name}`} />
@@ -247,7 +292,7 @@ function ProductCard({ product, onView, onAdd }) {
         <h3>{product.name}</h3>
         <p>{product.origin}</p>
         <div className="chip-row">
-          {product.notes.map((note) => (
+          {notes.map((note) => (
             <span key={note}>{note}</span>
           ))}
         </div>
@@ -265,6 +310,23 @@ function ProductCard({ product, onView, onAdd }) {
 }
 
 function ProductDetail({ product, addToCart, navigate }) {
+  if (!product) {
+    return (
+      <main className="detail-page">
+        <button className="back-button" onClick={() => navigate("/")}>
+          <ArrowLeft size={18} /> Ve cua hang
+        </button>
+        <div className="empty-state">
+          <ShoppingBag size={42} />
+          <h2>Khong tim thay san pham</h2>
+        </div>
+      </main>
+    );
+  }
+
+  const notes = product.notes?.length ? product.notes : ["Ca phe dac san"];
+  const brew = product.brew?.length ? product.brew : ["Phin", "Pour over"];
+
   return (
     <main className="detail-page">
       <button className="back-button" onClick={() => navigate("/")}>
@@ -290,7 +352,7 @@ function ProductDetail({ product, addToCart, navigate }) {
           <div className="detail-panel">
             <h3>Hồ sơ hương vị</h3>
             <div className="chip-row">
-              {product.notes.map((note) => (
+              {notes.map((note) => (
                 <span key={note}>{note}</span>
               ))}
             </div>
@@ -298,7 +360,7 @@ function ProductDetail({ product, addToCart, navigate }) {
           <div className="detail-panel">
             <h3>Hợp để pha</h3>
             <div className="chip-row">
-              {product.brew.map((method) => (
+              {brew.map((method) => (
                 <span key={method}>{method}</span>
               ))}
             </div>
@@ -312,19 +374,19 @@ function ProductDetail({ product, addToCart, navigate }) {
   );
 }
 
-function FlavorQuiz({ navigate, addToCart }) {
+function FlavorQuiz({ navigate, addToCart, products }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
 
   const recommendation = useMemo(() => {
     if (answers.includes("Sáng vị và hương hoa") || answers.includes("Nhẹ nhàng")) {
-      return products[1];
+      return products[1] || products[0];
     }
     if (answers.includes("Đậm và mộc") || answers.includes("Đậm mạnh")) {
-      return products[2];
+      return products[2] || products[0];
     }
     return products[0];
-  }, [answers]);
+  }, [answers, products]);
 
   const choose = (answer) => {
     const nextAnswers = [...answers.slice(0, step), answer];
@@ -371,7 +433,7 @@ function FlavorQuiz({ navigate, addToCart }) {
             <h2>{recommendation.name}</h2>
             <p>{recommendation.story}</p>
             <div className="chip-row">
-              {recommendation.notes.map((note) => (
+              {(recommendation.notes?.length ? recommendation.notes : ["Ca phe dac san"]).map((note) => (
                 <span key={note}>{note}</span>
               ))}
             </div>
@@ -391,7 +453,7 @@ function FlavorQuiz({ navigate, addToCart }) {
   );
 }
 
-function Cart({ cart, setCart, navigate }) {
+function Cart({ cart, setCart, navigate, products }) {
   const items = cart
     .map((item) => ({
       ...item,
@@ -450,7 +512,7 @@ function Cart({ cart, setCart, navigate }) {
                   <h3>{item.product.name}</h3>
                   <strong>{money(item.product.price * item.qty)}</strong>
                 </div>
-                <p>{item.product.notes.join(", ")}</p>
+                <p>{(item.product.notes?.length ? item.product.notes : ["Ca phe dac san"]).join(", ")}</p>
                 <label className="subscription-toggle">
                   <input
                     type="checkbox"
