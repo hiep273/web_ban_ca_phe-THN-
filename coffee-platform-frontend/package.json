@@ -1,9 +1,17 @@
 {
+  "private": true,
+  "workspaces": [
+    "customer-frontend",
+    "admin-frontend",
+    "packages/shared"
+  ],
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "start": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "dev": "node scripts/dev-both.mjs",
+    "dev:customer": "npm --prefix customer-frontend run dev",
+    "dev:admin": "npm --prefix admin-frontend run dev",
+    "build": "npm --prefix customer-frontend run build && npm --prefix admin-frontend run build",
+    "build:customer": "npm --prefix customer-frontend run build",
+    "build:admin": "npm --prefix admin-frontend run build"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

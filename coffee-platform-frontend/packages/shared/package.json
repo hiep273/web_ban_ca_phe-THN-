@@ -1,0 +1,12 @@
+{
+  "name": "@coffee-platform/shared",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./api/*": "./api/*.js",
+    "./constants": "./constants/index.js",
+    "./hooks": "./hooks/index.js",
+    "./utils": "./utils/index.js",
+    "./utils/*": "./utils/*.js"
+  }
+}
