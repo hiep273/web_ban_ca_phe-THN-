@@ -41,37 +41,85 @@ The content is organized as follows:
 
 <directory_structure>
 .gitignore
+coffee-platform-frontend/.env.development
+coffee-platform-frontend/.env.example
 coffee-platform-frontend/.gitignore
+coffee-platform-frontend/admin-frontend/.env.development
+coffee-platform-frontend/admin-frontend/index.html
+coffee-platform-frontend/admin-frontend/package.json
+coffee-platform-frontend/admin-frontend/public/.gitkeep
+coffee-platform-frontend/admin-frontend/src/AdminApp.jsx
+coffee-platform-frontend/admin-frontend/src/components/AdminHeader.jsx
+coffee-platform-frontend/admin-frontend/src/components/AdminSidebar.jsx
+coffee-platform-frontend/admin-frontend/src/components/AdminTable.jsx
+coffee-platform-frontend/admin-frontend/src/components/ShipmentFeed.jsx
+coffee-platform-frontend/admin-frontend/src/components/StatsCards.jsx
+coffee-platform-frontend/admin-frontend/src/data/adminData.js
+coffee-platform-frontend/admin-frontend/src/main.jsx
+coffee-platform-frontend/admin-frontend/src/pages/DashboardPage.jsx
+coffee-platform-frontend/admin-frontend/src/pages/InventoryPage.jsx
+coffee-platform-frontend/admin-frontend/src/pages/OrderManagePage.jsx
+coffee-platform-frontend/admin-frontend/src/pages/ReportPage.jsx
+coffee-platform-frontend/admin-frontend/src/pages/SettingsPage.jsx
+coffee-platform-frontend/admin-frontend/src/pages/SupplierPage.jsx
+coffee-platform-frontend/admin-frontend/src/styles/admin.css
+coffee-platform-frontend/admin-frontend/vite.config.js
 coffee-platform-frontend/assets/screens/cart.png
 coffee-platform-frontend/assets/screens/flavor-quiz.png
 coffee-platform-frontend/assets/screens/home.png
 coffee-platform-frontend/assets/screens/product-detail.png
-coffee-platform-frontend/index.html
+coffee-platform-frontend/customer-frontend/.env.development
+coffee-platform-frontend/customer-frontend/index.html
+coffee-platform-frontend/customer-frontend/package.json
+coffee-platform-frontend/customer-frontend/public/.gitkeep
+coffee-platform-frontend/customer-frontend/src/components/Footer.jsx
+coffee-platform-frontend/customer-frontend/src/components/Header.jsx
+coffee-platform-frontend/customer-frontend/src/components/Metric.jsx
+coffee-platform-frontend/customer-frontend/src/components/ProductCard.jsx
+coffee-platform-frontend/customer-frontend/src/components/SummaryLine.jsx
+coffee-platform-frontend/customer-frontend/src/CustomerApp.jsx
+coffee-platform-frontend/customer-frontend/src/data/customerData.js
+coffee-platform-frontend/customer-frontend/src/hooks/useCustomerRouter.js
+coffee-platform-frontend/customer-frontend/src/main.jsx
+coffee-platform-frontend/customer-frontend/src/pages/CartPage.jsx
+coffee-platform-frontend/customer-frontend/src/pages/FlavorQuizPage.jsx
+coffee-platform-frontend/customer-frontend/src/pages/HomePage.jsx
+coffee-platform-frontend/customer-frontend/src/pages/ProductDetailPage.jsx
+coffee-platform-frontend/customer-frontend/src/styles/customer.css
+coffee-platform-frontend/customer-frontend/vite.config.js
 coffee-platform-frontend/package.json
+coffee-platform-frontend/packages/shared/api/adminApi.js
+coffee-platform-frontend/packages/shared/api/authApi.js
+coffee-platform-frontend/packages/shared/api/axiosClient.js
+coffee-platform-frontend/packages/shared/api/flavorApi.js
+coffee-platform-frontend/packages/shared/api/inventoryApi.js
+coffee-platform-frontend/packages/shared/api/orderApi.js
+coffee-platform-frontend/packages/shared/api/productApi.js
+coffee-platform-frontend/packages/shared/api/supplierApi.js
+coffee-platform-frontend/packages/shared/constants/app.js
+coffee-platform-frontend/packages/shared/constants/index.js
+coffee-platform-frontend/packages/shared/hooks/index.js
+coffee-platform-frontend/packages/shared/hooks/useApi.js
+coffee-platform-frontend/packages/shared/hooks/useAuth.js
+coffee-platform-frontend/packages/shared/hooks/useLocalStorage.js
+coffee-platform-frontend/packages/shared/package.json
+coffee-platform-frontend/packages/shared/utils/adminMetrics.js
+coffee-platform-frontend/packages/shared/utils/formatMoney.js
+coffee-platform-frontend/packages/shared/utils/index.js
+coffee-platform-frontend/packages/shared/utils/validators.js
+coffee-platform-frontend/public/.gitkeep
 coffee-platform-frontend/README.md
 coffee-platform-frontend/repomix-output.xml
-coffee-platform-frontend/src/admin/AdminApp.jsx
-coffee-platform-frontend/src/admin/components/AdminHeader.jsx
-coffee-platform-frontend/src/admin/components/AdminSidebar.jsx
-coffee-platform-frontend/src/admin/components/AdminTable.jsx
-coffee-platform-frontend/src/admin/components/DashboardPage.jsx
-coffee-platform-frontend/src/admin/components/InventoryTable.jsx
-coffee-platform-frontend/src/admin/components/OrdersPage.jsx
-coffee-platform-frontend/src/admin/components/ReportsPage.jsx
-coffee-platform-frontend/src/admin/components/SettingsPage.jsx
-coffee-platform-frontend/src/admin/components/ShipmentFeed.jsx
-coffee-platform-frontend/src/admin/components/StatsCards.jsx
-coffee-platform-frontend/src/admin/components/SuppliersPage.jsx
-coffee-platform-frontend/src/admin/data/adminData.js
-coffee-platform-frontend/src/admin/utils/adminMetrics.js
-coffee-platform-frontend/src/App.jsx
-coffee-platform-frontend/src/customer/CustomerApp.jsx
-coffee-platform-frontend/src/main.jsx
-coffee-platform-frontend/src/styles.css
+coffee-platform-frontend/scripts/dev-both.mjs
+coffee-platform-frontend/tests/shared/api/README.md
 FarmToCup.API/appsettings.Development.json
 FarmToCup.API/appsettings.json
+FarmToCup.API/Controllers/AdminController.cs
+FarmToCup.API/Controllers/HuongViController.cs
 FarmToCup.API/Controllers/SanPhamController.cs
 FarmToCup.API/Controllers/WeatherForecastController.cs
+FarmToCup.API/DTOs/HuongVi/CapNhatHuongViDto.cs
+FarmToCup.API/DTOs/HuongVi/TaoHuongViDto.cs
 FarmToCup.API/DTOs/SanPham/CapNhatSanPhamDto.cs
 FarmToCup.API/DTOs/SanPham/SanPhamDto.cs
 FarmToCup.API/DTOs/SanPham/TaoSanPhamDto.cs
@@ -101,23 +149,1437 @@ FarmToCup.API/Models/ThanhToan.cs
 FarmToCup.API/Models/VanChuyen.cs
 FarmToCup.API/Program.cs
 FarmToCup.API/Properties/launchSettings.json
+FarmToCup.API/Repository/HuongViRepository.cs
+FarmToCup.API/Repository/IHuongViRepository.cs
 FarmToCup.API/Repository/IRepository.cs
+FarmToCup.API/Repository/ISanPhamRepository.cs
 FarmToCup.API/Repository/Repository.cs
+FarmToCup.API/Repository/SanPhamRepository.cs
 FarmToCup.API/WeatherForecast.cs
+FarmToCup.API/wwwroot/image/brazill.jpg
+FarmToCup.API/wwwroot/image/colombia.jpg
+FarmToCup.API/wwwroot/image/da_lat.jpg
+FarmToCup.API/wwwroot/image/Ethiopia.jpg
+FarmToCup.API/wwwroot/image/sumatra.jpg
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
 
-<file path="coffee-platform-frontend/.gitignore">
-node_modules
-dist
-.env
-.env.local
-npm-debug.log*
+<file path="coffee-platform-frontend/.env.development">
+VITE_APP_MODE=customer
+VITE_API_BASE_URL=http://localhost:5244/api
 </file>
 
-<file path="coffee-platform-frontend/index.html">
+<file path="coffee-platform-frontend/admin-frontend/.env.development">
+VITE_APP_MODE=customer
+VITE_API_BASE_URL=http://localhost:5244/api
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/index.html">
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trang quản trị nền tảng cà phê, theo dõi tồn kho, đơn hàng, nhà cung cấp và báo cáo."
+    />
+    <title>Quản trị | Từ Vườn Đến Ly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/package.json">
+{
+  "name": "coffee-admin-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5174 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4174"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "@coffee-platform/shared": "file:../packages/shared",
+    "axios": "^1.16.0",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  }
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/public/.gitkeep">
+
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/AdminApp.jsx">
+import { useEffect, useMemo, useState } from "react";
+import { getAdminOverview } from "@coffee-platform/shared/api/adminApi.js";
+import AdminHeader from "./components/AdminHeader.jsx";
+import AdminSidebar from "./components/AdminSidebar.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import InventoryTable from "./pages/InventoryPage.jsx";
+import OrdersPage from "./pages/OrderManagePage.jsx";
+import ReportsPage from "./pages/ReportPage.jsx";
+import SettingsPage from "./pages/SettingsPage.jsx";
+import StatsCards from "./components/StatsCards.jsx";
+import SuppliersPage from "./pages/SupplierPage.jsx";
+import {
+  adminNavItems,
+  settings,
+} from "./data/adminData.js";
+import { buildStats } from "@coffee-platform/shared/utils/adminMetrics.js";
+
+const pageMeta = {
+  dashboard: {
+    eyebrow: "Tổng quan vận hành",
+    title: "Bảng điều khiển quản trị",
+    description: "Theo dõi tồn kho, nhập hàng, đơn hàng và hoạt động nhà cung cấp trong một màn hình.",
+  },
+  inventory: {
+    eyebrow: "Tổng quan kho",
+    title: "Quản lý tồn kho",
+    description: "Theo dõi sản phẩm cà phê, hạn dùng, điểm nhập lại, mức rang và nhà cung cấp.",
+  },
+  orders: {
+    eyebrow: "Xử lý đơn",
+    title: "Đơn hàng",
+    description: "Kiểm tra thanh toán, kênh bán, khách hàng và trạng thái giao hàng.",
+  },
+  suppliers: {
+    eyebrow: "Nguồn cung",
+    title: "Nhà cung cấp",
+    description: "Theo dõi đối tác, lô hàng đang hoạt động, xếp hạng và lịch nhập hàng.",
+  },
+  reports: {
+    eyebrow: "Tình hình kinh doanh",
+    title: "Báo cáo",
+    description: "Xem các chỉ số chính về doanh thu, rủi ro tồn kho và chuỗi cung ứng.",
+  },
+  settings: {
+    eyebrow: "Cấu hình",
+    title: "Cài đặt",
+    description: "Quản lý các thiết lập mặc định cho khu vực quản trị.",
+  },
+};
+
+const emptyAdminData = {
+  inventoryItems: [],
+  orders: [],
+  reportMetrics: [],
+  settings,
+  shipments: [],
+  suppliers: [],
+};
+
+export default function AdminApp() {
+  const [activePage, setActivePage] = useState("dashboard");
+  const [adminData, setAdminData] = useState(emptyAdminData);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadAdminData() {
+      try {
+        setIsLoading(true);
+        const data = await getAdminOverview();
+
+        if (isMounted) {
+          setAdminData({ ...emptyAdminData, ...data, settings });
+          setLoadError("");
+        }
+      } catch (error) {
+        if (isMounted) {
+          setAdminData(emptyAdminData);
+          setLoadError("Chưa tải được dữ liệu quản trị từ backend.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    }
+
+    loadAdminData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const stats = useMemo(
+    () => buildStats({
+      inventoryItems: adminData.inventoryItems,
+      shipments: adminData.shipments,
+      orders: adminData.orders,
+    }),
+    [adminData]
+  );
+  const meta = pageMeta[activePage] || pageMeta.dashboard;
+
+  return (
+    <div className="admin-shell">
+      <AdminSidebar
+        activePage={activePage}
+        items={adminNavItems}
+        onChangePage={setActivePage}
+      />
+      <div className="admin-workspace">
+        <AdminHeader />
+        <main className="admin-main">
+          <section className="admin-page-heading">
+            <div>
+              <span className="admin-eyebrow">{meta.eyebrow}</span>
+              <h1>{meta.title}</h1>
+              <p>{meta.description}</p>
+            </div>
+            <div className="admin-actions">
+              <button className="admin-button ghost">Xuất dữ liệu</button>
+              <button className="admin-button primary">Tạo mới</button>
+            </div>
+          </section>
+
+          {isLoading && <p className="inline-notice">Đang tải dữ liệu quản trị từ backend...</p>}
+          {loadError && <p className="inline-notice">{loadError}</p>}
+          {activePage === "dashboard" && <DashboardPage data={adminData} stats={stats} />}
+          {activePage === "inventory" && (
+            <>
+              <StatsCards stats={stats} />
+              <InventoryTable items={adminData.inventoryItems} />
+            </>
+          )}
+          {activePage === "orders" && <OrdersPage orders={adminData.orders} />}
+          {activePage === "suppliers" && <SuppliersPage suppliers={adminData.suppliers} />}
+          {activePage === "reports" && <ReportsPage metrics={adminData.reportMetrics} />}
+          {activePage === "settings" && <SettingsPage settings={settings} />}
+        </main>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/components/AdminHeader.jsx">
+import { Bell, CircleHelp, Search } from "lucide-react";
+
+export default function AdminHeader() {
+  return (
+    <header className="admin-header">
+      <label className="admin-search">
+        <Search size={18} />
+        <input placeholder="Tìm sản phẩm, lô hàng hoặc xuất xứ..." type="search" />
+      </label>
+      <div className="admin-header-actions">
+        <button aria-label="Thông báo">
+          <Bell size={20} />
+        </button>
+        <button aria-label="Trợ giúp">
+          <CircleHelp size={20} />
+        </button>
+        <span className="admin-user-label">Quản lý tồn kho</span>
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
+          alt="Quản lý tồn kho"
+        />
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/components/AdminSidebar.jsx">
+import {
+  BarChart3,
+  Coffee,
+  LayoutDashboard,
+  LogOut,
+  Package,
+  Settings,
+  ShoppingCart,
+  Truck,
+} from "lucide-react";
+
+const icons = {
+  dashboard: LayoutDashboard,
+  inventory: Package,
+  orders: ShoppingCart,
+  suppliers: Truck,
+  reports: BarChart3,
+  settings: Settings,
+};
+
+export default function AdminSidebar({ activePage, items, onChangePage }) {
+  return (
+    <aside className="admin-sidebar">
+      <div className="admin-brand">
+        <span>
+          <Coffee size={22} />
+        </span>
+        <div>
+          <strong>Từ Vườn Đến Ly</strong>
+          <small>Quản trị cà phê</small>
+        </div>
+      </div>
+
+      <nav className="admin-nav" aria-label="Điều hướng quản trị">
+        {items.map((item) => {
+          const Icon = icons[item.id] || LayoutDashboard;
+          return (
+            <button
+              className={activePage === item.id ? "active" : ""}
+              key={item.id}
+              onClick={() => onChangePage(item.id)}
+              type="button"
+            >
+              <Icon size={19} />
+              {item.label}
+            </button>
+          );
+        })}
+      </nav>
+
+      <button className="admin-logout" type="button">
+        <LogOut size={19} />
+        Đăng xuất
+      </button>
+    </aside>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/components/AdminTable.jsx">
+export default function AdminTable({ columns, rows, getRowKey }) {
+  return (
+    <div className="inventory-table-wrap">
+      <table className="inventory-table">
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th key={column.key}>{column.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={getRowKey(row)}>
+              {columns.map((column) => (
+                <td key={column.key}>{column.render ? column.render(row) : row[column.key]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/components/ShipmentFeed.jsx">
+import { Clock, Truck } from "lucide-react";
+
+export default function ShipmentFeed({ shipments }) {
+  return (
+    <aside className="admin-panel shipment-feed">
+      <div className="shipment-heading">
+        <h2>Lịch nhập hàng</h2>
+        <button type="button">Ghi nhận nhập hàng</button>
+      </div>
+      {shipments.map((shipment) => {
+        const Icon = shipment.status === "Đang về kho" ? Truck : Clock;
+        return (
+          <div className="shipment-item" key={shipment.id}>
+            <span>
+              <Icon size={18} />
+            </span>
+            <div>
+              <strong>
+                {shipment.title} ({shipment.quantity})
+              </strong>
+              <p>
+                {shipment.status} vào {shipment.eta} - {shipment.route}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </aside>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/components/StatsCards.jsx">
+import { AlertTriangle, Flame, Leaf, Truck } from "lucide-react";
+
+const icons = {
+  green: Leaf,
+  roasted: Flame,
+  alerts: AlertTriangle,
+  shipments: Truck,
+};
+
+export default function StatsCards({ stats }) {
+  return (
+    <section className="admin-stats">
+      {stats.map((stat) => {
+        const Icon = icons[stat.id] || Leaf;
+        return (
+          <article className={stat.danger ? "admin-stat danger" : "admin-stat"} key={stat.id}>
+            <div>
+              <span className="admin-stat-icon">
+                <Icon size={21} />
+              </span>
+              <small>{stat.meta}</small>
+            </div>
+            <p>{stat.label}</p>
+            <strong>{stat.value}</strong>
+          </article>
+        );
+      })}
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/data/adminData.js">
+export const adminNavItems = [
+  { id: "dashboard", label: "Tổng quan" },
+  { id: "inventory", label: "Tồn kho" },
+  { id: "orders", label: "Đơn hàng" },
+  { id: "suppliers", label: "Nhà cung cấp" },
+  { id: "reports", label: "Báo cáo" },
+  { id: "settings", label: "Cài đặt" },
+];
+
+export const settings = [
+  { key: "Trạng thái cửa hàng", value: "Đang mở" },
+  { key: "Tiền tệ mặc định", value: "VND" },
+  { key: "Ngưỡng cảnh báo tồn kho", value: "Dùng điểm nhập lại của từng sản phẩm" },
+  { key: "Vai trò quản trị", value: "Quản lý tồn kho" },
+];
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/main.jsx">
+import React from "react";
+import { createRoot } from "react-dom/client";
+import AdminApp from "./AdminApp.jsx";
+import "./styles/admin.css";
+
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <AdminApp />
+  </React.StrictMode>
+);
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/DashboardPage.jsx">
+import ShipmentFeed from "../components/ShipmentFeed.jsx";
+import StatsCards from "../components/StatsCards.jsx";
+import InventoryTable from "./InventoryPage.jsx";
+
+export default function DashboardPage({ data, stats }) {
+  const highlightedItem = data.inventoryItems[0];
+
+  return (
+    <>
+      <StatsCards stats={stats} />
+      <InventoryTable items={data.inventoryItems.slice(0, 4)} />
+
+      <section className="admin-secondary-grid">
+        <div className="roaster-note">
+          {highlightedItem?.image && (
+            <img
+              src={highlightedItem.image}
+              alt={highlightedItem.name}
+            />
+          )}
+          <div>
+            <span className="admin-eyebrow">Ghi chú tồn kho</span>
+            <h2>
+              {highlightedItem
+                ? `${highlightedItem.name} còn ${highlightedItem.stockQty} ${highlightedItem.stockUnit} trong kho.`
+                : "Chưa có dữ liệu tồn kho."}
+            </h2>
+            <p>{highlightedItem?.supplierName || "Dữ liệu backend"}</p>
+          </div>
+        </div>
+        <ShipmentFeed shipments={data.shipments} />
+      </section>
+    </>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/InventoryPage.jsx">
+import { MoreHorizontal, Search, SlidersHorizontal } from "lucide-react";
+import AdminTable from "../components/AdminTable.jsx";
+
+function getStatusClass(item) {
+  if (item.status === "Sắp hết") return "status low";
+  if (item.status === "Hết hàng") return "status muted";
+  return "status";
+}
+
+export default function InventoryTable({ items }) {
+  const origins = [...new Set(items.map((item) => item.origin.split(",").pop().trim()))];
+  const processes = [...new Set(items.map((item) => item.process))];
+  const roastLevels = [...new Set(items.map((item) => item.roastLevel))];
+  const columns = [
+    {
+      key: "name",
+      label: "Tên sản phẩm / xuất xứ",
+      render: (item) => (
+        <div className="bean-cell">
+          <img src={item.image} alt={item.name} />
+          <div>
+            <strong>{item.name}</strong>
+            <span>{item.origin}</span>
+          </div>
+        </div>
+      ),
+    },
+    { key: "type", label: "Loại", render: (item) => <span className="admin-tag">{item.type}</span> },
+    { key: "stock", label: "Tồn hiện tại", render: (item) => `${item.stockQty} ${item.stockUnit}` },
+    { key: "reorderPoint", label: "Điểm nhập lại", render: (item) => `${item.reorderPoint} ${item.stockUnit}` },
+    { key: "freshness", label: "Hạn dùng", render: (item) => <span className={item.status === "Sắp hết" ? "danger-text" : ""}>{item.freshness}</span> },
+    { key: "process", label: "Sơ chế" },
+    { key: "roastLevel", label: "Mức rang" },
+    { key: "supplierName", label: "Nhà cung cấp" },
+    { key: "status", label: "Trạng thái", render: (item) => <span className={getStatusClass(item)}>{item.status}</span> },
+    {
+      key: "action",
+      label: "Thao tác",
+      render: (item) => (
+        <button className="icon-only" aria-label={`Mở thao tác cho ${item.name}`} type="button">
+          <MoreHorizontal size={20} />
+        </button>
+      ),
+    },
+  ];
+
+  return (
+    <section className="admin-panel inventory-panel">
+      <div className="inventory-toolbar">
+        <div>
+          <h2>Danh sách tồn kho</h2>
+          <div className="inventory-filters">
+            <label className="admin-search compact">
+              <Search size={16} />
+              <input placeholder="Tìm trong danh sách..." type="search" />
+            </label>
+            <select defaultValue="all-origin">
+              <option value="all-origin">Xuất xứ: Tất cả</option>
+              {origins.map((origin) => (
+                <option key={origin}>{origin}</option>
+              ))}
+            </select>
+            <select defaultValue="all-process">
+              <option value="all-process">Sơ chế: Tất cả</option>
+              {processes.map((process) => (
+                <option key={process}>{process}</option>
+              ))}
+            </select>
+            <select defaultValue="all-roast">
+              <option value="all-roast">Mức rang: Tất cả</option>
+              {roastLevels.map((roast) => (
+                <option key={roast}>{roast}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <button className="admin-button ghost" type="button">
+          <SlidersHorizontal size={16} />
+          Sắp xếp nâng cao
+        </button>
+      </div>
+
+      <AdminTable columns={columns} rows={items} getRowKey={(item) => item.id} />
+
+      <footer className="inventory-footer">
+        <span>Hiển thị 1-{items.length} trên {items.length} sản phẩm cà phê</span>
+        <div>
+          <button type="button">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+        </div>
+      </footer>
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/OrderManagePage.jsx">
+import AdminTable from "../components/AdminTable.jsx";
+import { formatMoney } from "@coffee-platform/shared/utils/adminMetrics.js";
+
+export default function OrdersPage({ orders }) {
+  const columns = [
+    { key: "id", label: "Đơn hàng" },
+    { key: "customer", label: "Khách hàng" },
+    { key: "channel", label: "Kênh bán" },
+    { key: "items", label: "Số lượng" },
+    { key: "total", label: "Tổng tiền", render: (order) => formatMoney(order.total) },
+    { key: "payment", label: "Thanh toán", render: (order) => <span className="admin-tag">{order.payment}</span> },
+    { key: "fulfillment", label: "Xử lý", render: (order) => <span className="status">{order.fulfillment}</span> },
+    { key: "createdAt", label: "Ngày tạo" },
+  ];
+
+  return (
+    <section className="admin-panel inventory-panel">
+      <div className="inventory-toolbar">
+        <div>
+          <h2>Hàng chờ đơn hàng</h2>
+          <p>Theo dõi khách hàng, kênh bán, thanh toán và trạng thái xử lý đơn.</p>
+        </div>
+      </div>
+      <AdminTable columns={columns} rows={orders} getRowKey={(order) => order.id} />
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/ReportPage.jsx">
+import { formatMoney, formatNumber } from "@coffee-platform/shared/utils/adminMetrics.js";
+
+export default function ReportsPage({ metrics }) {
+  return (
+    <section className="admin-stats report-grid">
+      {metrics.map((metric) => (
+        <article className="admin-stat" key={metric.label}>
+          <div>
+            <span className="admin-stat-icon">{metric.label.slice(0, 1)}</span>
+            <small>{metric.trend}</small>
+          </div>
+          <p>{metric.label}</p>
+          <strong>{metric.type === "currency" ? formatMoney(metric.value) : formatNumber(metric.value)}</strong>
+        </article>
+      ))}
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/SettingsPage.jsx">
+export default function SettingsPage({ settings }) {
+  return (
+    <section className="admin-panel settings-panel">
+      <div className="inventory-toolbar">
+        <div>
+          <h2>Cài đặt quản trị</h2>
+          <p>Các thiết lập vận hành được gom tại đây để sau này đồng bộ với API cấu hình.</p>
+        </div>
+      </div>
+      <div className="settings-list">
+        {settings.map((setting) => (
+          <div className="settings-row" key={setting.key}>
+            <span>{setting.key}</span>
+            <strong>{setting.value}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/pages/SupplierPage.jsx">
+import AdminTable from "../components/AdminTable.jsx";
+
+export default function SuppliersPage({ suppliers }) {
+  const columns = [
+    { key: "name", label: "Nhà cung cấp" },
+    { key: "region", label: "Khu vực" },
+    { key: "contact", label: "Liên hệ" },
+    { key: "activeLots", label: "Lô đang hoạt động" },
+    { key: "nextShipment", label: "Lần nhập gần nhất" },
+    { key: "rating", label: "Xếp hạng", render: (supplier) => <span className="admin-tag">{supplier.rating}</span> },
+    { key: "status", label: "Trạng thái", render: (supplier) => <span className={supplier.status === "Chậm" ? "status low" : "status"}>{supplier.status}</span> },
+  ];
+
+  return (
+    <section className="admin-panel inventory-panel">
+      <div className="inventory-toolbar">
+        <div>
+          <h2>Danh bạ nhà cung cấp</h2>
+          <p>Quản lý đối tác, thông tin liên hệ, lịch nhập hàng và tình trạng nguồn cung.</p>
+        </div>
+      </div>
+      <AdminTable columns={columns} rows={suppliers} getRowKey={(supplier) => supplier.id} />
+    </section>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/src/styles/admin.css">
+:root {
+  color: #1c1c18;
+  background: #fcf9f3;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #1c1c18;
+  --muted: #62564e;
+  --line: #d8cbc2;
+  --surface: #fcf9f3;
+  --surface-low: #f4efe7;
+  --surface-high: #ffffff;
+  --primary: #26170c;
+  --secondary: #496455;
+  --accent: #b5924c;
+  --danger: #a13025;
+  --radius: 8px;
+  --shadow: 0 18px 50px rgba(61, 43, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--surface);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Noto Serif", Georgia, serif;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+:root {
+  --app-mode: admin;
+}
+
+.inline-notice {
+  max-width: 660px;
+  margin: -14px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-low);
+  color: var(--secondary);
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+.admin-shell {
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  min-height: 100vh;
+  background: #fcf9f3;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid rgba(216, 203, 194, 0.72);
+  background: #fdfcfb;
+  padding: 24px 0;
+  box-shadow: 4px 0 24px rgba(61, 43, 31, 0.04);
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 32px;
+}
+
+.admin-brand > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius);
+  background: #3d2b1f;
+  color: #fbddca;
+}
+
+.admin-brand strong,
+.admin-brand small {
+  display: block;
+}
+
+.admin-brand strong {
+  color: #3d2b1f;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 20px;
+}
+
+.admin-brand small,
+.admin-eyebrow {
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.admin-nav button,
+.admin-logout {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 46px;
+  border: 0;
+  border-left: 4px solid transparent;
+  background: transparent;
+  color: #62564e;
+  padding: 0 24px 0 20px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.admin-nav button:hover,
+.admin-nav button.active {
+  background: rgba(61, 43, 31, 0.07);
+  color: #3d2b1f;
+}
+
+.admin-nav button.active {
+  border-left-color: #3d2b1f;
+}
+
+.admin-logout {
+  margin-top: auto;
+  border-top: 1px solid rgba(216, 203, 194, 0.7);
+  color: var(--danger);
+  padding-top: 18px;
+}
+
+.admin-workspace {
+  min-width: 0;
+}
+
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 68px;
+  border-bottom: 1px solid rgba(216, 203, 194, 0.72);
+  background: rgba(253, 252, 251, 0.88);
+  padding: 0 32px;
+  backdrop-filter: blur(12px);
+}
+
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(440px, 100%);
+  min-height: 42px;
+  border-radius: 999px;
+  background: #f4efe7;
+  color: #81756e;
+  padding: 0 14px;
+}
+
+.admin-search.compact {
+  width: min(280px, 100%);
+  min-height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(216, 203, 194, 0.7);
+  background: #fff;
+}
+
+.admin-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #26170c;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-header-actions button,
+.icon-only {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: #62564e;
+}
+
+.admin-header-actions button:hover,
+.icon-only:hover {
+  border-color: var(--line);
+  background: #fff;
+  color: #26170c;
+}
+
+.admin-user-label {
+  border-left: 1px solid var(--line);
+  color: #3d2b1f;
+  padding-left: 16px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-header-actions img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fbddca;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.admin-main {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 34px 0 48px;
+}
+
+.admin-page-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.admin-page-heading h1 {
+  margin-top: 8px;
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+.admin-page-heading p {
+  max-width: 640px;
+  margin-bottom: 0;
+}
+
+.admin-actions,
+.inventory-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border-radius: var(--radius);
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-button.primary {
+  border: 1px solid var(--secondary);
+  background: var(--secondary);
+  color: #fff;
+}
+
+.admin-button.ghost {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #26170c;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.admin-stat,
+.admin-panel {
+  border: 1px solid rgba(216, 203, 194, 0.65);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(61, 43, 31, 0.08);
+}
+
+.admin-stat {
+  min-height: 154px;
+  padding: 20px;
+}
+
+.admin-stat > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: #ffdea5;
+  color: #3f2c00;
+}
+
+.admin-stat small {
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.admin-stat p {
+  margin: 18px 0 6px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-stat strong {
+  color: #26170c;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 30px;
+}
+
+.admin-stat.danger .admin-stat-icon {
+  background: #ffdad6;
+  color: var(--danger);
+}
+
+.inventory-panel {
+  overflow: hidden;
+}
+
+.inventory-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid rgba(216, 203, 194, 0.58);
+  background: #fff;
+  padding: 22px 24px;
+}
+
+.inventory-toolbar h2,
+.shipment-heading h2,
+.roaster-note h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.inventory-filters {
+  margin-top: 16px;
+}
+
+.inventory-filters select {
+  min-height: 40px;
+  border: 1px solid rgba(216, 203, 194, 0.7);
+  border-radius: var(--radius);
+  background: #fff;
+  color: #4f453f;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.inventory-table-wrap {
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.inventory-table th {
+  border-bottom: 1px solid rgba(216, 203, 194, 0.58);
+  background: #f6f3ed;
+  color: #62564e;
+  padding: 14px 18px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.inventory-table td {
+  border-bottom: 1px solid rgba(216, 203, 194, 0.35);
+  color: #4f453f;
+  padding: 16px 18px;
+  font-size: 14px;
+}
+
+.inventory-table tr:hover td {
+  background: rgba(244, 239, 231, 0.52);
+}
+
+.bean-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bean-cell img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.bean-cell strong,
+.bean-cell span {
+  display: block;
+}
+
+.bean-cell strong {
+  color: #26170c;
+}
+
+.bean-cell span {
+  color: #62564e;
+  font-size: 12px;
+}
+
+.admin-tag {
+  display: inline-flex;
+  border-radius: 999px;
+  background: #ffdea5;
+  color: #5d4201;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status.low,
+.danger-text {
+  color: var(--danger);
+}
+
+.status.muted {
+  color: #9b928c;
+}
+
+.inventory-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  color: #62564e;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.inventory-footer div {
+  display: flex;
+  gap: 8px;
+}
+
+.inventory-footer button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: #26170c;
+  font-weight: 900;
+}
+
+.admin-secondary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.roaster-note {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(216, 203, 194, 0.7);
+  border-radius: var(--radius);
+  background: #fdfcfb;
+  padding: 24px;
+}
+
+.roaster-note img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.roaster-note p {
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+.shipment-feed {
+  padding: 22px;
+}
+
+.shipment-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.shipment-heading button {
+  border: 0;
+  background: transparent;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shipment-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+.shipment-item + .shipment-item {
+  border-top: 1px solid rgba(216, 203, 194, 0.58);
+}
+
+.shipment-item > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccead6;
+  color: #062014;
+  flex: 0 0 auto;
+}
+
+.shipment-item strong {
+  color: #26170c;
+}
+
+.shipment-item p {
+  margin: 3px 0 0;
+  font-size: 13px;
+}
+
+.report-grid {
+  margin-bottom: 0;
+}
+
+.settings-panel {
+  overflow: hidden;
+}
+
+.settings-list {
+  display: grid;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgba(216, 203, 194, 0.58);
+  padding: 18px 24px;
+}
+
+.settings-row span {
+  color: #62564e;
+  font-weight: 800;
+}
+
+.settings-row strong {
+  color: #26170c;
+}
+
+@media (max-width: 1100px) {
+  .admin-shell {
+    grid-template-columns: 86px minmax(0, 1fr);
+  }
+
+  .admin-brand div,
+  .admin-nav button,
+  .admin-logout {
+    font-size: 0;
+  }
+
+  .admin-brand {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .admin-nav button,
+  .admin-logout {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .admin-stats,
+  .admin-secondary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roaster-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-shell {
+    display: block;
+  }
+
+  .admin-sidebar {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .admin-brand div,
+  .admin-nav button,
+  .admin-logout {
+    font-size: inherit;
+  }
+
+  .admin-nav {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .admin-header,
+  .admin-page-heading,
+  .inventory-toolbar,
+  .inventory-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .admin-main {
+    width: min(100% - 32px, 1280px);
+  }
+
+  .admin-stats,
+  .admin-secondary-grid,
+  .roaster-note {
+    grid-template-columns: 1fr;
+  }
+}
+</file>
+
+<file path="coffee-platform-frontend/admin-frontend/vite.config.js">
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      "@coffee-platform/shared": resolve(__dirname, "../packages/shared"),
+    },
+  },
+  plugins: [react()],
+  server: {
+    host: "0.0.0.0",
+    port: 5174,
+    strictPort: true,
+  },
+});
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/.env.development">
+VITE_APP_MODE=customer
+VITE_API_BASE_URL=http://localhost:5244/api
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/index.html">
 <!doctype html>
 <html lang="vi">
   <head>
@@ -142,23 +1604,2214 @@ npm-debug.log*
 </html>
 </file>
 
-<file path="coffee-platform-frontend/package.json">
+<file path="coffee-platform-frontend/customer-frontend/package.json">
 {
+  "name": "coffee-customer-frontend",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0 --port 5173 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0 --port 4173"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "@coffee-platform/shared": "file:../packages/shared",
+    "axios": "^1.16.0",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
-  },
-  "devDependencies": {}
+    "vite": "latest"
+  }
 }
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/public/.gitkeep">
+
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/components/Footer.jsx">
+import { ArrowRight } from "lucide-react";
+
+export default function Footer({ navigate }) {
+  return (
+    <footer className="site-footer">
+      <div>
+        <strong>Từ Vườn Đến Ly</strong>
+        <p>
+          Trải nghiệm khám phá cà phê đặc sản, câu chuyện sản phẩm, bài tìm gu và giỏ
+          hàng trong một ứng dụng React.
+        </p>
+      </div>
+      <button onClick={() => navigate("/")}>
+        Về cửa hàng <ArrowRight size={16} />
+      </button>
+    </footer>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/components/Header.jsx">
+import { ShoppingBag, User } from "lucide-react";
+import { fallbackProducts } from "../data/customerData.js";
+
+export default function Header({ route, navigate, cartCount, featuredProductId }) {
+  const links = [
+    { label: "Cửa hàng", route: "/" },
+    { label: "Tìm gu", route: "/quiz" },
+    {
+      label: "Cà phê nổi bật",
+      route: `/product/${featuredProductId || fallbackProducts[0].id}`,
+    },
+    { label: "Giỏ hàng", route: "/cart" },
+  ];
+
+  return (
+    <header className="site-header">
+      <button className="brand" onClick={() => navigate("/")}>
+        Từ Vườn Đến Ly
+      </button>
+      <nav className="nav-links" aria-label="Điều hướng chính">
+        {links.map((link) => (
+          <button
+            key={link.route}
+            className={route === link.route ? "active" : ""}
+            onClick={() => navigate(link.route)}
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
+      <div className="header-actions">
+        <button
+          className="icon-button"
+          onClick={() => navigate("/cart")}
+          aria-label="Mở giỏ hàng"
+        >
+          <ShoppingBag size={20} />
+          {cartCount > 0 && <span>{cartCount}</span>}
+        </button>
+        <button className="icon-button" aria-label="Tài khoản">
+          <User size={20} />
+        </button>
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/components/Metric.jsx">
+export default function Metric({ icon, label, value }) {
+  return (
+    <div className="metric">
+      {icon}
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/components/ProductCard.jsx">
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
+import { defaultNotes } from "../data/customerData.js";
+
+export default function ProductCard({ product, onView, onAdd }) {
+  const notes = product.notes?.length ? product.notes : defaultNotes;
+
+  return (
+    <article className="product-card">
+      <img src={product.image} alt={`Cà phê ${product.name}`} />
+      <div className="product-card-body">
+        <div className="card-topline">
+          <span>{product.badge}</span>
+          <strong>{formatMoney(product.price)}</strong>
+        </div>
+        <h3>{product.name}</h3>
+        <p>{product.origin}</p>
+        <div className="chip-row">
+          {notes.map((note) => (
+            <span key={note}>{note}</span>
+          ))}
+        </div>
+        <div className="card-actions">
+          <button className="secondary-button compact" onClick={onView}>
+            Chi tiết
+          </button>
+          <button className="primary-button compact" onClick={onAdd}>
+            Thêm
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/components/SummaryLine.jsx">
+export default function SummaryLine({ label, value }) {
+  return (
+    <div className="summary-line">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/CustomerApp.jsx">
+import { useEffect, useState } from "react";
+import { getFlavors } from "@coffee-platform/shared/api/flavorApi.js";
+import { getProducts } from "@coffee-platform/shared/api/productApi.js";
+import Footer from "./components/Footer.jsx";
+import Header from "./components/Header.jsx";
+import { fallbackFlavors, fallbackProducts } from "./data/customerData.js";
+import { useCustomerRouter } from "./hooks/useCustomerRouter.js";
+import CartPage from "./pages/CartPage.jsx";
+import FlavorQuizPage from "./pages/FlavorQuizPage.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage.jsx";
+
+export default function CustomerApp() {
+  const { route, navigate } = useCustomerRouter();
+  const [products, setProducts] = useState(fallbackProducts);
+  const [flavors, setFlavors] = useState(fallbackFlavors);
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  const [productsError, setProductsError] = useState("");
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadProducts() {
+      try {
+        setIsLoadingProducts(true);
+        const data = await getProducts();
+
+        if (isMounted && data.length > 0) {
+          setProducts(data);
+          setProductsError("");
+        }
+      } catch {
+        if (isMounted) {
+          setProducts(fallbackProducts);
+          setProductsError("Chưa kết nối được API sản phẩm, đang hiển thị dữ liệu mẫu.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoadingProducts(false);
+        }
+      }
+    }
+
+    loadProducts();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadFlavors() {
+      try {
+        const data = await getFlavors();
+
+        if (isMounted && data.length > 0) {
+          setFlavors(data);
+        }
+      } catch {
+        if (isMounted) {
+          setFlavors(fallbackFlavors);
+        }
+      }
+    }
+
+    loadFlavors();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const activeProduct =
+    products.find((product) => route === `/product/${product.id}`) || products[0];
+  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  const addToCart = (productId) => {
+    setCart((items) => {
+      const existing = items.find((item) => item.productId === productId);
+
+      if (existing) {
+        return items.map((item) =>
+          item.productId === productId ? { ...item, qty: item.qty + 1 } : item
+        );
+      }
+
+      return [...items, { productId, qty: 1, subscription: false }];
+    });
+    navigate("/cart");
+  };
+
+  return (
+    <div className="app-shell">
+      <Header
+        route={route}
+        navigate={navigate}
+        cartCount={cartCount}
+        featuredProductId={products[0]?.id}
+      />
+      {route === "/" && (
+        <HomePage
+          navigate={navigate}
+          addToCart={addToCart}
+          products={products}
+          isLoadingProducts={isLoadingProducts}
+          productsError={productsError}
+        />
+      )}
+      {route.startsWith("/product/") && (
+        <ProductDetailPage
+          product={activeProduct}
+          addToCart={addToCart}
+          navigate={navigate}
+        />
+      )}
+      {route === "/quiz" && (
+        <FlavorQuizPage
+          navigate={navigate}
+          addToCart={addToCart}
+          products={products}
+          flavors={flavors}
+        />
+      )}
+      {route === "/cart" && (
+        <CartPage
+          cart={cart}
+          setCart={setCart}
+          navigate={navigate}
+          products={products}
+        />
+      )}
+      <Footer navigate={navigate} />
+    </div>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/data/customerData.js">
+export const fallbackProducts = [
+  {
+    id: "dalat-red-bourbon",
+    name: "Dalat Red Bourbon",
+    origin: "Lâm Đồng, Việt Nam",
+    price: 280000,
+    roast: "Rang vừa",
+    process: "Sơ chế ướt",
+    notes: ["Ca cao", "Vỏ cam", "Đường nâu"],
+    brew: ["Pour over", "Phin", "French press"],
+    image:
+      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "Lô cà phê vùng cao có vị sạch, hậu ngọt tròn và dư vị sô cô la êm.",
+    badge: "Từ nông trại",
+  },
+  {
+    id: "ethiopia-yirgacheffe",
+    name: "Ethiopia Yirgacheffe",
+    origin: "Gedeo, Ethiopia",
+    price: 320000,
+    roast: "Rang nhẹ",
+    process: "Sơ chế ướt",
+    notes: ["Hoa nhài", "Vỏ chanh", "Mật ong"],
+    brew: ["Pour over", "Aeropress"],
+    image:
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "Cà phê single origin tươi sáng, hương hoa rõ nét và hậu vị trong trẻo.",
+    badge: "Phiên bản giới hạn",
+  },
+  {
+    id: "sumatra-mandheling",
+    name: "Sumatra Mandheling",
+    origin: "Aceh, Indonesia",
+    price: 300000,
+    roast: "Rang đậm",
+    process: "Giling basah",
+    notes: ["Gỗ tuyết tùng", "Gia vị", "Mật mía"],
+    brew: ["Espresso", "French press", "Moka pot"],
+    image:
+      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
+    story:
+      "Cà phê dày vị, ít chua, hợp với người thích body đậm, cay nhẹ và hậu kéo dài.",
+    badge: "Nhà rang chọn",
+  },
+];
+
+export const quizQuestions = [
+  {
+    title: "Bạn thường pha cà phê bằng cách nào?",
+    options: ["Pour over", "Phin", "Espresso", "French press"],
+  },
+  {
+    title: "Bạn thích gu hương vị nào?",
+    options: [
+      "Sáng vị và hương hoa",
+      "Vị sô cô la",
+      "Đậm và mộc",
+      "Ngọt cân bằng",
+    ],
+  },
+  {
+    title: "Bạn muốn ly cà phê mạnh đến mức nào?",
+    options: ["Nhẹ nhàng", "Vừa phải", "Đậm mạnh"],
+  },
+];
+
+export const fallbackFlavors = [
+  ...new Set(fallbackProducts.flatMap((product) => product.notes)),
+].map((name, index) => ({
+  id: `fallback-flavor-${index}`,
+  name,
+}));
+
+export const defaultNotes = ["Ca phe dac san"];
+export const defaultBrewMethods = ["Phin", "Pour over"];
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/hooks/useCustomerRouter.js">
+import { useEffect, useState } from "react";
+
+function getRoute() {
+  return window.location.hash.replace("#", "") || "/";
+}
+
+export function useCustomerRouter() {
+  const [route, setRoute] = useState(getRoute);
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(getRoute());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  const navigate = (nextRoute) => {
+    window.location.hash = nextRoute;
+    setRoute(nextRoute);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return { route, navigate };
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/main.jsx">
+import React from "react";
+import { createRoot } from "react-dom/client";
+import CustomerApp from "./CustomerApp.jsx";
+import "./styles/customer.css";
+
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <CustomerApp />
+  </React.StrictMode>
+);
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/pages/CartPage.jsx">
+import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
+import SummaryLine from "../components/SummaryLine.jsx";
+import { defaultNotes } from "../data/customerData.js";
+
+export default function CartPage({ cart, setCart, navigate, products }) {
+  const items = cart
+    .map((item) => ({
+      ...item,
+      product: products.find((product) => product.id === item.productId),
+    }))
+    .filter((item) => item.product);
+
+  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.qty, 0);
+  const discount = items.some((item) => item.subscription) ? subtotal * 0.15 : 0;
+  const shipping = items.length ? 30000 : 0;
+  const total = subtotal - discount + shipping;
+
+  const updateQty = (productId, delta) => {
+    setCart((current) =>
+      current
+        .map((item) =>
+          item.productId === productId ? { ...item, qty: Math.max(0, item.qty + delta) } : item
+        )
+        .filter((item) => item.qty > 0)
+    );
+  };
+
+  const remove = (productId) => {
+    setCart((current) => current.filter((item) => item.productId !== productId));
+  };
+
+  const toggleSubscription = (productId) => {
+    setCart((current) =>
+      current.map((item) =>
+        item.productId === productId ? { ...item, subscription: !item.subscription } : item
+      )
+    );
+  };
+
+  return (
+    <main className="cart-page">
+      <section className="cart-items">
+        <div className="section-heading">
+          <p className="eyebrow">Thanh toán</p>
+          <h1>Giỏ Cà Phê Của Bạn</h1>
+        </div>
+        {items.length === 0 ? (
+          <div className="empty-state">
+            <ShoppingBag size={42} />
+            <h2>Giỏ hàng đang trống</h2>
+            <button className="primary-button" onClick={() => navigate("/")}>
+              Xem cà phê
+            </button>
+          </div>
+        ) : (
+          items.map((item) => (
+            <article className="cart-item" key={item.productId}>
+              <img src={item.product.image} alt={item.product.name} />
+              <div>
+                <div className="cart-title-row">
+                  <h3>{item.product.name}</h3>
+                  <strong>{formatMoney(item.product.price * item.qty)}</strong>
+                </div>
+                <p>{(item.product.notes?.length ? item.product.notes : defaultNotes).join(", ")}</p>
+                <label className="subscription-toggle">
+                  <input
+                    type="checkbox"
+                    checked={item.subscription}
+                    onChange={() => toggleSubscription(item.productId)}
+                  />
+                  Đăng ký định kỳ và tiết kiệm 15%
+                </label>
+                <div className="quantity-row">
+                  <button
+                    onClick={() => updateQty(item.productId, -1)}
+                    aria-label="Giảm số lượng"
+                  >
+                    <Minus size={16} />
+                  </button>
+                  <span>{item.qty}</span>
+                  <button
+                    onClick={() => updateQty(item.productId, 1)}
+                    aria-label="Tăng số lượng"
+                  >
+                    <Plus size={16} />
+                  </button>
+                  <button className="remove-button" onClick={() => remove(item.productId)}>
+                    <Trash2 size={16} /> Xóa
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))
+        )}
+      </section>
+
+      <aside className="summary">
+        <h2>Tóm tắt đơn hàng</h2>
+        <SummaryLine label="Tạm tính" value={formatMoney(subtotal)} />
+        <SummaryLine label="Tiết kiệm định kỳ" value={`-${formatMoney(discount)}`} />
+        <SummaryLine label="Phí giao hàng" value={formatMoney(shipping)} />
+        <div className="summary-total">
+          <span>Tổng cộng</span>
+          <strong>{formatMoney(total)}</strong>
+        </div>
+        <button className="primary-button wide" disabled={items.length === 0}>
+          Tiếp tục thanh toán
+        </button>
+      </aside>
+    </main>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/pages/FlavorQuizPage.jsx">
+import { Coffee } from "lucide-react";
+import { useMemo, useState } from "react";
+import { defaultNotes, fallbackFlavors, quizQuestions } from "../data/customerData.js";
+
+export default function FlavorQuizPage({ navigate, addToCart, products, flavors }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState([]);
+  const flavorOptions = useMemo(
+    () =>
+      flavors.length > 0
+        ? flavors.map((flavor) => flavor.name)
+        : fallbackFlavors.map((flavor) => flavor.name),
+    [flavors]
+  );
+  const questions = useMemo(
+    () => [
+      quizQuestions[0],
+      {
+        title: "Bạn thích gu hương vị nào?",
+        options: flavorOptions.slice(0, 8),
+      },
+      quizQuestions[2],
+    ],
+    [flavorOptions]
+  );
+
+  const recommendation = useMemo(() => {
+    const selectedFlavor = answers.find((answer) => flavorOptions.includes(answer));
+    const productByFlavor = selectedFlavor
+      ? products.find((product) =>
+          product.notes?.some((note) => note.toLowerCase() === selectedFlavor.toLowerCase())
+        )
+      : null;
+
+    if (productByFlavor) {
+      return productByFlavor;
+    }
+
+    if (answers.includes("Sáng vị và hương hoa") || answers.includes("Nhẹ nhàng")) {
+      return products[1] || products[0];
+    }
+    if (answers.includes("Đậm và mộc") || answers.includes("Đậm mạnh")) {
+      return products[2] || products[0];
+    }
+    return products[0];
+  }, [answers, flavorOptions, products]);
+
+  const choose = (answer) => {
+    const nextAnswers = [...answers.slice(0, step), answer];
+    setAnswers(nextAnswers);
+    if (step < questions.length - 1) {
+      setStep(step + 1);
+    }
+  };
+
+  const isDone = answers.length === questions.length;
+  const current = questions[step];
+
+  return (
+    <main className="quiz-page">
+      <section className="section-heading centered">
+        <p className="eyebrow">Gợi ý theo gu</p>
+        <h1>Tìm Gu Cà Phê</h1>
+        <p>
+          Trả lời ba câu hỏi để nhận gợi ý cà phê phù hợp với cách bạn uống.
+        </p>
+      </section>
+
+      {!isDone ? (
+        <section className="quiz-card">
+          <div className="progress-row">
+            <span>
+              Bước {step + 1} / {questions.length}
+            </span>
+            <span>{Math.round(((step + 1) / questions.length) * 100)}%</span>
+          </div>
+          <div className="progress-track">
+            <div style={{ width: `${((step + 1) / questions.length) * 100}%` }} />
+          </div>
+          <h2>{current.title}</h2>
+          <div className="quiz-options">
+            {current.options.map((option) => (
+              <button key={option} onClick={() => choose(option)}>
+                <Coffee size={22} />
+                {option}
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section className="result-card">
+          <div>
+            <p className="eyebrow">Gợi ý phù hợp</p>
+            <h2>{recommendation.name}</h2>
+            <p>{recommendation.story}</p>
+            <div className="chip-row">
+              {(recommendation.notes?.length ? recommendation.notes : defaultNotes).map((note) => (
+                <span key={note}>{note}</span>
+              ))}
+            </div>
+            <div className="button-row">
+              <button className="primary-button" onClick={() => addToCart(recommendation.id)}>
+                Thêm gợi ý
+              </button>
+              <button
+                className="secondary-button"
+                onClick={() => navigate(`/product/${recommendation.id}`)}
+              >
+                Xem chi tiết
+              </button>
+            </div>
+          </div>
+          <img src={recommendation.image} alt={recommendation.name} />
+        </section>
+      )}
+    </main>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/pages/HomePage.jsx">
+import { Award, Coffee, Leaf } from "lucide-react";
+import Metric from "../components/Metric.jsx";
+import ProductCard from "../components/ProductCard.jsx";
+
+export default function HomePage({
+  navigate,
+  addToCart,
+  products,
+  isLoadingProducts,
+  productsError,
+}) {
+  return (
+    <main>
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow">Nghệ thuật pha cà phê</p>
+          <h1>Từ Đất Lành Đến Tách Cà Phê</h1>
+          <p>
+            Nền tảng cà phê kết nối trực tiếp với nông trại, giúp bạn khám phá
+            vùng trồng, so sánh hương vị và chọn đúng gu cho mỗi buổi sáng.
+          </p>
+          <div className="button-row">
+            <button
+              className="primary-button"
+              onClick={() => document.getElementById("shop")?.scrollIntoView()}
+            >
+              Khám phá vùng trồng
+            </button>
+            <button className="secondary-button" onClick={() => navigate("/quiz")}>
+              Tìm gu cà phê
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="shop">
+        <div className="section-heading">
+          <p className="eyebrow">Bộ sưu tập theo mùa</p>
+          <h2>Chọn Gu Cà Phê Của Bạn</h2>
+          <p>
+            Mua theo vùng trồng, mức rang, phương pháp sơ chế và những nốt hương bạn
+            yêu thích.
+          </p>
+        </div>
+        {productsError && <p className="inline-notice">{productsError}</p>}
+        {isLoadingProducts && <p className="inline-notice">Đang tải sản phẩm từ backend...</p>}
+        <div className="product-grid">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onView={() => navigate(`/product/${product.id}`)}
+              onAdd={() => addToCart(product.id)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="story-band">
+        <div>
+          <p className="eyebrow">Nguồn gốc minh bạch</p>
+          <h2>Theo dấu hành trình từ nông trại đến tách cà phê.</h2>
+        </div>
+        <div className="journey-grid">
+          <Metric icon={<Leaf />} label="Nguồn gốc" value="3 vùng trồng" />
+          <Metric icon={<Award />} label="Chất lượng" value="Lô Q-grade" />
+          <Metric icon={<Coffee />} label="Thủ công" value="Rang mỗi tuần" />
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/pages/ProductDetailPage.jsx">
+import { ArrowLeft, Coffee, ShoppingBag, Sparkles, Star } from "lucide-react";
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
+import Metric from "../components/Metric.jsx";
+import { defaultBrewMethods, defaultNotes } from "../data/customerData.js";
+
+export default function ProductDetailPage({ product, addToCart, navigate }) {
+  if (!product) {
+    return (
+      <main className="detail-page">
+        <button className="back-button" onClick={() => navigate("/")}>
+          <ArrowLeft size={18} /> Về cửa hàng
+        </button>
+        <div className="empty-state">
+          <ShoppingBag size={42} />
+          <h2>Không tìm thấy sản phẩm</h2>
+        </div>
+      </main>
+    );
+  }
+
+  const notes = product.notes?.length ? product.notes : defaultNotes;
+  const brew = product.brew?.length ? product.brew : defaultBrewMethods;
+
+  return (
+    <main className="detail-page">
+      <button className="back-button" onClick={() => navigate("/")}>
+        <ArrowLeft size={18} /> Về cửa hàng
+      </button>
+      <section className="product-detail">
+        <div className="gallery">
+          <img src={product.image} alt={`Gói cà phê ${product.name}`} />
+        </div>
+        <div className="detail-copy">
+          <div className="badge-line">
+            <span>{product.badge}</span>
+            <span>{product.process}</span>
+          </div>
+          <h1>{product.name}</h1>
+          <p className="origin">{product.origin}</p>
+          <p>{product.story}</p>
+          <div className="detail-stats">
+            <Metric icon={<Star />} label="Mức rang" value={product.roast} />
+            <Metric icon={<Sparkles />} label="Sơ chế" value={product.process} />
+            <Metric icon={<Coffee />} label="Giá" value={formatMoney(product.price)} />
+          </div>
+          <div className="detail-panel">
+            <h3>Hồ sơ hương vị</h3>
+            <div className="chip-row">
+              {notes.map((note) => (
+                <span key={note}>{note}</span>
+              ))}
+            </div>
+          </div>
+          <div className="detail-panel">
+            <h3>Hợp để pha</h3>
+            <div className="chip-row">
+              {brew.map((method) => (
+                <span key={method}>{method}</span>
+              ))}
+            </div>
+          </div>
+          <button className="primary-button wide" onClick={() => addToCart(product.id)}>
+            Thêm vào giỏ - {formatMoney(product.price)}
+          </button>
+        </div>
+      </section>
+    </main>
+  );
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/src/styles/customer.css">
+:root {
+  color: #1c1c18;
+  background: #fcf9f3;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #1c1c18;
+  --muted: #62564e;
+  --line: #d8cbc2;
+  --surface: #fcf9f3;
+  --surface-low: #f4efe7;
+  --surface-high: #ffffff;
+  --primary: #26170c;
+  --secondary: #496455;
+  --accent: #b5924c;
+  --danger: #a13025;
+  --radius: 8px;
+  --shadow: 0 18px 50px rgba(61, 43, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--surface);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Noto Serif", Georgia, serif;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+:root {
+  --app-mode: customer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 76px;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(216, 203, 194, 0.7);
+  background: rgba(252, 249, 243, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-links button,
+.site-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  padding: 0 14px;
+  font-weight: 700;
+}
+
+.nav-links button.active,
+.nav-links button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  color: var(--primary);
+}
+
+.icon-button span {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  min-width: 21px;
+  height: 21px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 80px 32px;
+  background:
+    linear-gradient(90deg, rgba(38, 23, 12, 0.78), rgba(38, 23, 12, 0.28)),
+    url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+}
+
+.hero-copy {
+  width: min(680px, 100%);
+  margin-left: max(0px, calc((100vw - 1180px) / 2));
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(52px, 8vw, 96px);
+}
+
+.hero p {
+  max-width: 600px;
+  color: #f5ece2;
+  font-size: 19px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button-row,
+.card-actions,
+.quantity-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.primary-button,
+.secondary-button,
+.back-button {
+  min-height: 48px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  padding: 0 20px;
+  font-weight: 800;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.secondary-button,
+.back-button {
+  background: var(--surface-high);
+  border-color: var(--line);
+  color: var(--primary);
+}
+
+.compact {
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+.wide {
+  width: 100%;
+}
+
+.section,
+.quiz-page,
+.detail-page,
+.cart-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 82px 0;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading.centered {
+  max-width: 720px;
+  text-align: center;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.section-heading p {
+  max-width: 660px;
+}
+
+.inline-notice {
+  max-width: 660px;
+  margin: -14px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-low);
+  color: var(--secondary);
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.product-card,
+.quiz-card,
+.result-card,
+.summary,
+.empty-state,
+.cart-item,
+.detail-panel {
+  border: 1px solid rgba(216, 203, 194, 0.72);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  box-shadow: var(--shadow);
+}
+
+.product-card {
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 22px;
+}
+
+.card-topline,
+.cart-title-row,
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.card-topline span,
+.badge-line span {
+  border-radius: 999px;
+  background: rgba(73, 100, 85, 0.12);
+  color: var(--secondary);
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.product-card h3 {
+  margin-top: 16px;
+  font-size: 28px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.chip-row span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-low);
+  color: var(--primary);
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.story-band {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 42px;
+  align-items: center;
+  padding: 70px max(24px, calc((100vw - 1180px) / 2));
+  background: var(--primary);
+}
+
+.story-band h2 {
+  color: #fff;
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.journey-grid,
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric {
+  min-height: 128px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 18px;
+}
+
+.detail-stats .metric {
+  background: var(--surface-low);
+  border-color: var(--line);
+  color: var(--primary);
+}
+
+.metric span,
+.metric strong {
+  display: block;
+  margin-top: 10px;
+}
+
+.metric span {
+  color: inherit;
+  opacity: 0.72;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.gallery img {
+  width: 100%;
+  min-height: 620px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.detail-copy h1 {
+  margin-top: 16px;
+  font-size: clamp(42px, 6vw, 70px);
+}
+
+.origin {
+  font-weight: 800;
+}
+
+.badge-line {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-panel {
+  margin: 18px 0;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.quiz-card,
+.result-card {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.progress-track {
+  height: 8px;
+  margin: 14px 0 28px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-low);
+}
+
+.progress-track div {
+  height: 100%;
+  background: var(--secondary);
+}
+
+.quiz-card h2 {
+  font-size: 34px;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.quiz-options button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-low);
+  color: var(--primary);
+  padding: 0 18px;
+  font-weight: 800;
+}
+
+.quiz-options button:hover {
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: center;
+}
+
+.result-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.cart-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 28px;
+  align-items: start;
+}
+
+.cart-items {
+  display: grid;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px;
+  box-shadow: none;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 170px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.subscription-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 18px;
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+.quantity-row button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-high);
+  color: var(--primary);
+}
+
+.quantity-row span {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.remove-button {
+  padding: 0 12px;
+  color: var(--danger) !important;
+}
+
+.summary {
+  position: sticky;
+  top: 98px;
+  padding: 24px;
+}
+
+.summary h2 {
+  margin-bottom: 22px;
+}
+
+.summary-line {
+  padding: 11px 0;
+  color: var(--muted);
+}
+
+.summary-total {
+  margin: 14px 0 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  font-size: 22px;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  min-height: 320px;
+  padding: 28px;
+  box-shadow: none;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 36px 32px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-low);
+}
+
+.site-footer p {
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 880px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding: 64px 24px;
+  }
+
+  .product-grid,
+  .story-band,
+  .product-detail,
+  .result-card,
+  .cart-page {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-grid,
+  .detail-stats,
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    min-height: 420px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: 240px;
+  }
+
+  .summary {
+    position: static;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+</file>
+
+<file path="coffee-platform-frontend/customer-frontend/vite.config.js">
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      "@coffee-platform/shared": resolve(__dirname, "../packages/shared"),
+    },
+  },
+  plugins: [react()],
+  server: {
+    host: "0.0.0.0",
+    port: 5173,
+    strictPort: true,
+  },
+});
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/adminApi.js">
+import api from "./axiosClient.js";
+import { resolveImageUrl } from "./productApi.js";
+
+const valueLabels = {
+  Green: "Nhân xanh",
+  Roasted: "Đã rang",
+  "In Stock": "Còn hàng",
+  "Low Stock": "Sắp hết",
+  "Out of Stock": "Hết hàng",
+  Active: "Đang hoạt động",
+  Pending: "Đang chờ",
+  Scheduled: "Đã lên lịch",
+  Arriving: "Đang về kho",
+  Delayed: "Chậm",
+  Website: "Website",
+  Subscription: "Đăng ký định kỳ",
+  Shipped: "Đã giao",
+  Packing: "Đang đóng gói",
+  Paid: "Đã thanh toán",
+  "Revenue this week": "Doanh thu tuần này",
+  Orders: "Đơn hàng",
+  "Low stock lots": "Mặt hàng sắp hết",
+  "Supplier delays": "Nhà cung cấp chậm",
+  "Needs action": "Cần xử lý",
+  DB: "Từ CSDL",
+};
+
+function translateValue(value) {
+  return valueLabels[value] ?? value;
+}
+
+function mapInventoryItem(item) {
+  return {
+    ...item,
+    type: translateValue(item.type),
+    stockUnit: item.stockUnit === "bags" ? "gói" : item.stockUnit,
+    status: translateValue(item.status),
+    image: resolveImageUrl(item.image),
+  };
+}
+
+function mapOrder(order) {
+  return {
+    ...order,
+    channel: translateValue(order.channel),
+    payment: translateValue(order.payment),
+    fulfillment: translateValue(order.fulfillment),
+  };
+}
+
+function mapSupplier(supplier) {
+  return {
+    ...supplier,
+    status: translateValue(supplier.status),
+  };
+}
+
+function mapShipment(shipment) {
+  return {
+    ...shipment,
+    status: translateValue(shipment.status),
+  };
+}
+
+function mapMetric(metric) {
+  return {
+    ...metric,
+    label: translateValue(metric.label),
+    trend: translateValue(metric.trend),
+  };
+}
+
+export async function getAdminOverview() {
+  const response = await api.get("/admin/overview");
+  const data = response.data;
+
+  return {
+    inventoryItems: (data.inventoryItems ?? []).map(mapInventoryItem),
+    orders: (data.orders ?? []).map(mapOrder),
+    suppliers: (data.suppliers ?? []).map(mapSupplier),
+    shipments: (data.shipments ?? []).map(mapShipment),
+    reportMetrics: (data.reportMetrics ?? []).map(mapMetric),
+  };
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/authApi.js">
+import api from "./axiosClient.js";
+
+export function login(credentials) {
+  return api.post("/auth/login", credentials);
+}
+
+export function register(payload) {
+  return api.post("/auth/register", payload);
+}
+
+export function getCurrentUser() {
+  return api.get("/auth/me");
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/axiosClient.js">
+import axios from "axios";
+import { API_BASE_URL } from "../constants/index.js";
+
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export default api;
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/flavorApi.js">
+import api from "./axiosClient.js";
+
+export function mapFlavorFromApi(flavor) {
+  return {
+    id: String(flavor.maHuongVi ?? flavor.MaHuongVi),
+    name: flavor.tenHuongVi ?? flavor.TenHuongVi ?? "Hương vị",
+  };
+}
+
+export async function getFlavors() {
+  const response = await api.get("/huong-vi");
+  const payload = response.data;
+  const items = Array.isArray(payload) ? payload : payload?.value ?? [];
+
+  return items.map(mapFlavorFromApi).filter((flavor) => flavor.name);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/inventoryApi.js">
+import api from "./axiosClient.js";
+
+export function getInventory(params = {}) {
+  return api.get("/ton-kho", { params });
+}
+
+export function updateInventoryItem(id, payload) {
+  return api.put(`/ton-kho/${id}`, payload);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/orderApi.js">
+import api from "./axiosClient.js";
+
+export function getOrders(params = {}) {
+  return api.get("/don-hang", { params });
+}
+
+export function getOrderById(id) {
+  return api.get(`/don-hang/${id}`);
+}
+
+export function createOrder(payload) {
+  return api.post("/don-hang", payload);
+}
+
+export function updateOrderStatus(id, payload) {
+  return api.patch(`/don-hang/${id}/trang-thai`, payload);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/productApi.js">
+import api from "./axiosClient.js";
+
+const fallbackImage =
+  "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80";
+
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5244/api";
+const apiOrigin = apiBaseUrl.replace(/\/api\/?$/, "");
+
+function listNames(value, key) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value.map((item) => item?.[key]).filter(Boolean);
+}
+
+export function resolveImageUrl(value) {
+  const imagePath = value?.trim();
+
+  if (!imagePath) {
+    return fallbackImage;
+  }
+
+  if (/^https?:\/\//i.test(imagePath)) {
+    return imagePath;
+  }
+
+  const publicPath = imagePath
+    .replace(/\\/g, "/")
+    .replace(/^wwwroot\/?/i, "")
+    .replace(/^\/+/, "");
+
+  return `${apiOrigin}/${publicPath}`;
+}
+
+export function mapProductFromApi(product) {
+  const notes = listNames(product.huongVis ?? product.HuongVis, "tenHuongVi");
+  const notesPascal = listNames(product.huongVis ?? product.HuongVis, "TenHuongVi");
+  const brew = listNames(product.phuongPhapPhas ?? product.PhuongPhapPhas, "tenPhuongPhap");
+  const brewPascal = listNames(product.phuongPhapPhas ?? product.PhuongPhapPhas, "TenPhuongPhap");
+
+  return {
+    id: String(product.maSanPham ?? product.MaSanPham),
+    name: product.tenSanPham ?? product.TenSanPham ?? "Sản phẩm cà phê",
+    origin: product.xuatXu ?? product.XuatXu ?? "Đang cập nhật xuất xứ",
+    price: Number(product.gia ?? product.Gia ?? 0),
+    roast: product.mucRang ?? product.MucRang ?? "Đang cập nhật",
+    process: product.quyTrinhCheBien ?? product.QuyTrinhCheBien ?? "Đang cập nhật",
+    notes: [...notes, ...notesPascal].length ? [...notes, ...notesPascal] : ["Cà phê đặc sản"],
+    brew: [...brew, ...brewPascal].length ? [...brew, ...brewPascal] : ["Phin", "Pour over"],
+    image: resolveImageUrl(product.hinhAnh ?? product.HinhAnh),
+    story: product.moTa ?? product.MoTa ?? "Sản phẩm cà phê đang được cập nhật mô tả.",
+    badge: product.nhanHieuPhu ?? product.NhanHieuPhu ?? "Tu backend",
+    stock: product.soLuongTon ?? product.SoLuongTon ?? 0,
+  };
+}
+
+export async function getProducts(params = {}) {
+  const response = await api.get("/san-pham", {
+    params: {
+      page: 1,
+      pageSize: 50,
+      ...params,
+    },
+  });
+
+  const payload = response.data;
+  const items = Array.isArray(payload) ? payload : payload?.data ?? [];
+
+  return items.map(mapProductFromApi);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/api/supplierApi.js">
+import api from "./axiosClient.js";
+
+export function getSuppliers(params = {}) {
+  return api.get("/nha-cung-cap", { params });
+}
+
+export function getSupplierById(id) {
+  return api.get(`/nha-cung-cap/${id}`);
+}
+
+export function createSupplier(payload) {
+  return api.post("/nha-cung-cap", payload);
+}
+
+export function updateSupplier(id, payload) {
+  return api.put(`/nha-cung-cap/${id}`, payload);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/constants/app.js">
+export const APP_MODES = {
+  ADMIN: "admin",
+  CUSTOMER: "customer",
+};
+
+export const APP_MODE = import.meta.env.VITE_APP_MODE || APP_MODES.CUSTOMER;
+
+export const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5244/api";
+
+export const ROLES = {
+  ADMIN: "admin",
+  CUSTOMER: "customer",
+};
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/constants/index.js">
+export * from "./app.js";
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/hooks/index.js">
+export * from "./useApi.js";
+export * from "./useAuth.js";
+export * from "./useLocalStorage.js";
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/hooks/useApi.js">
+import { useCallback, useEffect, useState } from "react";
+
+export function useApi(request, options = {}) {
+  const { immediate = true, initialData = null } = options;
+  const [data, setData] = useState(initialData);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(immediate);
+
+  const execute = useCallback(
+    async (...args) => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const response = await request(...args);
+        const payload = response?.data ?? response;
+        setData(payload);
+        return payload;
+      } catch (requestError) {
+        setError(requestError);
+        throw requestError;
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [request]
+  );
+
+  useEffect(() => {
+    if (immediate) {
+      execute();
+    }
+  }, [execute, immediate]);
+
+  return { data, error, execute, isLoading };
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/hooks/useAuth.js">
+import { useMemo } from "react";
+import { login as loginRequest } from "../api/authApi.js";
+import { useLocalStorage } from "./useLocalStorage.js";
+
+const AUTH_STORAGE_KEY = "coffee-platform.auth";
+
+export function useAuth() {
+  const [session, setSession] = useLocalStorage(AUTH_STORAGE_KEY, null);
+
+  const auth = useMemo(
+    () => ({
+      isAuthenticated: Boolean(session?.token),
+      role: session?.user?.role,
+      token: session?.token,
+      user: session?.user,
+    }),
+    [session]
+  );
+
+  async function login(credentials) {
+    const response = await loginRequest(credentials);
+    const nextSession = response.data;
+    setSession(nextSession);
+    return nextSession;
+  }
+
+  function logout() {
+    setSession(null);
+  }
+
+  return { ...auth, login, logout, session };
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/hooks/useLocalStorage.js">
+import { useEffect, useState } from "react";
+
+export function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    try {
+      const storedValue = window.localStorage.getItem(key);
+      return storedValue ? JSON.parse(storedValue) : initialValue;
+    } catch {
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      // Ignore storage errors so UI state still works in private or locked-down browsers.
+    }
+  }, [key, value]);
+
+  return [value, setValue];
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/package.json">
+{
+  "name": "@coffee-platform/shared",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./api/*": "./api/*.js",
+    "./constants": "./constants/index.js",
+    "./hooks": "./hooks/index.js",
+    "./utils": "./utils/index.js",
+    "./utils/*": "./utils/*.js"
+  },
+  "peerDependencies": {
+    "axios": "^1.16.0",
+    "react": "latest"
+  }
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/utils/adminMetrics.js">
+export function formatMoney(value) {
+  return new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+export function formatNumber(value) {
+  return new Intl.NumberFormat("vi-VN").format(value);
+}
+
+export function buildStats({ inventoryItems, shipments, orders }) {
+  const greenStock = inventoryItems
+    .filter((item) => item.type === "Nhân xanh")
+    .reduce((sum, item) => sum + item.stockQty, 0);
+  const roastedStock = inventoryItems
+    .filter((item) => item.type === "Đã rang")
+    .reduce((sum, item) => sum + item.stockQty, 0);
+  const lowStock = inventoryItems.filter((item) => item.stockQty <= item.reorderPoint).length;
+  const pendingOrders = orders.filter((order) => order.fulfillment !== "Đã giao").length;
+
+  return [
+    { id: "green", label: "Tồn kho nhân xanh", value: `${formatNumber(greenStock)} kg`, meta: "Theo CSDL" },
+    { id: "roasted", label: "Tồn kho đã rang", value: `${formatNumber(roastedStock)} gói`, meta: "Đang hoạt động" },
+    { id: "alerts", label: "Cảnh báo sắp hết", value: `${formatNumber(lowStock)} mặt hàng`, meta: "Cần xử lý", danger: true },
+    { id: "shipments", label: "Lịch nhập hàng", value: `${formatNumber(shipments.length)} phiếu`, meta: `${pendingOrders} đơn đang mở` },
+  ];
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/utils/formatMoney.js">
+export function formatMoney(value, currency = "VND") {
+  return new Intl.NumberFormat("vi-VN", {
+    currency,
+    maximumFractionDigits: 0,
+    style: "currency",
+  }).format(Number(value) || 0);
+}
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/utils/index.js">
+export * from "./adminMetrics.js";
+export * from "./formatMoney.js";
+export * from "./validators.js";
+</file>
+
+<file path="coffee-platform-frontend/packages/shared/utils/validators.js">
+export function isRequired(value) {
+  return value !== null && value !== undefined && String(value).trim().length > 0;
+}
+
+export function isEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value).trim());
+}
+
+export function isPositiveNumber(value) {
+  return Number.isFinite(Number(value)) && Number(value) > 0;
+}
+</file>
+
+<file path="coffee-platform-frontend/public/.gitkeep">
+
+</file>
+
+<file path="coffee-platform-frontend/scripts/dev-both.mjs">
+import { spawn } from "node:child_process";
+import { dirname, resolve } from "node:path";
+import { platform } from "node:process";
+import { fileURLToPath } from "node:url";
+
+const isWindows = platform === "win32";
+const npmCommand = isWindows ? "cmd.exe" : "npm";
+const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+const apps = [
+  { name: "customer", cwd: resolve(rootDir, "customer-frontend") },
+  { name: "admin", cwd: resolve(rootDir, "admin-frontend") },
+];
+
+const children = apps.map((app) => {
+  const args = isWindows ? ["/d", "/s", "/c", "npm.cmd run dev"] : ["run", "dev"];
+  const child = spawn(npmCommand, args, {
+    cwd: app.cwd,
+    shell: false,
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+
+  child.stdout.on("data", (data) => {
+    process.stdout.write(`[${app.name}] ${data}`);
+  });
+
+  child.stderr.on("data", (data) => {
+    process.stderr.write(`[${app.name}] ${data}`);
+  });
+
+  child.on("exit", (code) => {
+    if (code !== 0 && code !== null) {
+      process.exitCode = code;
+    }
+  });
+
+  return child;
+});
+
+function shutdown() {
+  for (const child of children) {
+    child.kill();
+  }
+}
+
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);
+</file>
+
+<file path="coffee-platform-frontend/tests/shared/api/README.md">
+# Shared API Tests
+
+Place shared API and mapper tests here. This folder is reserved for tests that validate `packages/shared/api` behavior without coupling to customer or admin screens.
+</file>
+
+<file path="FarmToCup.API/Controllers/HuongViController.cs">
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using FarmToCup.API.Models;
+using FarmToCup.API.Repository;
+using FarmToCup.API.DTOs.HuongVi;
+
+namespace FarmToCup.API.Controllers
+{
+    [Route("api/huong-vi")]
+    [ApiController]
+    public class HuongViController : ControllerBase
+    {
+        private readonly IHuongViRepository _repo;
+
+        public HuongViController(IHuongViRepository repo)
+        {
+            _repo = repo;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var data = await _repo.GetAllAsync();
+
+            return Ok(data);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var data = await _repo.GetByIdAsync(id);
+
+            if (data == null)
+                return NotFound("Không tìm thấy hương vị");
+
+            return Ok(data);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(TaoHuongViDto dto)
+        {
+            var huongVi = new HuongVi
+            {
+                TenHuongVi = dto.TenHuongVi
+            };
+
+            var result = await _repo.AddAsync(huongVi);
+
+            return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(
+            int id,
+            CapNhatHuongViDto dto)
+        {
+            var huongVi = await _repo.GetByIdAsync(id);
+
+            if (huongVi == null)
+                return NotFound("Không tìm thấy hương vị");
+
+            huongVi.TenHuongVi = dto.TenHuongVi;
+
+            await _repo.UpdateAsync(huongVi);
+
+            return Ok(huongVi);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _repo.DeleteAsync(id);
+
+            if (!result)
+                return NotFound("Không tìm thấy hương vị");
+
+            return Ok("Xóa thành công");
+        }
+
+    }
+}
+</file>
+
+<file path="FarmToCup.API/DTOs/HuongVi/CapNhatHuongViDto.cs">
+namespace FarmToCup.API.DTOs.HuongVi
+{
+    public class CapNhatHuongViDto
+    {
+        public string? TenHuongVi { get; set; }
+    }
+}
+</file>
+
+<file path="FarmToCup.API/DTOs/HuongVi/TaoHuongViDto.cs">
+namespace FarmToCup.API.DTOs.HuongVi
+{
+    public class TaoHuongViDto
+    {
+        public string TenHuongVi { get; set; } = null!;
+    }
+}
+</file>
+
+<file path="FarmToCup.API/Repository/HuongViRepository.cs">
+using FarmToCup.API.Models;
+using Microsoft.EntityFrameworkCore;
+namespace FarmToCup.API.Repository
+{
+    public class HuongViRepository : Repository<HuongVi>, IHuongViRepository
+    {
+        private readonly FarmToCupContext _context;
+
+        public HuongViRepository(FarmToCupContext context)
+            : base(context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<HuongVi>> GetAllAsync()
+        {
+            return await _context.HuongVis.ToListAsync();
+        }
+
+        public async Task<HuongVi?> GetByIdAsync(int id)
+        {
+            return await _context.HuongVis
+                .FirstOrDefaultAsync(x => x.MaHuongVi == id);
+        }
+
+        public async Task<HuongVi> AddAsync(HuongVi huongVi)
+        {
+            await _context.HuongVis.AddAsync(huongVi);
+
+            await _context.SaveChangesAsync();
+
+            return huongVi;
+        }
+
+        public async Task<bool> UpdateAsync(HuongVi huongVi)
+        {
+            _context.HuongVis.Update(huongVi);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var huongVi = await _context.HuongVis
+                .FindAsync(id);
+
+            if (huongVi == null)
+                return false;
+
+            _context.HuongVis.Remove(huongVi);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+
+    }
+}
+</file>
+
+<file path="FarmToCup.API/Repository/IHuongViRepository.cs">
+using FarmToCup.API.Models;
+namespace FarmToCup.API.Repository
+{
+    public interface IHuongViRepository
+    {
+        Task<IEnumerable<HuongVi>> GetAllAsync();
+        Task<HuongVi?> GetByIdAsync(int id);
+        Task<HuongVi> AddAsync(HuongVi huongVi);
+        Task<bool> UpdateAsync(HuongVi huongVi);
+        Task<bool> DeleteAsync(int id);
+
+    }
+}
+</file>
+
+<file path="coffee-platform-frontend/.env.example">
+VITE_API_BASE_URL=http://localhost:5244/api
+</file>
+
+<file path="coffee-platform-frontend/.gitignore">
+node_modules
+dist
+.env
+.env.local
+npm-debug.log*
 </file>
 
 <file path="coffee-platform-frontend/README.md">
@@ -1532,1304 +5185,6 @@ p {
 </files>
 </file>
 
-<file path="coffee-platform-frontend/src/admin/AdminApp.jsx">
-import { useMemo, useState } from "react";
-import AdminHeader from "./components/AdminHeader.jsx";
-import AdminSidebar from "./components/AdminSidebar.jsx";
-import DashboardPage from "./components/DashboardPage.jsx";
-import InventoryTable from "./components/InventoryTable.jsx";
-import OrdersPage from "./components/OrdersPage.jsx";
-import ReportsPage from "./components/ReportsPage.jsx";
-import SettingsPage from "./components/SettingsPage.jsx";
-import StatsCards from "./components/StatsCards.jsx";
-import SuppliersPage from "./components/SuppliersPage.jsx";
-import {
-  adminNavItems,
-  inventoryItems,
-  orders,
-  reportMetrics,
-  settings,
-  shipments,
-  suppliers,
-} from "./data/adminData.js";
-import { buildStats } from "./utils/adminMetrics.js";
-
-const pageMeta = {
-  dashboard: {
-    eyebrow: "Operations Overview",
-    title: "Admin Dashboard",
-    description: "A single view for stock, shipments, orders, and sourcing activity.",
-  },
-  inventory: {
-    eyebrow: "Stock Overview",
-    title: "Global Inventory",
-    description: "Track coffee lots, freshness, reorder points, roast state, and suppliers.",
-  },
-  orders: {
-    eyebrow: "Fulfillment",
-    title: "Orders",
-    description: "Review payment, channel, customer, and shipping status before dispatch.",
-  },
-  suppliers: {
-    eyebrow: "Sourcing",
-    title: "Suppliers",
-    description: "Monitor farm partners, active lots, ratings, and upcoming shipments.",
-  },
-  reports: {
-    eyebrow: "Business Health",
-    title: "Reports",
-    description: "Read the main weekly metrics for sales, stock risk, and supply chain issues.",
-  },
-  settings: {
-    eyebrow: "Configuration",
-    title: "Settings",
-    description: "Manage admin defaults and operational settings.",
-  },
-};
-
-const adminData = {
-  inventoryItems,
-  orders,
-  reportMetrics,
-  settings,
-  shipments,
-  suppliers,
-};
-
-export default function AdminApp() {
-  const [activePage, setActivePage] = useState("dashboard");
-  const stats = useMemo(
-    () => buildStats({ inventoryItems, shipments, orders }),
-    []
-  );
-  const meta = pageMeta[activePage] || pageMeta.dashboard;
-
-  return (
-    <div className="admin-shell">
-      <AdminSidebar
-        activePage={activePage}
-        items={adminNavItems}
-        onChangePage={setActivePage}
-      />
-      <div className="admin-workspace">
-        <AdminHeader />
-        <main className="admin-main">
-          <section className="admin-page-heading">
-            <div>
-              <span className="admin-eyebrow">{meta.eyebrow}</span>
-              <h1>{meta.title}</h1>
-              <p>{meta.description}</p>
-            </div>
-            <div className="admin-actions">
-              <button className="admin-button ghost">Export</button>
-              <button className="admin-button primary">Create new</button>
-            </div>
-          </section>
-
-          {activePage === "dashboard" && <DashboardPage data={adminData} stats={stats} />}
-          {activePage === "inventory" && (
-            <>
-              <StatsCards stats={stats} />
-              <InventoryTable items={inventoryItems} />
-            </>
-          )}
-          {activePage === "orders" && <OrdersPage orders={orders} />}
-          {activePage === "suppliers" && <SuppliersPage suppliers={suppliers} />}
-          {activePage === "reports" && <ReportsPage metrics={reportMetrics} />}
-          {activePage === "settings" && <SettingsPage settings={settings} />}
-        </main>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/AdminHeader.jsx">
-import { Bell, CircleHelp, Search } from "lucide-react";
-
-export default function AdminHeader() {
-  return (
-    <header className="admin-header">
-      <label className="admin-search">
-        <Search size={18} />
-        <input placeholder="Search inventory, batches, or origins..." type="search" />
-      </label>
-      <div className="admin-header-actions">
-        <button aria-label="Notifications">
-          <Bell size={20} />
-        </button>
-        <button aria-label="Help">
-          <CircleHelp size={20} />
-        </button>
-        <span className="admin-user-label">Inventory Management</span>
-        <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
-          alt="Inventory manager"
-        />
-      </div>
-    </header>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/AdminSidebar.jsx">
-import {
-  BarChart3,
-  Coffee,
-  LayoutDashboard,
-  LogOut,
-  Package,
-  Settings,
-  ShoppingCart,
-  Truck,
-} from "lucide-react";
-
-const icons = {
-  dashboard: LayoutDashboard,
-  inventory: Package,
-  orders: ShoppingCart,
-  suppliers: Truck,
-  reports: BarChart3,
-  settings: Settings,
-};
-
-export default function AdminSidebar({ activePage, items, onChangePage }) {
-  return (
-    <aside className="admin-sidebar">
-      <div className="admin-brand">
-        <span>
-          <Coffee size={22} />
-        </span>
-        <div>
-          <strong>Artisan Roast</strong>
-          <small>Farm to Cup</small>
-        </div>
-      </div>
-
-      <nav className="admin-nav" aria-label="Admin navigation">
-        {items.map((item) => {
-          const Icon = icons[item.id] || LayoutDashboard;
-          return (
-            <button
-              className={activePage === item.id ? "active" : ""}
-              key={item.id}
-              onClick={() => onChangePage(item.id)}
-              type="button"
-            >
-              <Icon size={19} />
-              {item.label}
-            </button>
-          );
-        })}
-      </nav>
-
-      <button className="admin-logout" type="button">
-        <LogOut size={19} />
-        Logout
-      </button>
-    </aside>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/AdminTable.jsx">
-export default function AdminTable({ columns, rows, getRowKey }) {
-  return (
-    <div className="inventory-table-wrap">
-      <table className="inventory-table">
-        <thead>
-          <tr>
-            {columns.map((column) => (
-              <th key={column.key}>{column.label}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={getRowKey(row)}>
-              {columns.map((column) => (
-                <td key={column.key}>{column.render ? column.render(row) : row[column.key]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/DashboardPage.jsx">
-import InventoryTable from "./InventoryTable.jsx";
-import ShipmentFeed from "./ShipmentFeed.jsx";
-import StatsCards from "./StatsCards.jsx";
-
-export default function DashboardPage({ data, stats }) {
-  return (
-    <>
-      <StatsCards stats={stats} />
-      <InventoryTable items={data.inventoryItems.slice(0, 4)} />
-
-      <section className="admin-secondary-grid">
-        <div className="roaster-note">
-          <img
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-            alt="Roasted coffee beans"
-          />
-          <div>
-            <span className="admin-eyebrow">Roaster note</span>
-            <h2>Ethiopia Yirgacheffe has strong floral notes this season. Prioritize it for light roast subscriptions.</h2>
-            <p>Marco, Head Roaster</p>
-          </div>
-        </div>
-        <ShipmentFeed shipments={data.shipments} />
-      </section>
-    </>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/InventoryTable.jsx">
-import { MoreHorizontal, Search, SlidersHorizontal } from "lucide-react";
-import AdminTable from "./AdminTable.jsx";
-
-function getStatusClass(item) {
-  if (item.status === "Low Stock") return "status low";
-  if (item.status === "Out of Stock") return "status muted";
-  return "status";
-}
-
-export default function InventoryTable({ items }) {
-  const origins = [...new Set(items.map((item) => item.origin.split(",").pop().trim()))];
-  const processes = [...new Set(items.map((item) => item.process))];
-  const roastLevels = [...new Set(items.map((item) => item.roastLevel))];
-  const columns = [
-    {
-      key: "name",
-      label: "Bean name / origin",
-      render: (item) => (
-        <div className="bean-cell">
-          <img src={item.image} alt={item.name} />
-          <div>
-            <strong>{item.name}</strong>
-            <span>{item.origin}</span>
-          </div>
-        </div>
-      ),
-    },
-    { key: "type", label: "Type", render: (item) => <span className="admin-tag">{item.type}</span> },
-    { key: "stock", label: "Current stock", render: (item) => `${item.stockQty} ${item.stockUnit}` },
-    { key: "reorderPoint", label: "Reorder point", render: (item) => `${item.reorderPoint} ${item.stockUnit}` },
-    { key: "freshness", label: "Freshness window", render: (item) => <span className={item.status === "Low Stock" ? "danger-text" : ""}>{item.freshness}</span> },
-    { key: "process", label: "Process" },
-    { key: "roastLevel", label: "Roast" },
-    { key: "supplierName", label: "Supplier" },
-    { key: "status", label: "Status", render: (item) => <span className={getStatusClass(item)}>{item.status}</span> },
-    {
-      key: "action",
-      label: "Action",
-      render: (item) => (
-        <button className="icon-only" aria-label={`Open actions for ${item.name}`} type="button">
-          <MoreHorizontal size={20} />
-        </button>
-      ),
-    },
-  ];
-
-  return (
-    <section className="admin-panel inventory-panel">
-      <div className="inventory-toolbar">
-        <div>
-          <h2>Inventory Master List</h2>
-          <div className="inventory-filters">
-            <label className="admin-search compact">
-              <Search size={16} />
-              <input placeholder="Search within list..." type="search" />
-            </label>
-            <select defaultValue="all-origin">
-              <option value="all-origin">Origin: All</option>
-              {origins.map((origin) => (
-                <option key={origin}>{origin}</option>
-              ))}
-            </select>
-            <select defaultValue="all-process">
-              <option value="all-process">Processing: All</option>
-              {processes.map((process) => (
-                <option key={process}>{process}</option>
-              ))}
-            </select>
-            <select defaultValue="all-roast">
-              <option value="all-roast">Roast: All</option>
-              {roastLevels.map((roast) => (
-                <option key={roast}>{roast}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <button className="admin-button ghost" type="button">
-          <SlidersHorizontal size={16} />
-          Advanced sort
-        </button>
-      </div>
-
-      <AdminTable columns={columns} rows={items} getRowKey={(item) => item.id} />
-
-      <footer className="inventory-footer">
-        <span>Showing 1-{items.length} of {items.length} coffee variants</span>
-        <div>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-        </div>
-      </footer>
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/OrdersPage.jsx">
-import AdminTable from "./AdminTable.jsx";
-import { formatMoney } from "../utils/adminMetrics.js";
-
-export default function OrdersPage({ orders }) {
-  const columns = [
-    { key: "id", label: "Order" },
-    { key: "customer", label: "Customer" },
-    { key: "channel", label: "Channel" },
-    { key: "items", label: "Items" },
-    { key: "total", label: "Total", render: (order) => formatMoney(order.total) },
-    { key: "payment", label: "Payment", render: (order) => <span className="admin-tag">{order.payment}</span> },
-    { key: "fulfillment", label: "Fulfillment", render: (order) => <span className="status">{order.fulfillment}</span> },
-    { key: "createdAt", label: "Created" },
-  ];
-
-  return (
-    <section className="admin-panel inventory-panel">
-      <div className="inventory-toolbar">
-        <div>
-          <h2>Order Queue</h2>
-          <p>Track customer, wholesale, and subscription orders from payment to fulfillment.</p>
-        </div>
-      </div>
-      <AdminTable columns={columns} rows={orders} getRowKey={(order) => order.id} />
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/ReportsPage.jsx">
-import { formatMoney, formatNumber } from "../utils/adminMetrics.js";
-
-export default function ReportsPage({ metrics }) {
-  return (
-    <section className="admin-stats report-grid">
-      {metrics.map((metric) => (
-        <article className="admin-stat" key={metric.label}>
-          <div>
-            <span className="admin-stat-icon">{metric.label.slice(0, 1)}</span>
-            <small>{metric.trend}</small>
-          </div>
-          <p>{metric.label}</p>
-          <strong>{metric.type === "currency" ? formatMoney(metric.value) : formatNumber(metric.value)}</strong>
-        </article>
-      ))}
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/SettingsPage.jsx">
-export default function SettingsPage({ settings }) {
-  return (
-    <section className="admin-panel settings-panel">
-      <div className="inventory-toolbar">
-        <div>
-          <h2>Admin Settings</h2>
-          <p>Configuration values are grouped here so they can later map to real API settings.</p>
-        </div>
-      </div>
-      <div className="settings-list">
-        {settings.map((setting) => (
-          <div className="settings-row" key={setting.key}>
-            <span>{setting.key}</span>
-            <strong>{setting.value}</strong>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/ShipmentFeed.jsx">
-import { Clock, Truck } from "lucide-react";
-
-export default function ShipmentFeed({ shipments }) {
-  return (
-    <aside className="admin-panel shipment-feed">
-      <div className="shipment-heading">
-        <h2>Shipment Feed</h2>
-        <button type="button">Log shipment</button>
-      </div>
-      {shipments.map((shipment) => {
-        const Icon = shipment.status === "Arriving" ? Truck : Clock;
-        return (
-          <div className="shipment-item" key={shipment.id}>
-            <span>
-              <Icon size={18} />
-            </span>
-            <div>
-              <strong>
-                {shipment.title} ({shipment.quantity})
-              </strong>
-              <p>
-                {shipment.status} on {shipment.eta} - {shipment.route}
-              </p>
-            </div>
-          </div>
-        );
-      })}
-    </aside>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/StatsCards.jsx">
-import { AlertTriangle, Flame, Leaf, Truck } from "lucide-react";
-
-const icons = {
-  green: Leaf,
-  roasted: Flame,
-  alerts: AlertTriangle,
-  shipments: Truck,
-};
-
-export default function StatsCards({ stats }) {
-  return (
-    <section className="admin-stats">
-      {stats.map((stat) => {
-        const Icon = icons[stat.id] || Leaf;
-        return (
-          <article className={stat.danger ? "admin-stat danger" : "admin-stat"} key={stat.id}>
-            <div>
-              <span className="admin-stat-icon">
-                <Icon size={21} />
-              </span>
-              <small>{stat.meta}</small>
-            </div>
-            <p>{stat.label}</p>
-            <strong>{stat.value}</strong>
-          </article>
-        );
-      })}
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/components/SuppliersPage.jsx">
-import AdminTable from "./AdminTable.jsx";
-
-export default function SuppliersPage({ suppliers }) {
-  const columns = [
-    { key: "name", label: "Supplier" },
-    { key: "region", label: "Region" },
-    { key: "contact", label: "Contact" },
-    { key: "activeLots", label: "Active lots" },
-    { key: "nextShipment", label: "Next shipment" },
-    { key: "rating", label: "Rating", render: (supplier) => <span className="admin-tag">{supplier.rating}</span> },
-    { key: "status", label: "Status", render: (supplier) => <span className={supplier.status === "Delayed" ? "status low" : "status"}>{supplier.status}</span> },
-  ];
-
-  return (
-    <section className="admin-panel inventory-panel">
-      <div className="inventory-toolbar">
-        <div>
-          <h2>Supplier Directory</h2>
-          <p>Manage farm partners, sourcing contacts, shipment timing, and supplier health.</p>
-        </div>
-      </div>
-      <AdminTable columns={columns} rows={suppliers} getRowKey={(supplier) => supplier.id} />
-    </section>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/admin/data/adminData.js">
-export const adminNavItems = [
-  { id: "dashboard", label: "Dashboard" },
-  { id: "inventory", label: "Inventory" },
-  { id: "orders", label: "Orders" },
-  { id: "suppliers", label: "Suppliers" },
-  { id: "reports", label: "Reports" },
-  { id: "settings", label: "Settings" },
-];
-
-export const inventoryItems = [
-  {
-    id: "inv-001",
-    name: "Ethiopia Yirgacheffe",
-    origin: "Gedeo Zone, Ethiopia",
-    process: "Washed",
-    roastLevel: "Light",
-    type: "Green",
-    stockQty: 420,
-    stockUnit: "kg",
-    reorderPoint: 80,
-    harvestDate: "Oct 2024",
-    freshness: "Harvest lot",
-    supplierId: "sup-001",
-    supplierName: "Organic Estates Ltd.",
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: "inv-002",
-    name: "Colombia Supremo",
-    origin: "Huila, Colombia",
-    process: "Washed",
-    roastLevel: "Medium",
-    type: "Roasted",
-    stockQty: 12,
-    stockUnit: "bags",
-    reorderPoint: 24,
-    roastDate: "2026-05-02",
-    freshness: "3 days left",
-    supplierId: "sup-002",
-    supplierName: "Direct Trade Portal",
-    status: "Low Stock",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: "inv-003",
-    name: "Guatemala Antigua",
-    origin: "Pastores Estate, Guatemala",
-    process: "Honey",
-    roastLevel: "Green",
-    type: "Green",
-    stockQty: 0,
-    stockUnit: "kg",
-    reorderPoint: 60,
-    harvestDate: "Awaiting shipment",
-    freshness: "Awaiting shipment",
-    supplierId: "sup-003",
-    supplierName: "Volcano Sourcing",
-    status: "Out of Stock",
-    image: "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: "inv-004",
-    name: "Da Lat Red Bourbon",
-    origin: "Lam Dong, Vietnam",
-    process: "Natural",
-    roastLevel: "Medium",
-    type: "Roasted",
-    stockQty: 88,
-    stockUnit: "bags",
-    reorderPoint: 36,
-    roastDate: "2026-05-04",
-    freshness: "5 days left",
-    supplierId: "sup-004",
-    supplierName: "Cau Dat Cooperative",
-    status: "In Stock",
-    image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=240&q=80",
-  },
-];
-
-export const orders = [
-  {
-    id: "ORD-1048",
-    customer: "Nguyen Minh Anh",
-    channel: "Website",
-    items: 3,
-    total: 980000,
-    payment: "Paid",
-    fulfillment: "Packing",
-    createdAt: "2026-05-06 09:15",
-  },
-  {
-    id: "ORD-1047",
-    customer: "Tran Bao Coffee Bar",
-    channel: "Wholesale",
-    items: 12,
-    total: 6240000,
-    payment: "Pending",
-    fulfillment: "Awaiting stock",
-    createdAt: "2026-05-05 16:40",
-  },
-  {
-    id: "ORD-1046",
-    customer: "Le Gia Huy",
-    channel: "Subscription",
-    items: 2,
-    total: 560000,
-    payment: "Paid",
-    fulfillment: "Shipped",
-    createdAt: "2026-05-05 11:20",
-  },
-];
-
-export const suppliers = [
-  {
-    id: "sup-001",
-    name: "Organic Estates Ltd.",
-    region: "Gedeo, Ethiopia",
-    contact: "Aster Bekele",
-    activeLots: 2,
-    nextShipment: "2026-05-18",
-    rating: "A",
-    status: "Active",
-  },
-  {
-    id: "sup-002",
-    name: "Direct Trade Portal",
-    region: "Huila, Colombia",
-    contact: "Mateo Ruiz",
-    activeLots: 1,
-    nextShipment: "2026-05-12",
-    rating: "B+",
-    status: "Review",
-  },
-  {
-    id: "sup-003",
-    name: "Volcano Sourcing",
-    region: "Antigua, Guatemala",
-    contact: "Lucia Perez",
-    activeLots: 1,
-    nextShipment: "2026-05-22",
-    rating: "A-",
-    status: "Delayed",
-  },
-  {
-    id: "sup-004",
-    name: "Cau Dat Cooperative",
-    region: "Lam Dong, Vietnam",
-    contact: "Pham Quoc Bao",
-    activeLots: 3,
-    nextShipment: "2026-05-10",
-    rating: "A",
-    status: "Active",
-  },
-];
-
-export const shipments = [
-  {
-    id: "ship-001",
-    title: "Brazil Santos",
-    quantity: "200kg",
-    eta: "2026-05-18",
-    route: "Via Port of Santos",
-    status: "Arriving",
-  },
-  {
-    id: "ship-002",
-    title: "Sumatra Mandheling",
-    quantity: "120kg",
-    eta: "2026-05-22",
-    route: "Pending customs",
-    status: "Pending",
-  },
-  {
-    id: "ship-003",
-    title: "Kenya AA Restock",
-    quantity: "80kg",
-    eta: "2026-05-25",
-    route: "Label created",
-    status: "Scheduled",
-  },
-];
-
-export const reportMetrics = [
-  { label: "Revenue this week", value: 7780000, type: "currency", trend: "+12%" },
-  { label: "Orders", value: orders.length, type: "number", trend: "+3" },
-  { label: "Low stock lots", value: 2, type: "number", trend: "Needs action" },
-  { label: "Supplier delays", value: 1, type: "number", trend: "1 delayed" },
-];
-
-export const settings = [
-  { key: "Store status", value: "Open" },
-  { key: "Default currency", value: "VND" },
-  { key: "Low stock threshold", value: "Use item reorder point" },
-  { key: "Admin role", value: "Inventory Manager" },
-];
-</file>
-
-<file path="coffee-platform-frontend/src/admin/utils/adminMetrics.js">
-export function formatMoney(value) {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
-export function formatNumber(value) {
-  return new Intl.NumberFormat("vi-VN").format(value);
-}
-
-export function buildStats({ inventoryItems, shipments, orders }) {
-  const greenStock = inventoryItems
-    .filter((item) => item.type === "Green")
-    .reduce((sum, item) => sum + item.stockQty, 0);
-  const roastedStock = inventoryItems
-    .filter((item) => item.type === "Roasted")
-    .reduce((sum, item) => sum + item.stockQty, 0);
-  const lowStock = inventoryItems.filter((item) => item.stockQty <= item.reorderPoint).length;
-  const pendingOrders = orders.filter((order) => order.fulfillment !== "Shipped").length;
-
-  return [
-    { id: "green", label: "Total Green Bean Stock", value: `${formatNumber(greenStock)} kg`, meta: "+4.2%" },
-    { id: "roasted", label: "Roasted Inventory", value: `${formatNumber(roastedStock)} bags`, meta: "Active" },
-    { id: "alerts", label: "Low Stock Alerts", value: `${formatNumber(lowStock)} lots`, meta: "Critical", danger: true },
-    { id: "shipments", label: "Upcoming Shipments", value: `${formatNumber(shipments.length)} expected`, meta: `${pendingOrders} orders open` },
-  ];
-}
-</file>
-
-<file path="coffee-platform-frontend/src/customer/CustomerApp.jsx">
-import {
-  ArrowLeft,
-  ArrowRight,
-  Award,
-  Coffee,
-  Heart,
-  Leaf,
-  Minus,
-  Plus,
-  ShoppingBag,
-  Sparkles,
-  Star,
-  Trash2,
-  User,
-} from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-
-const products = [
-  {
-    id: "dalat-red-bourbon",
-    name: "Dalat Red Bourbon",
-    origin: "Lâm Đồng, Việt Nam",
-    price: 280000,
-    roast: "Rang vừa",
-    process: "Sơ chế ướt",
-    notes: ["Ca cao", "Vỏ cam", "Đường nâu"],
-    brew: ["Pour over", "Phin", "French press"],
-    image:
-      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "Lô cà phê vùng cao có vị sạch, hậu ngọt tròn và dư vị sô cô la êm.",
-    badge: "Từ nông trại",
-  },
-  {
-    id: "ethiopia-yirgacheffe",
-    name: "Ethiopia Yirgacheffe",
-    origin: "Gedeo, Ethiopia",
-    price: 320000,
-    roast: "Rang nhẹ",
-    process: "Sơ chế ướt",
-    notes: ["Hoa nhài", "Vỏ chanh", "Mật ong"],
-    brew: ["Pour over", "Aeropress"],
-    image:
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "Cà phê single origin tươi sáng, hương hoa rõ nét và hậu vị trong trẻo.",
-    badge: "Phiên bản giới hạn",
-  },
-  {
-    id: "sumatra-mandheling",
-    name: "Sumatra Mandheling",
-    origin: "Aceh, Indonesia",
-    price: 300000,
-    roast: "Rang đậm",
-    process: "Giling basah",
-    notes: ["Gỗ tuyết tùng", "Gia vị", "Mật mía"],
-    brew: ["Espresso", "French press", "Moka pot"],
-    image:
-      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "Cà phê dày vị, ít chua, hợp với người thích body đậm, cay nhẹ và hậu kéo dài.",
-    badge: "Nhà rang chọn",
-  },
-];
-
-const quizQuestions = [
-  {
-    title: "Bạn thường pha cà phê bằng cách nào?",
-    options: ["Pour over", "Phin", "Espresso", "French press"],
-  },
-  {
-    title: "Bạn thích gu hương vị nào?",
-    options: ["Sáng vị và hương hoa", "Vị sô cô la", "Đậm và mộc", "Ngọt cân bằng"],
-  },
-  {
-    title: "Bạn muốn ly cà phê mạnh đến mức nào?",
-    options: ["Nhẹ nhàng", "Vừa phải", "Đậm mạnh"],
-  },
-];
-
-function money(value) {
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
-function useRouter() {
-  const getRoute = () => window.location.hash.replace("#", "") || "/";
-  const [route, setRoute] = useState(getRoute);
-
-  useEffect(() => {
-    const onHashChange = () => setRoute(getRoute());
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
-  const navigate = (nextRoute) => {
-    window.location.hash = nextRoute;
-    setRoute(nextRoute);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  return { route, navigate };
-}
-
-export default function App() {
-  const { route, navigate } = useRouter();
-  const [cart, setCart] = useState([
-    { productId: "dalat-red-bourbon", qty: 1, subscription: true },
-  ]);
-
-  const activeProduct =
-    products.find((product) => route === `/product/${product.id}`) || products[0];
-
-  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
-
-  const addToCart = (productId) => {
-    setCart((items) => {
-      const existing = items.find((item) => item.productId === productId);
-      if (existing) {
-        return items.map((item) =>
-          item.productId === productId ? { ...item, qty: item.qty + 1 } : item
-        );
-      }
-      return [...items, { productId, qty: 1, subscription: false }];
-    });
-    navigate("/cart");
-  };
-
-  return (
-    <div className="app-shell">
-      <Header route={route} navigate={navigate} cartCount={cartCount} />
-      {route === "/" && <Home navigate={navigate} addToCart={addToCart} />}
-      {route.startsWith("/product/") && (
-        <ProductDetail product={activeProduct} addToCart={addToCart} navigate={navigate} />
-      )}
-      {route === "/quiz" && <FlavorQuiz navigate={navigate} addToCart={addToCart} />}
-      {route === "/cart" && <Cart cart={cart} setCart={setCart} navigate={navigate} />}
-      <Footer navigate={navigate} />
-    </div>
-  );
-}
-
-function Header({ route, navigate, cartCount }) {
-  const links = [
-    { label: "Cửa hàng", route: "/" },
-    { label: "Tìm gu", route: "/quiz" },
-    { label: "Cà phê nổi bật", route: "/product/dalat-red-bourbon" },
-    { label: "Giỏ hàng", route: "/cart" },
-  ];
-
-  return (
-    <header className="site-header">
-      <button className="brand" onClick={() => navigate("/")}>
-        Từ Vườn Đến Ly
-      </button>
-      <nav className="nav-links" aria-label="Điều hướng chính">
-        {links.map((link) => (
-          <button
-            key={link.route}
-            className={route === link.route ? "active" : ""}
-            onClick={() => navigate(link.route)}
-          >
-            {link.label}
-          </button>
-        ))}
-      </nav>
-      <div className="header-actions">
-        <button className="icon-button" onClick={() => navigate("/cart")} aria-label="Mở giỏ hàng">
-          <ShoppingBag size={20} />
-          {cartCount > 0 && <span>{cartCount}</span>}
-        </button>
-        <button className="icon-button" aria-label="Tài khoản">
-          <User size={20} />
-        </button>
-      </div>
-    </header>
-  );
-}
-
-function Home({ navigate, addToCart }) {
-  return (
-    <main>
-      <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">Nghệ thuật pha cà phê</p>
-          <h1>Từ Đất Lành Đến Tách Cà Phê</h1>
-          <p>
-            Nền tảng cà phê kết nối trực tiếp với nông trại, giúp bạn khám phá
-            vùng trồng, so sánh hương vị và chọn đúng gu cho mỗi buổi sáng.
-          </p>
-          <div className="button-row">
-            <button className="primary-button" onClick={() => document.getElementById("shop")?.scrollIntoView()}>
-              Khám phá vùng trồng
-            </button>
-            <button className="secondary-button" onClick={() => navigate("/quiz")}>
-              Tìm gu cà phê
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="shop">
-        <div className="section-heading">
-          <p className="eyebrow">Bộ sưu tập theo mùa</p>
-          <h2>Chọn Gu Cà Phê Của Bạn</h2>
-          <p>Mua theo vùng trồng, mức rang, phương pháp sơ chế và những nốt hương bạn yêu thích.</p>
-        </div>
-        <div className="product-grid">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onView={() => navigate(`/product/${product.id}`)}
-              onAdd={() => addToCart(product.id)}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="story-band">
-        <div>
-          <p className="eyebrow">Nguồn gốc minh bạch</p>
-          <h2>Theo dấu hành trình từ nông trại đến tách cà phê.</h2>
-        </div>
-        <div className="journey-grid">
-          <Metric icon={<Leaf />} label="Nguồn gốc" value="3 vùng trồng" />
-          <Metric icon={<Award />} label="Chất lượng" value="Lô Q-grade" />
-          <Metric icon={<Coffee />} label="Thủ công" value="Rang mỗi tuần" />
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function ProductCard({ product, onView, onAdd }) {
-  return (
-    <article className="product-card">
-      <img src={product.image} alt={`Cà phê ${product.name}`} />
-      <div className="product-card-body">
-        <div className="card-topline">
-          <span>{product.badge}</span>
-          <strong>{money(product.price)}</strong>
-        </div>
-        <h3>{product.name}</h3>
-        <p>{product.origin}</p>
-        <div className="chip-row">
-          {product.notes.map((note) => (
-            <span key={note}>{note}</span>
-          ))}
-        </div>
-        <div className="card-actions">
-          <button className="secondary-button compact" onClick={onView}>
-            Chi tiết
-          </button>
-          <button className="primary-button compact" onClick={onAdd}>
-            Thêm
-          </button>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function ProductDetail({ product, addToCart, navigate }) {
-  return (
-    <main className="detail-page">
-      <button className="back-button" onClick={() => navigate("/")}>
-        <ArrowLeft size={18} /> Về cửa hàng
-      </button>
-      <section className="product-detail">
-        <div className="gallery">
-          <img src={product.image} alt={`Gói cà phê ${product.name}`} />
-        </div>
-        <div className="detail-copy">
-          <div className="badge-line">
-            <span>{product.badge}</span>
-            <span>{product.process}</span>
-          </div>
-          <h1>{product.name}</h1>
-          <p className="origin">{product.origin}</p>
-          <p>{product.story}</p>
-          <div className="detail-stats">
-            <Metric icon={<Star />} label="Mức rang" value={product.roast} />
-            <Metric icon={<Sparkles />} label="Sơ chế" value={product.process} />
-            <Metric icon={<Coffee />} label="Giá" value={money(product.price)} />
-          </div>
-          <div className="detail-panel">
-            <h3>Hồ sơ hương vị</h3>
-            <div className="chip-row">
-              {product.notes.map((note) => (
-                <span key={note}>{note}</span>
-              ))}
-            </div>
-          </div>
-          <div className="detail-panel">
-            <h3>Hợp để pha</h3>
-            <div className="chip-row">
-              {product.brew.map((method) => (
-                <span key={method}>{method}</span>
-              ))}
-            </div>
-          </div>
-          <button className="primary-button wide" onClick={() => addToCart(product.id)}>
-            Thêm vào giỏ - {money(product.price)}
-          </button>
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function FlavorQuiz({ navigate, addToCart }) {
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState([]);
-
-  const recommendation = useMemo(() => {
-    if (answers.includes("Sáng vị và hương hoa") || answers.includes("Nhẹ nhàng")) {
-      return products[1];
-    }
-    if (answers.includes("Đậm và mộc") || answers.includes("Đậm mạnh")) {
-      return products[2];
-    }
-    return products[0];
-  }, [answers]);
-
-  const choose = (answer) => {
-    const nextAnswers = [...answers.slice(0, step), answer];
-    setAnswers(nextAnswers);
-    if (step < quizQuestions.length - 1) {
-      setStep(step + 1);
-    }
-  };
-
-  const isDone = answers.length === quizQuestions.length;
-  const current = quizQuestions[step];
-
-  return (
-    <main className="quiz-page">
-      <section className="section-heading centered">
-        <p className="eyebrow">Gợi ý theo gu</p>
-        <h1>Tìm Gu Cà Phê</h1>
-        <p>Trả lời ba câu hỏi để nhận gợi ý cà phê phù hợp với cách bạn uống.</p>
-      </section>
-
-      {!isDone ? (
-        <section className="quiz-card">
-          <div className="progress-row">
-            <span>Bước {step + 1} / {quizQuestions.length}</span>
-            <span>{Math.round(((step + 1) / quizQuestions.length) * 100)}%</span>
-          </div>
-          <div className="progress-track">
-            <div style={{ width: `${((step + 1) / quizQuestions.length) * 100}%` }} />
-          </div>
-          <h2>{current.title}</h2>
-          <div className="quiz-options">
-            {current.options.map((option) => (
-              <button key={option} onClick={() => choose(option)}>
-                <Coffee size={22} />
-                {option}
-              </button>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <section className="result-card">
-          <div>
-            <p className="eyebrow">Gợi ý phù hợp</p>
-            <h2>{recommendation.name}</h2>
-            <p>{recommendation.story}</p>
-            <div className="chip-row">
-              {recommendation.notes.map((note) => (
-                <span key={note}>{note}</span>
-              ))}
-            </div>
-            <div className="button-row">
-              <button className="primary-button" onClick={() => addToCart(recommendation.id)}>
-                Thêm gợi ý
-              </button>
-              <button className="secondary-button" onClick={() => navigate(`/product/${recommendation.id}`)}>
-                Xem chi tiết
-              </button>
-            </div>
-          </div>
-          <img src={recommendation.image} alt={recommendation.name} />
-        </section>
-      )}
-    </main>
-  );
-}
-
-function Cart({ cart, setCart, navigate }) {
-  const items = cart
-    .map((item) => ({
-      ...item,
-      product: products.find((product) => product.id === item.productId),
-    }))
-    .filter((item) => item.product);
-
-  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.qty, 0);
-  const discount = items.some((item) => item.subscription) ? subtotal * 0.15 : 0;
-  const shipping = items.length ? 30000 : 0;
-  const total = subtotal - discount + shipping;
-
-  const updateQty = (productId, delta) => {
-    setCart((current) =>
-      current
-        .map((item) =>
-          item.productId === productId ? { ...item, qty: Math.max(0, item.qty + delta) } : item
-        )
-        .filter((item) => item.qty > 0)
-    );
-  };
-
-  const remove = (productId) => {
-    setCart((current) => current.filter((item) => item.productId !== productId));
-  };
-
-  const toggleSubscription = (productId) => {
-    setCart((current) =>
-      current.map((item) =>
-        item.productId === productId ? { ...item, subscription: !item.subscription } : item
-      )
-    );
-  };
-
-  return (
-    <main className="cart-page">
-      <section className="cart-items">
-        <div className="section-heading">
-          <p className="eyebrow">Thanh toán</p>
-          <h1>Giỏ Cà Phê Của Bạn</h1>
-        </div>
-        {items.length === 0 ? (
-          <div className="empty-state">
-            <ShoppingBag size={42} />
-            <h2>Giỏ hàng đang trống</h2>
-            <button className="primary-button" onClick={() => navigate("/")}>
-              Xem cà phê
-            </button>
-          </div>
-        ) : (
-          items.map((item) => (
-            <article className="cart-item" key={item.productId}>
-              <img src={item.product.image} alt={item.product.name} />
-              <div>
-                <div className="cart-title-row">
-                  <h3>{item.product.name}</h3>
-                  <strong>{money(item.product.price * item.qty)}</strong>
-                </div>
-                <p>{item.product.notes.join(", ")}</p>
-                <label className="subscription-toggle">
-                  <input
-                    type="checkbox"
-                    checked={item.subscription}
-                    onChange={() => toggleSubscription(item.productId)}
-                  />
-                  Đăng ký định kỳ và tiết kiệm 15%
-                </label>
-                <div className="quantity-row">
-                  <button onClick={() => updateQty(item.productId, -1)} aria-label="Giảm số lượng">
-                    <Minus size={16} />
-                  </button>
-                  <span>{item.qty}</span>
-                  <button onClick={() => updateQty(item.productId, 1)} aria-label="Tăng số lượng">
-                    <Plus size={16} />
-                  </button>
-                  <button className="remove-button" onClick={() => remove(item.productId)}>
-                    <Trash2 size={16} /> Xóa
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))
-        )}
-      </section>
-
-      <aside className="summary">
-        <h2>Tóm tắt đơn hàng</h2>
-        <SummaryLine label="Tạm tính" value={money(subtotal)} />
-        <SummaryLine label="Tiết kiệm định kỳ" value={`-${money(discount)}`} />
-        <SummaryLine label="Phí giao hàng" value={money(shipping)} />
-        <div className="summary-total">
-          <span>Tổng cộng</span>
-          <strong>{money(total)}</strong>
-        </div>
-        <button className="primary-button wide" disabled={items.length === 0}>
-          Tiếp tục thanh toán
-        </button>
-      </aside>
-    </main>
-  );
-}
-
-function Metric({ icon, label, value }) {
-  return (
-    <div className="metric">
-      {icon}
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
-function SummaryLine({ label, value }) {
-  return (
-    <div className="summary-line">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
-function Footer({ navigate }) {
-  return (
-    <footer className="site-footer">
-      <div>
-        <strong>Từ Vườn Đến Ly</strong>
-        <p>Trải nghiệm khám phá cà phê đặc sản, câu chuyện sản phẩm, bài tìm gu và giỏ hàng trong một ứng dụng React.</p>
-      </div>
-      <button onClick={() => navigate("/")}>
-        Về cửa hàng <ArrowRight size={16} />
-      </button>
-    </footer>
-  );
-}
-</file>
-
-<file path="coffee-platform-frontend/src/main.jsx">
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./styles.css";
-
-createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-</file>
-
 <file path="FarmToCup.API/appsettings.Development.json">
 {
   "Logging": {
@@ -2841,91 +5196,195 @@ createRoot(document.getElementById("root")).render(
 }
 </file>
 
-<file path="FarmToCup.API/Controllers/SanPhamController.cs">
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using FarmToCup.API.DTOs.SanPham;
-using FarmToCup.API.Repository;
+<file path="FarmToCup.API/Controllers/AdminController.cs">
 using FarmToCup.API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FarmToCup.API.Controllers
 {
-    [Route("api/san-pham")]
+    [Route("api/admin")]
     [ApiController]
-    public class SanPhamController : ControllerBase
+    public class AdminController : ControllerBase
     {
-        private readonly IRepository<SanPham> _sanPhamRepo;
-        public SanPhamController(IRepository<SanPham> sanPhamRepo)
-        {
-            _sanPhamRepo = sanPhamRepo;
-        }
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var sanPhams = await _sanPhamRepo.GetAllAsync();
-            return Ok(sanPhams);
-        }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
-            return Ok(sanPham);
-        }
-        [HttpPost]
-        public async Task<IActionResult> Create(TaoSanPhamDto taoSanPhamDto)
-        {
-            var sanPham = new SanPham
-            {
-                TenSanPham = taoSanPhamDto.TenSanPham,
-                XuatXu = taoSanPhamDto.XuatXu,
-                Gia = taoSanPhamDto.Gia,
-                MucRang = taoSanPhamDto.MucRang,
-                QuyTrinhCheBien = taoSanPhamDto.QuyTrinhCheBien,
-                MoTa = taoSanPhamDto.MoTa,
-                HinhAnh = taoSanPhamDto.HinhAnh,
-                NhanHieuPhu = taoSanPhamDto.NhanHieuPhu,
-                SoLuongTon = taoSanPhamDto.SoLuongTon,
-                TrangThai = true,
-                NgayTao = DateTime.UtcNow
+        private readonly FarmToCupContext _context;
 
+        public AdminController(FarmToCupContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet("overview")]
+        public async Task<IActionResult> GetOverview()
+        {
+            var products = await _context.SanPhams
+                .Include(product => product.LoHangs)
+                    .ThenInclude(lot => lot.MaNhaCungCapNavigation)
+                .Where(product => product.TrangThai == true || product.TrangThai == null)
+                .OrderByDescending(product => product.NgayTao)
+                .ToListAsync();
+
+            var orders = await _context.DonHangs
+                .Include(order => order.MaNguoiDungNavigation)
+                .Include(order => order.ChiTietDonHangs)
+                .Include(order => order.ThanhToans)
+                .Include(order => order.VanChuyens)
+                .OrderByDescending(order => order.NgayDat)
+                .ToListAsync();
+
+            var suppliers = await _context.NhaCungCaps
+                .Include(supplier => supplier.LoHangs)
+                .Include(supplier => supplier.PhieuNhapKhos)
+                .OrderBy(supplier => supplier.TenNhaCungCap)
+                .ToListAsync();
+
+            var purchaseReceipts = await _context.PhieuNhapKhos
+                .Include(receipt => receipt.MaNhaCungCapNavigation)
+                .Include(receipt => receipt.ChiTietPhieuNhapKhos)
+                    .ThenInclude(detail => detail.MaSanPhamNavigation)
+                .OrderByDescending(receipt => receipt.NgayNhap)
+                .Take(6)
+                .ToListAsync();
+
+            var inventoryItems = products.Select(product =>
+            {
+                var latestLot = product.LoHangs
+                    .OrderByDescending(lot => lot.NgayNhap)
+                    .FirstOrDefault();
+                var stockQty = product.SoLuongTon ?? 0;
+                var reorderPoint = Math.Max(10, (int)Math.Ceiling(stockQty * 0.2));
+
+                return new
+                {
+                    id = $"prd-{product.MaSanPham}",
+                    name = product.TenSanPham,
+                    origin = product.XuatXu ?? "Chua cap nhat",
+                    process = product.QuyTrinhCheBien ?? "Chua cap nhat",
+                    roastLevel = product.MucRang ?? "Chua cap nhat",
+                    type = IsGreenCoffee(product.MucRang) ? "Green" : "Roasted",
+                    stockQty,
+                    stockUnit = "bags",
+                    reorderPoint,
+                    harvestDate = FormatDate(latestLot?.NgaySanXuat),
+                    roastDate = FormatDate(product.NgayTao),
+                    freshness = latestLot?.HanSuDung != null
+                        ? $"HSD {FormatDate(latestLot.HanSuDung)}"
+                        : "Dang cap nhat",
+                    supplierId = latestLot?.MaNhaCungCap != null ? $"sup-{latestLot.MaNhaCungCap}" : "",
+                    supplierName = latestLot?.MaNhaCungCapNavigation?.TenNhaCungCap ?? "Chua gan nha cung cap",
+                    status = stockQty <= 0 ? "Out of Stock" : stockQty <= reorderPoint ? "Low Stock" : "In Stock",
+                    image = product.HinhAnh
+                };
+            });
+
+            var orderRows = orders.Select(order =>
+            {
+                var latestPayment = order.ThanhToans
+                    .OrderByDescending(payment => payment.NgayThanhToan)
+                    .FirstOrDefault();
+                var latestShipping = order.VanChuyens
+                    .OrderByDescending(shipping => shipping.NgayGui)
+                    .FirstOrDefault();
+
+                return new
+                {
+                    id = $"ORD-{order.MaDonHang}",
+                    customer = order.MaNguoiDungNavigation.HoTen,
+                    channel = order.ChiTietDonHangs.Any(detail => detail.DangKyDinhKy == true)
+                        ? "Subscription"
+                        : "Website",
+                    items = order.ChiTietDonHangs.Sum(detail => detail.SoLuong),
+                    total = order.ThanhTien,
+                    payment = latestPayment?.TrangThaiThanhToan ?? "Pending",
+                    fulfillment = latestShipping?.TrangThaiVanChuyen ?? order.TrangThaiDonHang ?? "Pending",
+                    createdAt = FormatDateTime(order.NgayDat)
+                };
+            });
+
+            var supplierRows = suppliers.Select(supplier =>
+            {
+                var nextReceipt = supplier.PhieuNhapKhos
+                    .Where(receipt => receipt.NgayNhap != null)
+                    .OrderByDescending(receipt => receipt.NgayNhap)
+                    .FirstOrDefault();
+
+                return new
+                {
+                    id = $"sup-{supplier.MaNhaCungCap}",
+                    name = supplier.TenNhaCungCap,
+                    region = supplier.KhuVuc ?? supplier.DiaChi ?? "Chua cap nhat",
+                    contact = supplier.NguoiLienHe ?? supplier.Email ?? supplier.SoDienThoai ?? "Chua cap nhat",
+                    activeLots = supplier.LoHangs.Count(lot => lot.TrangThai != "Da huy"),
+                    nextShipment = FormatDate(nextReceipt?.NgayNhap),
+                    rating = supplier.XepHang ?? "N/A",
+                    status = supplier.TrangThai ?? "Active"
+                };
+            });
+
+            var shipments = purchaseReceipts.Select(receipt =>
+            {
+                var firstDetail = receipt.ChiTietPhieuNhapKhos.FirstOrDefault();
+                var quantity = receipt.ChiTietPhieuNhapKhos.Sum(detail => detail.SoLuong);
+                var unit = firstDetail?.DonViTinh ?? "units";
+
+                return new
+                {
+                    id = $"ship-{receipt.MaPhieuNhap}",
+                    title = firstDetail?.MaSanPhamNavigation.TenSanPham
+                        ?? receipt.MaNhaCungCapNavigation?.TenNhaCungCap
+                        ?? "Phieu nhap kho",
+                    quantity = $"{quantity:0.##} {unit}",
+                    eta = FormatDate(receipt.NgayNhap),
+                    route = receipt.MaNhaCungCapNavigation?.TenNhaCungCap ?? "Kho noi bo",
+                    status = receipt.TrangThai ?? "Scheduled"
+                };
+            });
+
+            var revenue = orders
+                .Where(order => order.NgayDat >= DateTime.Today.AddDays(-7))
+                .Sum(order => order.ThanhTien);
+            var lowStockCount = products.Count(product => (product.SoLuongTon ?? 0) <= Math.Max(10, (int)Math.Ceiling((product.SoLuongTon ?? 0) * 0.2)));
+            var delayedSuppliers = suppliers.Count(supplier => supplier.TrangThai == "Delayed" || supplier.TrangThai == "Cham");
+
+            var reportMetrics = new[]
+            {
+                new { label = "Revenue this week", value = revenue, type = "currency", trend = "DB" },
+                new { label = "Orders", value = (decimal)orders.Count, type = "number", trend = "DB" },
+                new { label = "Low stock lots", value = (decimal)lowStockCount, type = "number", trend = "Needs action" },
+                new { label = "Supplier delays", value = (decimal)delayedSuppliers, type = "number", trend = $"{delayedSuppliers} delayed" }
             };
 
-
-
-            var createdSanPham = await _sanPhamRepo.AddAsync(sanPham);
-            return Ok(sanPham);
+            return Ok(new
+            {
+                inventoryItems,
+                orders = orderRows,
+                suppliers = supplierRows,
+                shipments,
+                reportMetrics
+            });
         }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, TaoSanPhamDto taoSanPhamDto)
-        {
-            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
-            sanPham.TenSanPham = taoSanPhamDto.TenSanPham;
-            sanPham.XuatXu = taoSanPhamDto.XuatXu;
-            sanPham.Gia = taoSanPhamDto.Gia;
-            sanPham.MucRang = taoSanPhamDto.MucRang;
-            sanPham.QuyTrinhCheBien = taoSanPhamDto.QuyTrinhCheBien;
-            sanPham.MoTa = taoSanPhamDto.MoTa;
-            sanPham.HinhAnh = taoSanPhamDto.HinhAnh;
-            sanPham.NhanHieuPhu = taoSanPhamDto.NhanHieuPhu;
-            sanPham.SoLuongTon = taoSanPhamDto.SoLuongTon;
-            await _sanPhamRepo.UpdateAsync(sanPham);
-            return Ok(sanPham);
-        }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
-            if (sanPham == null) return NotFound();
-            sanPham.TrangThai = false;
-            await _sanPhamRepo.UpdateAsync(sanPham);
-            return Ok("da an san pham");
-       
 
+        private static bool IsGreenCoffee(string? roastLevel)
+        {
+            return roastLevel?.Contains("green", StringComparison.OrdinalIgnoreCase) == true
+                || roastLevel?.Contains("xanh", StringComparison.OrdinalIgnoreCase) == true;
+        }
+
+        private static string FormatDate(DateOnly? value)
+        {
+            return value?.ToString("yyyy-MM-dd") ?? "Chua cap nhat";
+        }
+
+        private static string FormatDate(DateTime? value)
+        {
+            return value?.ToString("yyyy-MM-dd") ?? "Chua cap nhat";
+        }
+
+        private static string FormatDateTime(DateTime? value)
+        {
+            return value?.ToString("yyyy-MM-dd HH:mm") ?? "Chua cap nhat";
         }
     }
-            
 }
 </file>
 
@@ -2961,15 +5420,6 @@ namespace FarmToCup.API.Controllers
             })
             .ToArray();
         }
-    }
-}
-</file>
-
-<file path="FarmToCup.API/DTOs/SanPham/CapNhatSanPhamDto.cs">
-namespace FarmToCup.API.DTOs.SanPham
-{
-    public class CapNhatSanPhamDto
-    {
     }
 }
 </file>
@@ -4268,6 +6718,35 @@ namespace FarmToCup.API.Repository
 }
 </file>
 
+<file path="FarmToCup.API/Repository/ISanPhamRepository.cs">
+using FarmToCup.API.Models;
+namespace FarmToCup.API.Repository
+{
+    public interface ISanPhamRepository
+    {
+        Task<object> GetAllAsync(
+            string? keyword,
+            string? xuatXu,
+            string? mucRang,
+            string? quyTrinhCheBien,
+            string? huongVi,
+            string? phuongPhapPha,
+            decimal? minPrice,
+            decimal? maxPrice,
+            string? sortBy,
+            bool desc,
+            int page,
+            int pageSize);
+
+        Task<SanPham?> GetByIdAsync(int id);
+        Task<SanPham> AddAsync(SanPham sanPham);
+        Task<bool> UpdateAsync(SanPham sanPham);
+        Task<bool> SoftDeleteAsync(int id);
+
+    }
+}
+</file>
+
 <file path="FarmToCup.API/Repository/Repository.cs">
 using Microsoft.EntityFrameworkCore;
 using FarmToCup.API.Models;
@@ -4378,6 +6857,158 @@ namespace FarmToCup.API.Repository
 }
 </file>
 
+<file path="FarmToCup.API/Repository/SanPhamRepository.cs">
+using FarmToCup.API.Models;
+using Microsoft.EntityFrameworkCore;
+namespace FarmToCup.API.Repository
+{
+    public class SanPhamRepository : Repository<SanPham>, ISanPhamRepository
+    {
+        private readonly FarmToCupContext _context;
+
+        public SanPhamRepository(FarmToCupContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        public async Task<object> GetAllAsync(
+            string? keyword,
+            string? xuatXu,
+            string? mucRang,
+            string? quyTrinhCheBien,
+            string? huongVi,
+            string? phuongPhapPha,
+            decimal? minPrice,
+            decimal? maxPrice,
+            string? sortBy,
+            bool desc,
+            int page,
+            int pageSize)
+        {
+            if (page <= 0) page = 1;
+            if (pageSize <= 0) pageSize = 12;
+
+            var query = _context.SanPhams
+                .Include(x => x.MaHuongVis)
+                .Include(x => x.MaPhuongPhaps)
+                .Where(x => x.TrangThai == true || x.TrangThai == null)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+                query = query.Where(x => x.TenSanPham.Contains(keyword));
+
+            if (!string.IsNullOrWhiteSpace(xuatXu))
+                query = query.Where(x => x.XuatXu != null && x.XuatXu.Contains(xuatXu));
+
+            if (!string.IsNullOrWhiteSpace(mucRang))
+                query = query.Where(x => x.MucRang != null && x.MucRang.Contains(mucRang));
+
+            if (!string.IsNullOrWhiteSpace(quyTrinhCheBien))
+                query = query.Where(x => x.QuyTrinhCheBien != null && x.QuyTrinhCheBien.Contains(quyTrinhCheBien));
+
+            if (!string.IsNullOrWhiteSpace(huongVi))
+                query = query.Where(x => x.MaHuongVis.Any(hv => hv.TenHuongVi.Contains(huongVi)));
+
+            if (!string.IsNullOrWhiteSpace(phuongPhapPha))
+                query = query.Where(x => x.MaPhuongPhaps.Any(pp => pp.TenPhuongPhap.Contains(phuongPhapPha)));
+
+            if (minPrice.HasValue)
+                query = query.Where(x => x.Gia >= minPrice.Value);
+
+            if (maxPrice.HasValue)
+                query = query.Where(x => x.Gia <= maxPrice.Value);
+
+            query = sortBy?.ToLower() switch
+            {
+                "price" => desc ? query.OrderByDescending(x => x.Gia) : query.OrderBy(x => x.Gia),
+                "name" => desc ? query.OrderByDescending(x => x.TenSanPham) : query.OrderBy(x => x.TenSanPham),
+                "stock" => desc ? query.OrderByDescending(x => x.SoLuongTon) : query.OrderBy(x => x.SoLuongTon),
+                _ => desc ? query.OrderByDescending(x => x.NgayTao) : query.OrderBy(x => x.NgayTao)
+            };
+
+            var totalItems = await query.CountAsync();
+
+            var data = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(x => new
+                {
+                    x.MaSanPham,
+                    x.TenSanPham,
+                    x.XuatXu,
+                    x.Gia,
+                    x.MucRang,
+                    x.QuyTrinhCheBien,
+                    x.MoTa,
+                    x.HinhAnh,
+                    x.NhanHieuPhu,
+                    x.SoLuongTon,
+                    x.TrangThai,
+                    x.NgayTao,
+                    HuongVis = x.MaHuongVis.Select(hv => new
+                    {
+                        hv.MaHuongVi,
+                        hv.TenHuongVi
+                    }),
+                    PhuongPhapPhas = x.MaPhuongPhaps.Select(pp => new
+                    {
+                        pp.MaPhuongPhap,
+                        pp.TenPhuongPhap
+                    })
+                })
+                .ToListAsync();
+
+            return new
+            {
+                page,
+                pageSize,
+                totalItems,
+                totalPages = (int)Math.Ceiling((double)totalItems / pageSize),
+                data
+            };
+        }
+
+        public async Task<SanPham?> GetByIdAsync(int id)
+        {
+            return await _context.SanPhams
+                .Include(x => x.MaHuongVis)
+                .Include(x => x.MaPhuongPhaps)
+                .FirstOrDefaultAsync(x =>
+                    x.MaSanPham == id &&
+                    (x.TrangThai == true || x.TrangThai == null));
+        }
+
+        public async Task<SanPham> AddAsync(SanPham sanPham)
+        {
+            await _context.SanPhams.AddAsync(sanPham);
+            await _context.SaveChangesAsync();
+            return sanPham;
+        }
+
+        public async Task<bool> UpdateAsync(SanPham sanPham)
+        {
+            _context.SanPhams.Update(sanPham);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> SoftDeleteAsync(int id)
+        {
+            var sanPham = await _context.SanPhams.FindAsync(id);
+
+            if (sanPham == null)
+                return false;
+
+            sanPham.TrangThai = false;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+    }
+
+}
+</file>
+
 <file path="FarmToCup.API/WeatherForecast.cs">
 namespace FarmToCup.API
 {
@@ -4403,1332 +7034,29 @@ bin/
 *.user
 </file>
 
-<file path="coffee-platform-frontend/src/App.jsx">
-import AdminApp from "./admin/AdminApp.jsx";
-import CustomerApp from "./customer/CustomerApp.jsx";
-import { useEffect, useState } from "react";
-
-function getRoute() {
-  return window.location.hash.replace("#", "") || "/";
-}
-
-export default function App() {
-  const [route, setRoute] = useState(getRoute);
-
-  useEffect(() => {
-    const onHashChange = () => setRoute(getRoute());
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
-  if (route.startsWith("/admin")) {
-    return <AdminApp />;
-  }
-
-  return <CustomerApp />;
-}
-</file>
-
-<file path="coffee-platform-frontend/src/styles.css">
-:root {
-  color: #1c1c18;
-  background: #fcf9f3;
-  font-family: "Work Sans", Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  --ink: #1c1c18;
-  --muted: #62564e;
-  --line: #d8cbc2;
-  --surface: #fcf9f3;
-  --surface-low: #f4efe7;
-  --surface-high: #ffffff;
-  --primary: #26170c;
-  --secondary: #496455;
-  --accent: #b5924c;
-  --danger: #a13025;
-  --radius: 8px;
-  --shadow: 0 18px 50px rgba(61, 43, 31, 0.12);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  background: var(--surface);
-}
-
-button,
-input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-  color: var(--primary);
-  font-family: "Noto Serif", Georgia, serif;
-  line-height: 1.08;
-  letter-spacing: 0;
-}
-
-p {
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-.app-shell {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-  min-height: 76px;
-  padding: 0 32px;
-  border-bottom: 1px solid rgba(216, 203, 194, 0.7);
-  background: rgba(252, 249, 243, 0.92);
-  backdrop-filter: blur(14px);
-}
-
-.brand {
-  border: 0;
-  background: transparent;
-  color: var(--primary);
-  font-family: "Noto Serif", Georgia, serif;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.nav-links button,
-.site-footer button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 42px;
-  border: 0;
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--muted);
-  padding: 0 14px;
-  font-weight: 700;
-}
-
-.nav-links button.active,
-.nav-links button:hover {
-  background: var(--primary);
-  color: #fff;
-}
-
-.header-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.icon-button {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface-high);
-  color: var(--primary);
-}
-
-.icon-button span {
-  position: absolute;
-  top: -7px;
-  right: -7px;
-  display: grid;
-  place-items: center;
-  min-width: 21px;
-  height: 21px;
-  border-radius: 999px;
-  background: var(--secondary);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.hero {
-  min-height: calc(100vh - 76px);
-  display: flex;
-  align-items: center;
-  padding: 80px 32px;
-  background:
-    linear-gradient(90deg, rgba(38, 23, 12, 0.78), rgba(38, 23, 12, 0.28)),
-    url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80")
-      center/cover;
-}
-
-.hero-copy {
-  width: min(680px, 100%);
-  margin-left: max(0px, calc((100vw - 1180px) / 2));
-}
-
-.hero h1 {
-  color: #fff;
-  font-size: clamp(52px, 8vw, 96px);
-}
-
-.hero p {
-  max-width: 600px;
-  color: #f5ece2;
-  font-size: 19px;
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.button-row,
-.card-actions,
-.quantity-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-
-.primary-button,
-.secondary-button,
-.back-button {
-  min-height: 48px;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
-  padding: 0 20px;
-  font-weight: 800;
-}
-
-.primary-button {
-  background: var(--primary);
-  color: #fff;
-}
-
-.primary-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.secondary-button,
-.back-button {
-  background: var(--surface-high);
-  border-color: var(--line);
-  color: var(--primary);
-}
-
-.compact {
-  min-height: 40px;
-  padding: 0 14px;
-}
-
-.wide {
-  width: 100%;
-}
-
-.section,
-.quiz-page,
-.detail-page,
-.cart-page {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 82px 0;
-}
-
-.section-heading {
-  margin-bottom: 30px;
-}
-
-.section-heading.centered {
-  max-width: 720px;
-  text-align: center;
-}
-
-.section-heading h1,
-.section-heading h2 {
-  font-size: clamp(36px, 5vw, 58px);
-}
-
-.section-heading p {
-  max-width: 660px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.product-card,
-.quiz-card,
-.result-card,
-.summary,
-.empty-state,
-.cart-item,
-.detail-panel {
-  border: 1px solid rgba(216, 203, 194, 0.72);
-  border-radius: var(--radius);
-  background: var(--surface-high);
-  box-shadow: var(--shadow);
-}
-
-.product-card {
-  overflow: hidden;
-}
-
-.product-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.product-card-body {
-  padding: 22px;
-}
-
-.card-topline,
-.cart-title-row,
-.summary-line,
-.summary-total {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: center;
-}
-
-.card-topline span,
-.badge-line span {
-  border-radius: 999px;
-  background: rgba(73, 100, 85, 0.12);
-  color: var(--secondary);
-  padding: 6px 10px;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.product-card h3 {
-  margin-top: 16px;
-  font-size: 28px;
-}
-
-.chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 18px 0;
-}
-
-.chip-row span {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface-low);
-  color: var(--primary);
-  padding: 7px 10px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.story-band {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 42px;
-  align-items: center;
-  padding: 70px max(24px, calc((100vw - 1180px) / 2));
-  background: var(--primary);
-}
-
-.story-band h2 {
-  color: #fff;
-  font-size: clamp(34px, 5vw, 58px);
-}
-
-.journey-grid,
-.detail-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.metric {
-  min-height: 128px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  padding: 18px;
-}
-
-.detail-stats .metric {
-  background: var(--surface-low);
-  border-color: var(--line);
-  color: var(--primary);
-}
-
-.metric span,
-.metric strong {
-  display: block;
-  margin-top: 10px;
-}
-
-.metric span {
-  color: inherit;
-  opacity: 0.72;
-}
-
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-
-.product-detail {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
-  gap: 42px;
-  align-items: start;
-}
-
-.gallery img {
-  width: 100%;
-  min-height: 620px;
-  border-radius: var(--radius);
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-.detail-copy h1 {
-  margin-top: 16px;
-  font-size: clamp(42px, 6vw, 70px);
-}
-
-.origin {
-  font-weight: 800;
-}
-
-.badge-line {
-  display: flex;
-  gap: 10px;
-}
-
-.detail-panel {
-  margin: 18px 0;
-  padding: 20px;
-  box-shadow: none;
-}
-
-.quiz-card,
-.result-card {
-  width: min(900px, 100%);
-  margin: 0 auto;
-  padding: 28px;
-}
-
-.progress-row {
-  display: flex;
-  justify-content: space-between;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.progress-track {
-  height: 8px;
-  margin: 14px 0 28px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--surface-low);
-}
-
-.progress-track div {
-  height: 100%;
-  background: var(--secondary);
-}
-
-.quiz-card h2 {
-  font-size: 34px;
-}
-
-.quiz-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.quiz-options button {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 76px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface-low);
-  color: var(--primary);
-  padding: 0 18px;
-  font-weight: 800;
-}
-
-.quiz-options button:hover {
-  border-color: var(--primary);
-  background: #fff;
-}
-
-.result-card {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 28px;
-  align-items: center;
-}
-
-.result-card img {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.cart-page {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 28px;
-  align-items: start;
-}
-
-.cart-items {
-  display: grid;
-  gap: 16px;
-}
-
-.cart-item {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 20px;
-  padding: 18px;
-  box-shadow: none;
-}
-
-.cart-item img {
-  width: 150px;
-  height: 170px;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.subscription-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0 18px;
-  color: var(--secondary);
-  font-weight: 800;
-}
-
-.quantity-row button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 40px;
-  height: 40px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface-high);
-  color: var(--primary);
-}
-
-.quantity-row span {
-  min-width: 28px;
-  text-align: center;
-  font-weight: 800;
-}
-
-.remove-button {
-  padding: 0 12px;
-  color: var(--danger) !important;
-}
-
-.summary {
-  position: sticky;
-  top: 98px;
-  padding: 24px;
-}
-
-.summary h2 {
-  margin-bottom: 22px;
-}
-
-.summary-line {
-  padding: 11px 0;
-  color: var(--muted);
-}
-
-.summary-total {
-  margin: 14px 0 20px;
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
-  font-size: 22px;
-}
-
-.empty-state {
-  display: grid;
-  place-items: center;
-  gap: 14px;
-  min-height: 320px;
-  padding: 28px;
-  box-shadow: none;
-}
-
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 36px 32px;
-  border-top: 1px solid var(--line);
-  background: var(--surface-low);
-}
-
-.site-footer p {
-  max-width: 560px;
-  margin-bottom: 0;
-}
-
-@media (max-width: 880px) {
-  .site-header {
-    grid-template-columns: 1fr auto;
-    padding: 0 18px;
-  }
-
-  .nav-links {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 12px;
-  }
-
-  .hero {
-    min-height: 680px;
-    padding: 64px 24px;
-  }
-
-  .product-grid,
-  .story-band,
-  .product-detail,
-  .result-card,
-  .cart-page {
-    grid-template-columns: 1fr;
-  }
-
-  .journey-grid,
-  .detail-stats,
-  .quiz-options {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    min-height: 420px;
-  }
-
-  .cart-item {
-    grid-template-columns: 1fr;
-  }
-
-  .cart-item img {
-    width: 100%;
-    height: 240px;
-  }
-
-  .summary {
-    position: static;
-  }
-
-  .site-footer {
-    flex-direction: column;
-  }
-}
-
-.admin-shell {
-  display: grid;
-  grid-template-columns: 256px minmax(0, 1fr);
-  min-height: 100vh;
-  background: #fcf9f3;
-}
-
-.admin-sidebar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  border-right: 1px solid rgba(216, 203, 194, 0.72);
-  background: #fdfcfb;
-  padding: 24px 0;
-  box-shadow: 4px 0 24px rgba(61, 43, 31, 0.04);
-}
-
-.admin-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 24px 32px;
-}
-
-.admin-brand > span {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius);
-  background: #3d2b1f;
-  color: #fbddca;
-}
-
-.admin-brand strong,
-.admin-brand small {
-  display: block;
-}
-
-.admin-brand strong {
-  color: #3d2b1f;
-  font-family: "Noto Serif", Georgia, serif;
-  font-size: 20px;
-}
-
-.admin-brand small,
-.admin-eyebrow {
-  color: var(--secondary);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.admin-nav {
-  display: grid;
-  gap: 4px;
-}
-
-.admin-nav button,
-.admin-logout {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 46px;
-  border: 0;
-  border-left: 4px solid transparent;
-  background: transparent;
-  color: #62564e;
-  padding: 0 24px 0 20px;
-  font-weight: 800;
-  text-align: left;
-}
-
-.admin-nav button:hover,
-.admin-nav button.active {
-  background: rgba(61, 43, 31, 0.07);
-  color: #3d2b1f;
-}
-
-.admin-nav button.active {
-  border-left-color: #3d2b1f;
-}
-
-.admin-logout {
-  margin-top: auto;
-  border-top: 1px solid rgba(216, 203, 194, 0.7);
-  color: var(--danger);
-  padding-top: 18px;
-}
-
-.admin-workspace {
-  min-width: 0;
-}
-
-.admin-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 68px;
-  border-bottom: 1px solid rgba(216, 203, 194, 0.72);
-  background: rgba(253, 252, 251, 0.88);
-  padding: 0 32px;
-  backdrop-filter: blur(12px);
-}
-
-.admin-search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: min(440px, 100%);
-  min-height: 42px;
-  border-radius: 999px;
-  background: #f4efe7;
-  color: #81756e;
-  padding: 0 14px;
-}
-
-.admin-search.compact {
-  width: min(280px, 100%);
-  min-height: 40px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(216, 203, 194, 0.7);
-  background: #fff;
-}
-
-.admin-search input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #26170c;
-}
-
-.admin-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.admin-header-actions button,
-.icon-only {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  background: transparent;
-  color: #62564e;
-}
-
-.admin-header-actions button:hover,
-.icon-only:hover {
-  border-color: var(--line);
-  background: #fff;
-  color: #26170c;
-}
-
-.admin-user-label {
-  border-left: 1px solid var(--line);
-  color: #3d2b1f;
-  padding-left: 16px;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.admin-header-actions img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fbddca;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.admin-main {
-  width: min(1280px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 34px 0 48px;
-}
-
-.admin-page-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 28px;
-}
-
-.admin-page-heading h1 {
-  margin-top: 8px;
-  font-size: clamp(34px, 4vw, 52px);
-}
-
-.admin-page-heading p {
-  max-width: 640px;
-  margin-bottom: 0;
-}
-
-.admin-actions,
-.inventory-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-
-.admin-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  border-radius: var(--radius);
-  padding: 0 16px;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.admin-button.primary {
-  border: 1px solid var(--secondary);
-  background: var(--secondary);
-  color: #fff;
-}
-
-.admin-button.ghost {
-  border: 1px solid var(--line);
-  background: #fff;
-  color: #26170c;
-}
-
-.admin-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  margin-bottom: 28px;
-}
-
-.admin-stat,
-.admin-panel {
-  border: 1px solid rgba(216, 203, 194, 0.65);
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: 0 18px 50px rgba(61, 43, 31, 0.08);
-}
-
-.admin-stat {
-  min-height: 154px;
-  padding: 20px;
-}
-
-.admin-stat > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-}
-
-.admin-stat-icon {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius);
-  background: #ffdea5;
-  color: #3f2c00;
-}
-
-.admin-stat small {
-  color: var(--secondary);
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.admin-stat p {
-  margin: 18px 0 6px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.admin-stat strong {
-  color: #26170c;
-  font-family: "Noto Serif", Georgia, serif;
-  font-size: 30px;
-}
-
-.admin-stat.danger .admin-stat-icon {
-  background: #ffdad6;
-  color: var(--danger);
-}
-
-.inventory-panel {
-  overflow: hidden;
-}
-
-.inventory-toolbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  border-bottom: 1px solid rgba(216, 203, 194, 0.58);
-  background: #fff;
-  padding: 22px 24px;
-}
-
-.inventory-toolbar h2,
-.shipment-heading h2,
-.roaster-note h2 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.inventory-filters {
-  margin-top: 16px;
-}
-
-.inventory-filters select {
-  min-height: 40px;
-  border: 1px solid rgba(216, 203, 194, 0.7);
-  border-radius: var(--radius);
-  background: #fff;
-  color: #4f453f;
-  padding: 0 12px;
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.inventory-table-wrap {
-  overflow-x: auto;
-}
-
-.inventory-table {
-  width: 100%;
-  min-width: 980px;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.inventory-table th {
-  border-bottom: 1px solid rgba(216, 203, 194, 0.58);
-  background: #f6f3ed;
-  color: #62564e;
-  padding: 14px 18px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.inventory-table td {
-  border-bottom: 1px solid rgba(216, 203, 194, 0.35);
-  color: #4f453f;
-  padding: 16px 18px;
-  font-size: 14px;
-}
-
-.inventory-table tr:hover td {
-  background: rgba(244, 239, 231, 0.52);
-}
-
-.bean-cell {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.bean-cell img {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.bean-cell strong,
-.bean-cell span {
-  display: block;
-}
-
-.bean-cell strong {
-  color: #26170c;
-}
-
-.bean-cell span {
-  color: #62564e;
-  font-size: 12px;
-}
-
-.admin-tag {
-  display: inline-flex;
-  border-radius: 999px;
-  background: #ffdea5;
-  color: #5d4201;
-  padding: 5px 9px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--secondary);
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.status::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.status.low,
-.danger-text {
-  color: var(--danger);
-}
-
-.status.muted {
-  color: #9b928c;
-}
-
-.inventory-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 24px;
-  color: #62564e;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.inventory-footer div {
-  display: flex;
-  gap: 8px;
-}
-
-.inventory-footer button {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #fff;
-  color: #26170c;
-  font-weight: 900;
-}
-
-.admin-secondary-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
-  gap: 24px;
-  margin-top: 28px;
-}
-
-.roaster-note {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 24px;
-  align-items: center;
-  border: 1px solid rgba(216, 203, 194, 0.7);
-  border-radius: var(--radius);
-  background: #fdfcfb;
-  padding: 24px;
-}
-
-.roaster-note img {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.roaster-note p {
-  margin-bottom: 0;
-  font-weight: 800;
-}
-
-.shipment-feed {
-  padding: 22px;
-}
-
-.shipment-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.shipment-heading button {
-  border: 0;
-  background: transparent;
-  color: var(--secondary);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.shipment-item {
-  display: flex;
-  gap: 14px;
-  padding: 14px 0;
-}
-
-.shipment-item + .shipment-item {
-  border-top: 1px solid rgba(216, 203, 194, 0.58);
-}
-
-.shipment-item > span {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ccead6;
-  color: #062014;
-  flex: 0 0 auto;
-}
-
-.shipment-item strong {
-  color: #26170c;
-}
-
-.shipment-item p {
-  margin: 3px 0 0;
-  font-size: 13px;
-}
-
-.report-grid {
-  margin-bottom: 0;
-}
-
-.settings-panel {
-  overflow: hidden;
-}
-
-.settings-list {
-  display: grid;
-}
-
-.settings-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  border-top: 1px solid rgba(216, 203, 194, 0.58);
-  padding: 18px 24px;
-}
-
-.settings-row span {
-  color: #62564e;
-  font-weight: 800;
-}
-
-.settings-row strong {
-  color: #26170c;
-}
-
-@media (max-width: 1100px) {
-  .admin-shell {
-    grid-template-columns: 86px minmax(0, 1fr);
-  }
-
-  .admin-brand div,
-  .admin-nav button,
-  .admin-logout {
-    font-size: 0;
-  }
-
-  .admin-brand {
-    justify-content: center;
-    padding-inline: 0;
-  }
-
-  .admin-nav button,
-  .admin-logout {
-    justify-content: center;
-    padding: 0;
-  }
-
-  .admin-stats,
-  .admin-secondary-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .roaster-note {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 760px) {
-  .admin-shell {
-    display: block;
-  }
-
-  .admin-sidebar {
-    position: static;
-    height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .admin-brand div,
-  .admin-nav button,
-  .admin-logout {
-    font-size: inherit;
-  }
-
-  .admin-nav {
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-
-  .admin-header,
-  .admin-page-heading,
-  .inventory-toolbar,
-  .inventory-footer {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .admin-header-actions {
-    flex-wrap: wrap;
-  }
-
-  .admin-main {
-    width: min(100% - 32px, 1280px);
-  }
-
-  .admin-stats,
-  .admin-secondary-grid,
-  .roaster-note {
-    grid-template-columns: 1fr;
+<file path="coffee-platform-frontend/package.json">
+{
+  "private": true,
+  "workspaces": [
+    "customer-frontend",
+    "admin-frontend",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev-both.mjs",
+    "dev:customer": "npm --prefix customer-frontend run dev",
+    "dev:admin": "npm --prefix admin-frontend run dev",
+    "build": "npm --prefix customer-frontend run build && npm --prefix admin-frontend run build",
+    "build:customer": "npm --prefix customer-frontend run build",
+    "build:admin": "npm --prefix admin-frontend run build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "axios": "^1.16.0",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
   }
 }
 </file>
@@ -5748,37 +7076,155 @@ p {
 }
 </file>
 
-<file path="FarmToCup.API/Program.cs">
-using FarmToCup.API.Models;
+<file path="FarmToCup.API/Controllers/SanPhamController.cs">
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using FarmToCup.API.DTOs.SanPham;
 using FarmToCup.API.Repository;
-using Microsoft.EntityFrameworkCore;
-var builder = WebApplication.CreateBuilder(args);
+using FarmToCup.API.Models;
 
-// Add services to the container.
-builder.Services.AddDbContext<FarmToCupContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+namespace FarmToCup.API.Controllers
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    [Route("api/san-pham")]
+    [ApiController]
+    public class SanPhamController : ControllerBase
+    {
+        private readonly ISanPhamRepository _sanPhamRepo;
+
+        public SanPhamController(ISanPhamRepository sanPhamRepo)
+        {
+            _sanPhamRepo = sanPhamRepo;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll(
+            string? keyword,
+            string? xuatXu,
+            string? mucRang,
+            string? quyTrinhCheBien,
+            string? huongVi,
+            string? phuongPhapPha,
+            decimal? minPrice,
+            decimal? maxPrice,
+            string? sortBy = "newest",
+            bool desc = true,
+            int page = 1,
+            int pageSize = 12)
+        {
+            var result = await _sanPhamRepo.GetAllAsync(
+                keyword,
+                xuatXu,
+                mucRang,
+                quyTrinhCheBien,
+                huongVi,
+                phuongPhapPha,
+                minPrice,
+                maxPrice,
+                sortBy,
+                desc,
+                page,
+                pageSize);
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
+
+            if (sanPham == null)
+                return NotFound("Không tìm thấy sản phẩm");
+
+            return Ok(sanPham);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(TaoSanPhamDto dto)
+        {
+            var sanPham = new SanPham
+            {
+                TenSanPham = dto.TenSanPham,
+                XuatXu = dto.XuatXu,
+                Gia = dto.Gia,
+                MucRang = dto.MucRang,
+                QuyTrinhCheBien = dto.QuyTrinhCheBien,
+                MoTa = dto.MoTa,
+                HinhAnh = dto.HinhAnh,
+                NhanHieuPhu = dto.NhanHieuPhu,
+                SoLuongTon = dto.SoLuongTon ?? 0,
+                TrangThai = true,
+                NgayTao = DateTime.UtcNow
+            };
+
+            var result = await _sanPhamRepo.AddAsync(sanPham);
+
+            return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, CapNhatSanPhamDto dto)
+        {
+            var sanPham = await _sanPhamRepo.GetByIdAsync(id);
+
+            if (sanPham == null)
+                return NotFound("Không tìm thấy sản phẩm");
+
+            sanPham.TenSanPham = dto.TenSanPham;
+            sanPham.XuatXu = dto.XuatXu;
+            sanPham.Gia = (decimal)dto.Gia;
+            sanPham.MucRang = dto.MucRang;
+            sanPham.QuyTrinhCheBien = dto.QuyTrinhCheBien;
+            sanPham.MoTa = dto.MoTa;
+            sanPham.HinhAnh = dto.HinhAnh;
+            sanPham.NhanHieuPhu = dto.NhanHieuPhu;
+
+            if (dto.SoLuongTon.HasValue)
+                sanPham.SoLuongTon = dto.SoLuongTon.Value;
+
+            sanPham.TrangThai = dto.TrangThai ?? sanPham.TrangThai;
+
+            await _sanPhamRepo.UpdateAsync(sanPham);
+
+            return Ok(sanPham);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _sanPhamRepo.SoftDeleteAsync(id);
+
+            if (!result)
+                return NotFound("Không tìm thấy sản phẩm");
+
+            return Ok("Đã ẩn sản phẩm");
+        }
+
+    }
+            
 }
+</file>
 
-app.UseHttpsRedirection();
+<file path="FarmToCup.API/DTOs/SanPham/CapNhatSanPhamDto.cs">
+namespace FarmToCup.API.DTOs.SanPham
+{
+    public class CapNhatSanPhamDto
+    {
+        public string? TenSanPham { get; set; }
+        public string? XuatXu { get; set; }
+        public decimal? Gia { get; set; }
+        public string? MucRang { get; set; }
+        public string? QuyTrinhCheBien { get; set; }
+        public string? MoTa { get; set; }
+        public string? HinhAnh { get; set; }
+        public string? NhanHieuPhu { get; set; }
+        public int? SoLuongTon { get; set; }
+        public bool? TrangThai { get; set; }
 
-app.UseAuthorization();
 
-app.MapControllers();
 
-app.Run();
+    }
+}
 </file>
 
 <file path="FarmToCup.API/FarmToCup.API.csproj">
@@ -5805,6 +7251,61 @@ app.Run();
   </ItemGroup>
 
 </Project>
+</file>
+
+<file path="FarmToCup.API/Program.cs">
+using FarmToCup.API.Models;
+using FarmToCup.API.Repository;
+using Microsoft.EntityFrameworkCore;
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddDbContext<FarmToCupContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ISanPhamRepository, SanPhamRepository>();
+builder.Services.AddScoped<IHuongViRepository, HuongViRepository>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+    {
+        policy
+            .WithOrigins(
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+                "http://localhost:4173",
+                "http://127.0.0.1:4173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
+app.UseCors("Frontend");
+app.UseStaticFiles();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
 </file>
 
 </files>

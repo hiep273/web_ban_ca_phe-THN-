@@ -8,6 +8,7 @@ builder.Services.AddDbContext<FarmToCupContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ISanPhamRepository, SanPhamRepository>();
+builder.Services.AddScoped<IHuongViRepository, HuongViRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
