@@ -1,9 +1,6 @@
-import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
-import { defaultNotes } from "../data/customerData.js";
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney";
 
 export default function ProductCard({ product, onView, onAdd }) {
-  const notes = product.notes?.length ? product.notes : defaultNotes;
-
   return (
     <article className="product-card">
       <img src={product.image} alt={`Cà phê ${product.name}`} />
@@ -15,7 +12,7 @@ export default function ProductCard({ product, onView, onAdd }) {
         <h3>{product.name}</h3>
         <p>{product.origin}</p>
         <div className="chip-row">
-          {notes.map((note) => (
+          {product.notes.map((note) => (
             <span key={note}>{note}</span>
           ))}
         </div>

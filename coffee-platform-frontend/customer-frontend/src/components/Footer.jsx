@@ -6,8 +6,8 @@ export default function Footer({ navigate }) {
       <div>
         <strong>Từ Vườn Đến Ly</strong>
         <p>
-          Trải nghiệm khám phá cà phê đặc sản, câu chuyện sản phẩm, bài tìm gu và giỏ
-          hàng trong một ứng dụng React.
+          Trải nghiệm khám phá cà phê đặc sản, câu chuyện sản phẩm, bài tìm gu
+          và giỏ hàng trong một ứng dụng React.
         </p>
       </div>
       <button onClick={() => navigate("/")}>

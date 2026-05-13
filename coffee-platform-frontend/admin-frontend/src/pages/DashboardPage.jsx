@@ -1,6 +1,6 @@
 import ShipmentFeed from "../components/ShipmentFeed.jsx";
 import StatsCards from "../components/StatsCards.jsx";
-import InventoryTable from "./InventoryPage.jsx";
+import InventoryPage from "./InventoryPage.jsx";
 
 export default function DashboardPage({ data, stats }) {
   const highlightedItem = data.inventoryItems[0];
@@ -8,7 +8,7 @@ export default function DashboardPage({ data, stats }) {
   return (
     <>
       <StatsCards stats={stats} />
-      <InventoryTable items={data.inventoryItems.slice(0, 4)} />
+      <InventoryPage items={data.inventoryItems.slice(0, 4)} />
 
       <section className="admin-secondary-grid">
         <div className="roaster-note">

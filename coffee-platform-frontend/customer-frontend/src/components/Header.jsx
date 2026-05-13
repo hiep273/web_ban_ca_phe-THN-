@@ -1,14 +1,10 @@
 import { ShoppingBag, User } from "lucide-react";
-import { fallbackProducts } from "../data/customerData.js";
 
-export default function Header({ route, navigate, cartCount, featuredProductId }) {
+export default function Header({ route, navigate, cartCount }) {
   const links = [
     { label: "Cửa hàng", route: "/" },
     { label: "Tìm gu", route: "/quiz" },
-    {
-      label: "Cà phê nổi bật",
-      route: `/product/${featuredProductId || fallbackProducts[0].id}`,
-    },
+    { label: "Cà phê nổi bật", route: "/product/dalat-red-bourbon" },
     { label: "Giỏ hàng", route: "/cart" },
   ];
 

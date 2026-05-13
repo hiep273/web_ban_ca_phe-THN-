@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "@coffee-platform/shared": "file:../packages/shared",
-    "axios": "^1.16.0",
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",

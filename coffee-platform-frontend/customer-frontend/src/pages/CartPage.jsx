@@ -1,9 +1,9 @@
 import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
-import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney";
 import SummaryLine from "../components/SummaryLine.jsx";
-import { defaultNotes } from "../data/customerData.js";
+import { products } from "../data/customerData.js";
 
-export default function CartPage({ cart, setCart, navigate, products }) {
+export default function CartPage({ cart, setCart, navigate }) {
   const items = cart
     .map((item) => ({
       ...item,
@@ -62,7 +62,7 @@ export default function CartPage({ cart, setCart, navigate, products }) {
                   <h3>{item.product.name}</h3>
                   <strong>{formatMoney(item.product.price * item.qty)}</strong>
                 </div>
-                <p>{(item.product.notes?.length ? item.product.notes : defaultNotes).join(", ")}</p>
+                <p>{item.product.notes.join(", ")}</p>
                 <label className="subscription-toggle">
                   <input
                     type="checkbox"

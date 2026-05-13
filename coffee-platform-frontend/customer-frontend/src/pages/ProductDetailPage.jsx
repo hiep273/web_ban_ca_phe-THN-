@@ -1,26 +1,8 @@
-import { ArrowLeft, Coffee, ShoppingBag, Sparkles, Star } from "lucide-react";
-import { formatMoney } from "@coffee-platform/shared/utils/formatMoney.js";
+import { ArrowLeft, Coffee, Sparkles, Star } from "lucide-react";
+import { formatMoney } from "@coffee-platform/shared/utils/formatMoney";
 import Metric from "../components/Metric.jsx";
-import { defaultBrewMethods, defaultNotes } from "../data/customerData.js";
 
 export default function ProductDetailPage({ product, addToCart, navigate }) {
-  if (!product) {
-    return (
-      <main className="detail-page">
-        <button className="back-button" onClick={() => navigate("/")}>
-          <ArrowLeft size={18} /> Về cửa hàng
-        </button>
-        <div className="empty-state">
-          <ShoppingBag size={42} />
-          <h2>Không tìm thấy sản phẩm</h2>
-        </div>
-      </main>
-    );
-  }
-
-  const notes = product.notes?.length ? product.notes : defaultNotes;
-  const brew = product.brew?.length ? product.brew : defaultBrewMethods;
-
   return (
     <main className="detail-page">
       <button className="back-button" onClick={() => navigate("/")}>
@@ -46,7 +28,7 @@ export default function ProductDetailPage({ product, addToCart, navigate }) {
           <div className="detail-panel">
             <h3>Hồ sơ hương vị</h3>
             <div className="chip-row">
-              {notes.map((note) => (
+              {product.notes.map((note) => (
                 <span key={note}>{note}</span>
               ))}
             </div>
@@ -54,7 +36,7 @@ export default function ProductDetailPage({ product, addToCart, navigate }) {
           <div className="detail-panel">
             <h3>Hợp để pha</h3>
             <div className="chip-row">
-              {brew.map((method) => (
+              {product.brew.map((method) => (
                 <span key={method}>{method}</span>
               ))}
             </div>

@@ -1,4 +1,4 @@
-export const fallbackProducts = [
+export const products = [
   {
     id: "dalat-red-bourbon",
     name: "Dalat Red Bourbon",
@@ -53,25 +53,10 @@ export const quizQuestions = [
   },
   {
     title: "Bạn thích gu hương vị nào?",
-    options: [
-      "Sáng vị và hương hoa",
-      "Vị sô cô la",
-      "Đậm và mộc",
-      "Ngọt cân bằng",
-    ],
+    options: ["Sáng vị và hương hoa", "Vị sô cô la", "Đậm và mộc", "Ngọt cân bằng"],
   },
   {
     title: "Bạn muốn ly cà phê mạnh đến mức nào?",
     options: ["Nhẹ nhàng", "Vừa phải", "Đậm mạnh"],
   },
 ];
-
-export const fallbackFlavors = [
-  ...new Set(fallbackProducts.flatMap((product) => product.notes)),
-].map((name, index) => ({
-  id: `fallback-flavor-${index}`,
-  name,
-}));
-
-export const defaultNotes = ["Ca phe dac san"];
-export const defaultBrewMethods = ["Phin", "Pour over"];

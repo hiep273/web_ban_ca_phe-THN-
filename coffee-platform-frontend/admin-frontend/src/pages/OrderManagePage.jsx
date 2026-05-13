@@ -1,7 +1,7 @@
 import AdminTable from "../components/AdminTable.jsx";
-import { formatMoney } from "@coffee-platform/shared/utils/adminMetrics.js";
+import { formatMoney } from "@coffee-platform/shared/utils/adminMetrics";
 
-export default function OrdersPage({ orders }) {
+export default function OrderManagePage({ orders }) {
   const columns = [
     { key: "id", label: "Đơn hàng" },
     { key: "customer", label: "Khách hàng" },

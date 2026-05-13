@@ -1,30 +1,29 @@
 import { useEffect, useMemo, useState } from "react";
-import { getAdminOverview } from "@coffee-platform/shared/api/adminApi.js";
+import { getAdminOverview } from "@coffee-platform/shared/api/adminApi";
+import { buildStats } from "@coffee-platform/shared/utils/adminMetrics";
 import AdminHeader from "./components/AdminHeader.jsx";
 import AdminSidebar from "./components/AdminSidebar.jsx";
-import DashboardPage from "./pages/DashboardPage.jsx";
-import InventoryTable from "./pages/InventoryPage.jsx";
-import OrdersPage from "./pages/OrderManagePage.jsx";
-import ReportsPage from "./pages/ReportPage.jsx";
-import SettingsPage from "./pages/SettingsPage.jsx";
 import StatsCards from "./components/StatsCards.jsx";
-import SuppliersPage from "./pages/SupplierPage.jsx";
-import {
-  adminNavItems,
-  settings,
-} from "./data/adminData.js";
-import { buildStats } from "@coffee-platform/shared/utils/adminMetrics.js";
+import { adminNavItems, settings } from "./data/adminData.js";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import InventoryPage from "./pages/InventoryPage.jsx";
+import OrderManagePage from "./pages/OrderManagePage.jsx";
+import ReportPage from "./pages/ReportPage.jsx";
+import SettingsPage from "./pages/SettingsPage.jsx";
+import SupplierPage from "./pages/SupplierPage.jsx";
 
 const pageMeta = {
   dashboard: {
     eyebrow: "Tổng quan vận hành",
     title: "Bảng điều khiển quản trị",
-    description: "Theo dõi tồn kho, nhập hàng, đơn hàng và hoạt động nhà cung cấp trong một màn hình.",
+    description:
+      "Theo dõi tồn kho, nhập hàng, đơn hàng và hoạt động nhà cung cấp trong một màn hình.",
   },
   inventory: {
     eyebrow: "Tổng quan kho",
     title: "Quản lý tồn kho",
-    description: "Theo dõi sản phẩm cà phê, hạn dùng, điểm nhập lại, mức rang và nhà cung cấp.",
+    description:
+      "Theo dõi sản phẩm cà phê, hạn dùng, điểm nhập lại, mức rang và nhà cung cấp.",
   },
   orders: {
     eyebrow: "Xử lý đơn",
@@ -34,7 +33,8 @@ const pageMeta = {
   suppliers: {
     eyebrow: "Nguồn cung",
     title: "Nhà cung cấp",
-    description: "Theo dõi đối tác, lô hàng đang hoạt động, xếp hạng và lịch nhập hàng.",
+    description:
+      "Theo dõi đối tác, lô hàng đang hoạt động, xếp hạng và lịch nhập hàng.",
   },
   reports: {
     eyebrow: "Tình hình kinh doanh",
@@ -75,7 +75,7 @@ export default function AdminApp() {
           setAdminData({ ...emptyAdminData, ...data, settings });
           setLoadError("");
         }
-      } catch (error) {
+      } catch {
         if (isMounted) {
           setAdminData(emptyAdminData);
           setLoadError("Chưa tải được dữ liệu quản trị từ backend.");
@@ -95,11 +95,12 @@ export default function AdminApp() {
   }, []);
 
   const stats = useMemo(
-    () => buildStats({
-      inventoryItems: adminData.inventoryItems,
-      shipments: adminData.shipments,
-      orders: adminData.orders,
-    }),
+    () =>
+      buildStats({
+        inventoryItems: adminData.inventoryItems,
+        shipments: adminData.shipments,
+        orders: adminData.orders,
+      }),
     [adminData]
   );
   const meta = pageMeta[activePage] || pageMeta.dashboard;
@@ -126,18 +127,26 @@ export default function AdminApp() {
             </div>
           </section>
 
-          {isLoading && <p className="inline-notice">Đang tải dữ liệu quản trị từ backend...</p>}
+          {isLoading && (
+            <p className="inline-notice">Đang tải dữ liệu quản trị từ backend...</p>
+          )}
           {loadError && <p className="inline-notice">{loadError}</p>}
-          {activePage === "dashboard" && <DashboardPage data={adminData} stats={stats} />}
+          {activePage === "dashboard" && (
+            <DashboardPage data={adminData} stats={stats} />
+          )}
           {activePage === "inventory" && (
             <>
               <StatsCards stats={stats} />
-              <InventoryTable items={adminData.inventoryItems} />
+              <InventoryPage items={adminData.inventoryItems} />
             </>
           )}
-          {activePage === "orders" && <OrdersPage orders={adminData.orders} />}
-          {activePage === "suppliers" && <SuppliersPage suppliers={adminData.suppliers} />}
-          {activePage === "reports" && <ReportsPage metrics={adminData.reportMetrics} />}
+          {activePage === "orders" && <OrderManagePage orders={adminData.orders} />}
+          {activePage === "suppliers" && (
+            <SupplierPage suppliers={adminData.suppliers} />
+          )}
+          {activePage === "reports" && (
+            <ReportPage metrics={adminData.reportMetrics} />
+          )}
           {activePage === "settings" && <SettingsPage settings={settings} />}
         </main>
       </div>

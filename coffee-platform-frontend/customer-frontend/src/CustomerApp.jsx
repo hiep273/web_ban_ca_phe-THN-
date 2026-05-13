@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { getFlavors } from "@coffee-platform/shared/api/flavorApi.js";
-import { getProducts } from "@coffee-platform/shared/api/productApi.js";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
-import { fallbackFlavors, fallbackProducts } from "./data/customerData.js";
+import { productService } from "./services/productService.js";
 import { useCustomerRouter } from "./hooks/useCustomerRouter.js";
 import CartPage from "./pages/CartPage.jsx";
 import FlavorQuizPage from "./pages/FlavorQuizPage.jsx";
@@ -12,65 +10,26 @@ import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 
 export default function CustomerApp() {
   const { route, navigate } = useCustomerRouter();
-  const [products, setProducts] = useState(fallbackProducts);
-  const [flavors, setFlavors] = useState(fallbackFlavors);
-  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
-  const [productsError, setProductsError] = useState("");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([
+    { productId: "dalat-red-bourbon", qty: 1, subscription: true },
+  ]);
+  
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let isMounted = true;
-
-    async function loadProducts() {
+    const fetchProducts = async () => {
       try {
-        setIsLoadingProducts(true);
-        const data = await getProducts();
-
-        if (isMounted && data.length > 0) {
-          setProducts(data);
-          setProductsError("");
-        }
-      } catch {
-        if (isMounted) {
-          setProducts(fallbackProducts);
-          setProductsError("Chưa kết nối được API sản phẩm, đang hiển thị dữ liệu mẫu.");
-        }
+        setLoading(true);
+        const data = await productService.getAllProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to load products:", error);
       } finally {
-        if (isMounted) {
-          setIsLoadingProducts(false);
-        }
+        setLoading(false);
       }
-    }
-
-    loadProducts();
-
-    return () => {
-      isMounted = false;
     };
-  }, []);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    async function loadFlavors() {
-      try {
-        const data = await getFlavors();
-
-        if (isMounted && data.length > 0) {
-          setFlavors(data);
-        }
-      } catch {
-        if (isMounted) {
-          setFlavors(fallbackFlavors);
-        }
-      }
-    }
-
-    loadFlavors();
-
-    return () => {
-      isMounted = false;
-    };
+    fetchProducts();
   }, []);
 
   const activeProduct =
@@ -80,13 +39,11 @@ export default function CustomerApp() {
   const addToCart = (productId) => {
     setCart((items) => {
       const existing = items.find((item) => item.productId === productId);
-
       if (existing) {
         return items.map((item) =>
           item.productId === productId ? { ...item, qty: item.qty + 1 } : item
         );
       }
-
       return [...items, { productId, qty: 1, subscription: false }];
     });
     navigate("/cart");
@@ -94,43 +51,26 @@ export default function CustomerApp() {
 
   return (
     <div className="app-shell">
-      <Header
-        route={route}
-        navigate={navigate}
-        cartCount={cartCount}
-        featuredProductId={products[0]?.id}
-      />
-      {route === "/" && (
-        <HomePage
-          navigate={navigate}
-          addToCart={addToCart}
-          products={products}
-          isLoadingProducts={isLoadingProducts}
-          productsError={productsError}
-        />
-      )}
+      <Header route={route} navigate={navigate} cartCount={cartCount} />
+      {route === "/" && <HomePage navigate={navigate} addToCart={addToCart} products={products} loading={loading} />}
       {route.startsWith("/product/") && (
-        <ProductDetailPage
-          product={activeProduct}
-          addToCart={addToCart}
-          navigate={navigate}
-        />
+        loading ? (
+          <div style={{ padding: "4rem", textAlign: "center" }}>Đang tải chi tiết sản phẩm...</div>
+        ) : activeProduct ? (
+          <ProductDetailPage
+            product={activeProduct}
+            addToCart={addToCart}
+            navigate={navigate}
+          />
+        ) : (
+          <div style={{ padding: "4rem", textAlign: "center" }}>Không tìm thấy sản phẩm.</div>
+        )
       )}
       {route === "/quiz" && (
-        <FlavorQuizPage
-          navigate={navigate}
-          addToCart={addToCart}
-          products={products}
-          flavors={flavors}
-        />
+        <FlavorQuizPage navigate={navigate} addToCart={addToCart} />
       )}
       {route === "/cart" && (
-        <CartPage
-          cart={cart}
-          setCart={setCart}
-          navigate={navigate}
-          products={products}
-        />
+        <CartPage cart={cart} setCart={setCart} navigate={navigate} />
       )}
       <Footer navigate={navigate} />
     </div>

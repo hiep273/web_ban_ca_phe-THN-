@@ -2,13 +2,7 @@ import { Award, Coffee, Leaf } from "lucide-react";
 import Metric from "../components/Metric.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
-export default function HomePage({
-  navigate,
-  addToCart,
-  products,
-  isLoadingProducts,
-  productsError,
-}) {
+export default function HomePage({ navigate, addToCart, products = [], loading = false }) {
   return (
     <main>
       <section className="hero">
@@ -38,21 +32,25 @@ export default function HomePage({
           <p className="eyebrow">Bộ sưu tập theo mùa</p>
           <h2>Chọn Gu Cà Phê Của Bạn</h2>
           <p>
-            Mua theo vùng trồng, mức rang, phương pháp sơ chế và những nốt hương bạn
-            yêu thích.
+            Mua theo vùng trồng, mức rang, phương pháp sơ chế và những nốt
+            hương bạn yêu thích.
           </p>
         </div>
-        {productsError && <p className="inline-notice">{productsError}</p>}
-        {isLoadingProducts && <p className="inline-notice">Đang tải sản phẩm từ backend...</p>}
         <div className="product-grid">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onView={() => navigate(`/product/${product.id}`)}
-              onAdd={() => addToCart(product.id)}
-            />
-          ))}
+          {loading ? (
+            <div style={{ padding: "2rem", textAlign: "center", gridColumn: "1 / -1" }}>Đang tải danh sách sản phẩm...</div>
+          ) : products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onView={() => navigate(`/product/${product.id}`)}
+                onAdd={() => addToCart(product.id)}
+              />
+            ))
+          ) : (
+            <div style={{ padding: "2rem", textAlign: "center", gridColumn: "1 / -1" }}>Không tìm thấy sản phẩm nào.</div>
+          )}
         </div>
       </section>
 

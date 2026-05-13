@@ -1,6 +1,6 @@
 import AdminTable from "../components/AdminTable.jsx";
 
-export default function SuppliersPage({ suppliers }) {
+export default function SupplierPage({ suppliers }) {
   const columns = [
     { key: "name", label: "Nhà cung cấp" },
     { key: "region", label: "Khu vực" },

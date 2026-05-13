@@ -14,7 +14,7 @@ export function useLocalStorage(key, initialValue) {
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch {
-      // Ignore storage errors so UI state still works in private or locked-down browsers.
+      // Ignore storage failures in restricted browser modes.
     }
   }, [key, value]);
 

@@ -1,6 +1,6 @@
-import { formatMoney, formatNumber } from "@coffee-platform/shared/utils/adminMetrics.js";
+import { formatMoney, formatNumber } from "@coffee-platform/shared/utils/adminMetrics";
 
-export default function ReportsPage({ metrics }) {
+export default function ReportPage({ metrics }) {
   return (
     <section className="admin-stats report-grid">
       {metrics.map((metric) => (

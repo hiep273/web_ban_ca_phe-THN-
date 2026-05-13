@@ -1,4 +1,4 @@
-export function formatMoney(value) {
+﻿export function formatMoney(value) {
   return new Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency: "VND",
@@ -27,3 +27,4 @@ export function buildStats({ inventoryItems, shipments, orders }) {
     { id: "shipments", label: "Lịch nhập hàng", value: `${formatNumber(shipments.length)} phiếu`, meta: `${pendingOrders} đơn đang mở` },
   ];
 }
+

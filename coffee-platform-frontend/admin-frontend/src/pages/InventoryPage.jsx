@@ -7,7 +7,7 @@ function getStatusClass(item) {
   return "status";
 }
 
-export default function InventoryTable({ items }) {
+export default function InventoryPage({ items }) {
   const origins = [...new Set(items.map((item) => item.origin.split(",").pop().trim()))];
   const processes = [...new Set(items.map((item) => item.process))];
   const roastLevels = [...new Set(items.map((item) => item.roastLevel))];
